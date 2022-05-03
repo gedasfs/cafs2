@@ -5,11 +5,28 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Task 2</title>
 
+	<style>
+		.container-pictures {
+			width: 540px;
+			display: flex;
+		}
+
+		.cont-pic {
+			margin: 0px 10px;
+		}
+
+		.cont-pic > p {
+			margin: 0px 0px;
+			text-align: center;
+		}
+
+	</style>
+
 </head>
 <body>
 	<h2>You're in good company</h2>
 	
-	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, <a href="http://www.google.lt">GOOGLE</a> do eiusmod
+	<p style="width: 270px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, <a href="http://www.google.lt">GOOGLE</a> do eiusmod
 	tempor incididunt ut labore et dolore magna aliqua. </p>
 
 	<ul>
@@ -24,9 +41,17 @@
 		<li>dolor</li>
 	</ol>
 
-	<img  width="250" src=" https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="pic1">
-
-	<img  width="250" src=" https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="pic2">
+	<div class="container-pictures">
+		<div class="cont-pic">
+			<img  width="250" src="https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="pic1">
+			<p>picture1</p>
+		</div>
+			
+		<div class="cont-pic">
+			<img  width="250" src="https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="pic2">
+			<p>picture2</p>
+		</div>
+	</div>
 
 
 </body>
