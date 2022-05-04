@@ -1,0 +1,75 @@
+* {
+	font-family: Tahoma;
+	font-size: 1em;
+	color: rgb(80, 80, 80);
+}
+
+body {
+	width: 600px;
+}
+
+ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+nav, article, footer {
+	background: rgb(230, 230, 230);
+}
+
+nav {
+	overflow: hidden;
+}
+
+nav li {
+	float: right;
+}
+
+nav li a {
+	text-decoration: none;
+	display: block;
+	padding: 15px 15px;
+}
+
+article {
+	padding: 5px 0px 5px 0px;
+	margin: 20px 0px;
+}
+
+.art1 {
+	text-align: center;
+	padding-bottom: 40px;
+}
+
+.art1 p {
+	width: 50%;
+	margin: auto;
+}
+
+.art2 {
+	display:  flex;
+}
+
+.art3 {
+	display: flex;
+}
+
+section {
+	margin: 20px 20px;
+}
+
+footer {
+	padding: 10px 0px 10px 0px;
+	margin: 20px 0px;
+	text-align: center;
+}
+
+footer ul {
+	display: flex;
+	justify-content: center;
+}
+
+footer ul li {
+	padding:  0px 15px;
+}
