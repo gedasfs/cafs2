@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Task 3</title>
+
+	<style>
+		* {
+			font-family: Tahoma;
+			font-size: 1em;
+		}
+
+		body {
+			width: 600px;
+		}
+
+		ul {
+			list-style-type: none;
+			padding: 0;
+		}
+
+		nav, article, footer {
+			background: rgb(230, 230, 230);
+		}
+
+		article	{
+			padding: 0px;
+			margin: 10px 0px;
+		}
+
+		nav {
+			overflow: hidden;
+		}
+
+		nav ul {
+			margin: 0;
+			padding: 0;
+		}
+
+		nav li {
+			float: right;
+
+		}
+
+		nav li a {
+			text-decoration: none;
+			display: block;
+			padding: 15px 15px;
+		}
+
+		article {
+			padding: 5px 0px 5px 0px;
+			margin: 20px 0px;
+		}
+
+		.art1 {
+			text-align: center;
+			padding-bottom: 40px;
+		}
+
+		.art1 > p {
+			width: 50%;
+			margin: auto;
+		}
+
+		.art2 {
+			display:  flex;
+		}
+
+		.art3 {
+			display: flex;
+		}
+
+		section {
+			margin: 20px 20px;
+		}
+
+		footer {
+			padding: 10px 0px 10px 0px;
+			margin: 20px 0px;
+			text-align: center;
+		}
+
+		footer > ul {
+			display: flex;
+			justify-content: center;
+		}
+
+		footer > ul > li {
+			padding:  0px 15px;
+		}
+
+
+
+	</style>
+</head>
+<body>
+	<header>
+		<nav>
+			<ul>
+				<li style="float: left;"><a href="#logo">LOGO</a></li>
+				<li><a class="" href="#nav-item-1">Menu item 1</a></li>
+				<li><a href="#nav-item-2">Menu item 2</a></li>
+				<li><a href="#nav-item-3">Menu item 3</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<main>
+		<article class="art1">
+			<h1>SUPER HEADLINE</h1>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua.</p>
+		</article>
+
+		<article class="art2">
+			<section>
+				<h2>Headline</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur.
+				</p>
+			</section>
+			<section>
+				<img class="pic1" src="https://via.placeholder.com/200" alt="pic1">
+			</section>
+		</article>
+
+		<article class="art3">
+			<section>
+				<img class="pic2" src="https://via.placeholder.com/200" alt="pic2">
+			</section>
+			<section>
+				<h2>Headline</h2>
+				<ul>
+					<li>Lorem ipsum is simply a dummy text.</li>
+					<li>Lorem ipsum is simply a dummy text.</li>
+					<li>Lorem ipsum is simply a dummy text.</li>
+				</ul>
+			</section>
+			
+		</article>
+	</main>
+
+
+	<footer>
+		<p style="text-align: center;">
+			<ul>
+				<li>Additional information 1</li>
+				<li>Additional information 2</li>
+				<li>Additional information 3</li>
+			</ul>
+		</p>
+		<p>All rights reserved.</p>
+	</footer>
+</body>
+</html>
