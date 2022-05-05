@@ -18,9 +18,21 @@ div {
 	padding: 5px 0px;
 }
 
+input, select {
+	border-radius: 2px;
+	border: 1px solid rgb(140, 140, 140);
+	width: 200px;
+	height: 25px;
+}
+
+p {
+	font-size: 1.1em;
+}
+
 button {
-	margin-top: 20px;
-	padding: 10px 10px;
+	margin-top: 30px;
+	width: 200px;
+	height: 50px;
 	background: rgb(17, 43, 60);
 	border-radius: 5px;
 	border:  none;
