@@ -1,0 +1,34 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+main {
+	margin: 5px 5px;
+}
+
+div {
+	border: 1px solid black;
+	margin: 10px 0px;
+}
+
+input {
+	margin: 10px 5px;
+}
+
+p {
+
+	width: 170px;
+	position: relative;
+	top: -10px;
+	left: 20px;
+	background: white;
+
+}
+
+button	{
+	background: white;
+	padding: 2px 5px;
+	border-radius:  3px;
+	border: 1px solid lightgrey;
+}
