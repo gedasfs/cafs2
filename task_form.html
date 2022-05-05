@@ -24,12 +24,13 @@
 			
 			<div>
 				<p>Tel. numeris</p>
-				<input type="text" name="phone-number">
+				<input type="text" name="phone_number" placeholder="+370...">
 			</div>
 
 			<div>
 				<p>Paslauga</p>
-				<select name="rent-service">
+				<select name="rent_service">
+					<option disabled selected></option>
 					<option value="car">Automobilio nuoma</option>
 					<option value="bicycle">Dviračio  nuoma</option>
 					<option value="scooter">Paspirtuko nuoma</option>
@@ -39,14 +40,15 @@
 			<div>
 				<p>Nuomos laikotarpis:</p>
 				<p>nuo</p>
-				<input type="date" name="date-from" value="2022-05-05"><br>
+				<input type="date" name="date_from" value="2022-05-05"><br>
 				<p>iki</p>
-				<input type="date" name="date-until">
+				<input type="date" name="date_until">
 			</div>
 
 			<div>
 				<p>Transporto priemonę atsiimsite</p>
-				<select name="pickup-city">
+				<select name="pickup_city">
+					<option disabled selected></option>
 					<option value="vilnius">Vilniuje</option>
 					<option value="kaunas">Kaune</option>
 					<option value="klaipeda">Klaipėdoje</option>
