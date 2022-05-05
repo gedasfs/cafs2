@@ -1,0 +1,51 @@
+* {
+	padding: 0px;
+	margin: 0px;
+}
+
+main {
+	margin: 5px 20px;
+	width: 1000px;
+}
+
+section	{
+	display: inline-block;
+	width: 40%;
+	margin: 20px 0px;
+	padding: 10px 20px;
+	vertical-align: top;
+	overflow: auto;
+}
+
+.cont-l > h1 {
+	margin-bottom: 20px;
+	font-size: 1.75em;
+}
+
+.cont-l > p {
+	margin-bottom: 30px;
+	font-size: 1.3em;
+}
+
+.gallery-cont {
+	display: grid;
+	grid-template-columns: auto auto auto;
+}
+
+.gallery-cont > img {
+	padding: 15px 0px;
+}
+
+.cont-r > img {
+	width: 400px;
+}
+
+.cont-r > h2 {
+	padding: 40px 50px 30px;
+	font-size: 1.05em;
+}
+
+.cont-r > p {
+	padding: 0px 50px 30px;
+	font-size: 0.9em;
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/task_form.css">
+	<title>Task form</title>
+</head>
+<body>
+	<main>
+		<form action="" method="POST">
+			<div>
+				<p>Vardas</p>
+				<input type="text" name="name">
+			</div>
+			<div>
+				<p>Pavardė</p>
+				<input type="text" name="surname">
+			</div>
+			<div>
+				<p>El. pašto adresas:</p>
+				<input type="email" name="email">
+			</div>
+			
+			<div>
+				<p>Paslauga</p>
+				<select name="services" id="servces">
+					<option value="car">Automobilio nuoma</option>
+					<option value="bicycle">Dviračio  nuoma</option>
+					<option value="scooter">Paspirtuko nuoma</option>
+				</select>
+			</div>
+
+			<div>
+				<p>Nuomos laikotarpis:</p>
+				<span>nuo</span>
+				<input type="date" name="from" value="2022-05-05"><br>
+				<span>iki</span>
+				<input type="date" name="until">
+			</div>
+
+			<div>
+				<p>Transporto priemonę atsiimsite:</p>
+				<select name="city">
+					<option value="vilnius">Vilniuje</option>
+					<option value="kaunas">Kaune</option>
+					<option value="klaipeda">Klaipėdoje</option>
+				</select>
+			</div>
+
+			<button>Pateikti užsakymą</button>
+		</form>	
+	</main>
+</body>
+</html>
