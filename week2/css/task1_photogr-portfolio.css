@@ -16,7 +16,9 @@ body {
 	height: 45vh;
 	min-height: 250px;
 	max-height: 500px;
-	width: 600px;
+	width: 50vw;
+	min-width: 400px;
+	max-width: 800px;
 	border: 1px solid black;
 	margin: 5px 0;
 
@@ -41,4 +43,8 @@ body {
 	text-align: center;
 	line-height: 50px;
 	text-decoration: none;
+}
+
+.top p {
+	margin: 0 20px;
 }
