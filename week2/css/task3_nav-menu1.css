@@ -101,3 +101,29 @@
 .menu4 a:hover {
 	color: red;
 }
+
+
+
+/*--- menu5 ---*/
+/*buttons inline, background color on hover*/
+.menu5 ul {
+	list-style-type: none;
+}
+
+.menu5 li {
+	float: left;
+	margin-right: 10px;
+}
+
+.menu5 a,
+.menu5 a:visited {
+	text-decoration: none;
+	color: blue;
+	border: 1px solid blue;
+	padding: 5px;
+}
+
+.menu5 a:hover {
+	background-color: DarkOliveGreen;
+	color: white;
+}
