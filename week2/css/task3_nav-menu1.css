@@ -77,3 +77,27 @@
 	background-color: beige;
 	color: DarkOliveGreen;
 }
+
+
+
+/*--- menu4 ---*/
+/*buttons inline*/
+.menu4 ul {
+	list-style-type: none;
+}
+
+.menu4 li {
+	display: inline;
+}
+
+.menu4 a,
+.menu4 a:visited {
+	text-decoration: none;
+	color: blue;
+	border: 1px solid DarkOliveGreen;
+	padding: 5px;
+}
+
+.menu4 a:hover {
+	color: red;
+}
