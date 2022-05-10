@@ -1,5 +1,10 @@
 /*--- menu1 ---*/
-.menu1 > ul > li > a, 
+/* Sukurkite pavaizduotą menu: Užvedus ant nuorodos spalva keičiasi į raundoną.*/
+
+
+/*To color the li list item (dot next to text), can be used list-style-position: inside or outside */
+
+/*.menu1 > ul > li > a, 
 .menu1 > ul > li > a:visited {
 	text-decoration: none;
 	color: blue;
@@ -8,5 +13,37 @@
 .menu1 > ul > li > a:hover {
 	text-decoration: underline;
 	color: red;
+}*/
+
+.menu1 a, 
+.menu1 a:visited {
+	text-decoration: none;
+	color: blue;
 }
 
+.menu1 a:hover {
+	text-decoration: underline;
+	color: red;
+}
+
+/*--- menu2 ---*/
+/*Blue colored buttons, with bolded text on hover*/
+
+.menu2 li {
+	list-style-type: none;
+}
+
+.menu2 a,
+.menu2 a:visited {
+	text-decoration: none;
+	color: blue;
+	border: 1px solid blue;
+	display: block;
+	width: 200px;
+	padding: 5px;
+	margin: 5px;
+}
+
+.menu2 a:hover {
+	font-weight: bold;
+}
