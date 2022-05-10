@@ -127,3 +127,35 @@
 	background-color: DarkOliveGreen;
 	color: white;
 }
+
+
+
+/*--- menu6 ---*/
+/*buttons inline, background color on hover, last link on right*/
+.menu6 ul {
+	list-style-type: none;
+	background-color: beige;
+	height: 42px;
+}
+
+.menu6 li {
+	float: left;
+}
+
+.menu6 li:last-child {
+	float: right;
+}
+
+.menu6 a,
+.menu6 a:visited {
+	height: 20px;
+	display: block;
+	text-decoration: none;
+	color: blue;
+	padding: 10px 15px;
+}
+
+.menu6 a:hover {
+	background-color: DarkOliveGreen;
+	color: white;
+}
