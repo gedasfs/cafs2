@@ -30,6 +30,10 @@ body {
 	justify-content: space-evenly;
 }
 
+.bottom {
+	border: none;
+}
+
 .panel-photo {
 	border: 1px solid black;
 	width: 33.33%;
