@@ -57,12 +57,13 @@
 
 .menu3 ul {
 	list-style-type: none;
+	width: 200px;
 }
 
 .menu3 a,
 .menu3 a:visited {
 	display: block;
-	width: 200px;
+	/*width: 200px;*/
 	padding: 5px;
 	margin-bottom: 5px;
 	text-decoration: none;
