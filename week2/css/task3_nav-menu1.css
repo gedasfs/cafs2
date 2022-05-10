@@ -29,7 +29,7 @@
 
 
 /*--- menu2 ---*/
-/*Blue colored buttons, with bolded text on hover*/
+/*buttons with blue border, with bolded text on hover*/
 
 .menu2 ul {
 	list-style-type: none;
@@ -50,3 +50,30 @@
 	font-weight: bold;
 }
 
+
+
+/*--- menu3 ---*/
+/*Colored buttons, on hover the coloring is inversed*/
+
+.menu3 ul {
+	list-style-type: none;
+}
+
+.menu3 a,
+.menu3 a:visited {
+	display: block;
+	width: 200px;
+	padding: 5px;
+	margin-bottom: 5px;
+	text-decoration: none;
+	background-color: DarkOliveGreen;
+	color: beige;
+	font-weight: bold;
+	border: 1px solid DarkOliveGreen;
+}
+
+.menu3 a:hover {
+	background-color: beige;
+	color: DarkOliveGreen;
+	border: 1px solid DarkOliveGreen;
+}
