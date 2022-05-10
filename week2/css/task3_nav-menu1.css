@@ -26,10 +26,12 @@
 	color: red;
 }
 
+
+
 /*--- menu2 ---*/
 /*Blue colored buttons, with bolded text on hover*/
 
-.menu2 li {
+.menu2 ul {
 	list-style-type: none;
 }
 
@@ -47,3 +49,4 @@
 .menu2 a:hover {
 	font-weight: bold;
 }
+
