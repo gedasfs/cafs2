@@ -1,0 +1,17 @@
+@media only screen and (max-width: 480px) {
+	div {
+		color: red;
+	}
+}
+
+@media only screen and (min-width: 480px) and (max-width: 800px) {
+	div {
+		color: green;
+	}
+}
+
+@media only screen and (min-width: 800px) {
+	div {
+		color: blue
+	}
+}
