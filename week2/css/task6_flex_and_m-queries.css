@@ -72,7 +72,7 @@ article {
 /* >1024px */
 @media only screen and (min-width: 1024px) {
 	
-	.flex-top {
+	.flex-top, .flex-lower, .flex-bottom {
 		display: flex;
 	}
 
@@ -85,17 +85,9 @@ article {
 		height: 14rem;
 	}
 	
-	.flex-lower {
-		display: flex;
-	}
-
 	.flex-lower article {
 		height: 12rem;
 		flex: 1;
-	}
-
-	.flex-bottom {
-		display: flex;
 	}
 
 	.flex-bottom article {
