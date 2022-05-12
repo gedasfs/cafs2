@@ -1,0 +1,109 @@
+
+/*Responsive desing with flexbox, 4 sections, 3 screensizes*/
+
+/*Mobile first (<320px) and default*/
+* {
+	box-sizing: border-box;
+}
+
+.flex-top article {
+	background-color: orange;
+	height: 2rem;
+}
+
+.flex-upper article {
+	background-color: yellowgreen;
+	height: 5rem
+}
+
+.flex-lower article {
+	background-color: steelblue;
+	height: 7rem;
+}
+
+.flex-bottom article {
+	background-color: lightgrey;
+	height: 3rem;
+	display: none;
+}
+
+.flex-bottom > article:first-child {
+	display: block;
+}
+
+article {
+	margin: 5px;
+	padding: 5px;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	max-width: 1200px;
+	margin:  auto;
+}
+
+
+/* > 321px, but <1023px */
+@media only screen and (min-width: 321px) and (max-width: 1023px) {
+	.flex-upper article {
+		height: 8rem;
+	}
+
+	.flex-lower article {
+		height: 2rem;
+	}
+
+	.flex-bottom {
+		display: flex;
+		flow-direction: row;
+		flex-wrap: wrap;
+	}
+
+	.flex-bottom article {
+		display: block;
+		width: 45%;
+		flex: 1 1 auto;
+	}
+	
+}
+
+
+/* >1024px */
+@media only screen and (min-width: 1024px) {
+	
+	.flex-top {
+		display: flex;
+	}
+
+	.flex-top article {
+		height: 3rem;
+		flex: 1;
+	}
+
+	.flex-upper article {
+		height: 14rem;
+	}
+	
+	.flex-lower {
+		display: flex;
+	}
+
+	.flex-lower article {
+		height: 12rem;
+		flex: 1;
+	}
+
+	.flex-bottom {
+		display: flex;
+		flow-direction: row;
+	}
+
+	.flex-bottom article {
+		display: block;
+		width: 25%;
+		flex: 1;
+		height: 10rem;
+	}
+}
