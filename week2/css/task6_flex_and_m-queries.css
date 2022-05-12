@@ -57,14 +57,13 @@ article {
 
 	.flex-bottom {
 		display: flex;
-		flow-direction: row;
 		flex-wrap: wrap;
 	}
 
 	.flex-bottom article {
 		display: block;
 		width: 45%;
-		flex: 1 1 auto;
+		flex-grow: 1;
 	}
 	
 }
