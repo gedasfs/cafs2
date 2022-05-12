@@ -1,0 +1,29 @@
+* {
+	box-sizing: border-box;
+}
+
+.nav-menu ul {
+	display: flex;
+	flex-direction: column;
+
+	list-style-type: none;
+	border: 1px solid red;
+}
+
+.nav-menu a, 
+.nav-menu a:visited {
+	text-decoration: none;
+	color: blue;
+	border: 1px solid grey;
+	padding: 5px;
+}
+
+.nav-menu li {
+	/*padding: 5px;*/
+	border: 1px solid green;
+}
+
+.nav-menu a:hover {
+	background-color: grey;
+	color: white;
+}
