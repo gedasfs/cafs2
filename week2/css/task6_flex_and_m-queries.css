@@ -96,7 +96,6 @@ article {
 
 	.flex-bottom {
 		display: flex;
-		flow-direction: row;
 	}
 
 	.flex-bottom article {
