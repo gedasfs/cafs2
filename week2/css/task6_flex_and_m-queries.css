@@ -85,6 +85,10 @@ article {
 		height: 14rem;
 	}
 	
+/*	.flex-lower {
+		display: flex;
+	}*/
+
 	.flex-lower article {
 		height: 12rem;
 		flex: 1;
