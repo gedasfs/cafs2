@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
+	<title>Task2 (homepage), week3</title>
+	<link rel="stylesheet" href="css/task2_bootstrap_home-page.css">
+</head>
+<body>
+	
+	
+
+	<!-- nav -->
+	<div class="container sticky-top">
+		<nav class="row navbar navbar-expand-lg navbar-light bg-light">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="#logo"><i class="bi bi-camera2 h1"></i></a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
+				<div class="collapse navbar-collapse" id="navbarToggler">
+					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+						<li class="nav-item">
+							<a class="nav-link active" aria-current="page" href="#home">Home</a>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#categories" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown">Categories</a>
+							<ul class="dropdown-menu bg-light" aria-labelledby="navbarScrollingDropdown">
+								<li><a class="dropdown-item" href="#category1">Category 1</a></li>
+								<li><hr class="dropdown-divider"></li>
+								<li><a class="dropdown-item" href="#category2">Category 2</a></li>
+								<li><hr class="dropdown-divider"></li>
+								<li><a class="dropdown-item" href="#category3">Category 3</a></li>
+								<li><hr class="dropdown-divider"></li>
+								<li><a class="dropdown-item" href="#category4">Category 4</a></li>
+							</ul>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#examples">Examples</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#about">About</a>
+						</li>
+					</ul>
+
+					<form class="d-flex">
+						<input class="form-control me-2" type="search" placeholder="Search">
+						<button class="btn btn-outline-success" type="submit">Search</button>
+					</form>
+
+				</div>
+			</div>
+		</nav>
+	</div>
+
+	<main class="container bg-light">
+
+		<!-- Section photo -->
+		<section class="row position-relative">
+			<img src="https://picsum.photos/id/1049/1440/900" class="col-12 p-0" alt="top-photo">
+			<h1 class="position-absolute text-light text-center fs-1" id="welcome">Welcome</h1>
+		</section>
+
+
+		<!-- Section texts -->
+		<section class="row mt-3">
+			<article class="col-12 col-md-4">
+				<p class="p-4 text-center mx-4 mx-md-2 shadow">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi possimus, incidunt perspiciatis. Asperiores, nisi, enim.</p>
+			</article>
+
+			<article class="col-12 col-md-4">
+				<p class="p-4 text-center mx-4 mx-md-2 shadow">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi possimus, incidunt perspiciatis. Asperiores, nisi, enim.</p>
+			</article>
+
+			<article class="col-12 col-md-4">
+				<p class="p-4 text-center mx-4 mx-md-2 shadow">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi possimus, incidunt perspiciatis. Asperiores, nisi, enim.</p>
+			</article>
+		</section>
+
+
+		<!-- Gallery cards -->
+		<section class="row mt-5">
+			<div class="col-12 text-center">
+				<h3>Gallery examples</h3>
+			</div>
+
+			<div class="col-12 col-md-6 col-lg-3">
+				<div class="card mx-5 my-3 mx-md-2 shadow">
+					<img src="https://picsum.photos/id/230/400" class="card-img-top" alt="...">
+					<div class="card-body">
+						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-12 col-md-6 col-lg-3">
+				<div class="card mx-5 my-3 mx-md-2 shadow">
+					<img src="https://picsum.photos/id/229/400" class="card-img-top" alt="...">
+					<div class="card-body">
+						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-12 col-md-6 col-lg-3">
+				<div class="card mx-5 my-3 mx-md-2 shadow">
+					<img src="https://picsum.photos/id/228/400" class="card-img-top" alt="...">
+					<div class="card-body">
+						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-12 col-md-6 col-lg-3">
+				<div class="card mx-5 my-3 mx-md-2 shadow">
+					<img src="https://picsum.photos/id/227/400" class="card-img-top" alt="...">
+					<div class="card-body">
+						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- last section/registration -->
+		<section class="row mt-5">
+			<div class="col-12 col-lg-6">
+				<form class="row">
+					<h4>Signup for weekly feed</h4>         
+					<div class="col-10">
+						<div class="form-floating mb-3">
+							<input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+							<label for="floatingInput">Email address</label>
+						</div>
+					</div>
+
+					<div class="col-2">
+						<button type="submit" class="btn btn-secondary">Signup</button>
+					</div>
+
+				</form>
+			</div>
+
+			<div class="col-12 col-lg-6">
+				<div class="row">
+					<p class="col-12 col-lg-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, alias.</p>
+					<p class="col-12 col-lg-4">Lorem, ipsum dolor sit amet consectetur adipisicing, elit. Quis, dolore!</p>
+					<p class="col-12 col-lg-4">Lorem ipsum dolor sit amet, consectetur, adipisicing elit. Cupiditate, inventore.</p>
+				</div>
+			</div>
+		</section>
+
+	</main>
+
+	<div class="container bg-light py-5">
+		<footer class="row">
+			<div class="col-12 text-center ">
+				<a href="#f1"><i class="bi bi-envelope-fill text-dark border border-dark rounded-circle p-2 mx-3"></i></a>
+				<a href="#f2"><i class="bi bi-linkedin text-dark border border-dark rounded-circle p-2 mx-3"></i></a>
+				<a href="#f3"><i class="bi bi-instagram text-dark border border-dark rounded-circle p-2 mx-3"></i></a>
+				<a href="#f4"><i class="bi bi-twitter text-dark border border-dark rounded-circle p-2 mx-3"></i></a>
+				<a href="#f5"><i class="bi bi-facebook text-dark border border-dark rounded-circle p-2 mx-3"></i></a>
+			</div>
+		</footer>
+	</div>
+
+	
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</body>
+</html>
