@@ -16,18 +16,19 @@
 		<nav class="row navbar navbar-expand-lg navbar-light bg-light">
 			<div class="container-fluid">
 				<a class="navbar-brand" href="#logo"><i class="bi bi-camera2 h1"></i></a>
+				
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler">
 					<span class="navbar-toggler-icon"></span>
 				</button>
 
 				<div class="collapse navbar-collapse" id="navbarToggler">
-					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 						<li class="nav-item">
-							<a class="nav-link active" aria-current="page" href="#home">Home</a>
+							<a class="nav-link active" href="#home">Home</a>
 						</li>
 						<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="#categories" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown">Categories</a>
-							<ul class="dropdown-menu bg-light" aria-labelledby="navbarScrollingDropdown">
+							<ul class="dropdown-menu bg-light">
 								<li><a class="dropdown-item" href="#category1">Category 1</a></li>
 								<li><hr class="dropdown-divider"></li>
 								<li><a class="dropdown-item" href="#category2">Category 2</a></li>
@@ -45,9 +46,9 @@
 						</li>
 					</ul>
 
-					<form class="d-flex">
-						<input class="form-control me-2" type="search" placeholder="Search">
-						<button class="btn btn-outline-secondary" type="submit">Search</button>
+					<form class="d-flex position-relative">
+						<input class="form-control me-2 text-center" type="search">
+						<button class="btn btn-outline-secondary position-absolute" type="submit" id="btn-search"><i class="bi bi-search"></i></button>
 					</form>
 
 				</div>
@@ -93,6 +94,7 @@
 					<img src="https://picsum.photos/id/230/400" class="card-img-top" alt="...">
 					<div class="card-body">
 						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+						<a href="#category1" class="link-secondary"><i class="bi bi-chevron-right"></i>More info</a>
 					</div>
 				</div>
 			</div>
@@ -101,6 +103,7 @@
 					<img src="https://picsum.photos/id/229/400" class="card-img-top" alt="...">
 					<div class="card-body">
 						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+						<a href="#category2" class="link-secondary"><i class="bi bi-chevron-right"></i>More info</a>
 					</div>
 				</div>
 			</div>
@@ -109,6 +112,7 @@
 					<img src="https://picsum.photos/id/228/400" class="card-img-top" alt="...">
 					<div class="card-body">
 						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+						<a href="#category3" class="link-secondary"><i class="bi bi-chevron-right"></i>More info</a>
 					</div>
 				</div>
 			</div>
@@ -117,6 +121,7 @@
 					<img src="https://picsum.photos/id/227/400" class="card-img-top" alt="...">
 					<div class="card-body">
 						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+						<a href="#category4" class="link-secondary"><i class="bi bi-chevron-right"></i>More info</a>
 					</div>
 				</div>
 			</div>
@@ -139,9 +144,9 @@
 
 			<div class="col-12 col-lg-6">	
 				<div class="row mt-3 justify-content-center">
-					<button type="button" class="btn btn-outline-secondary col-12 col-lg-4 w-25 mx-3 py-3">Big button link 1</button>
-					<button type="button" class="btn btn-outline-secondary col-12 col-lg-4 w-25 mx-3 py-3">Big button link 2</button>
-					<button type="button" class="btn btn-outline-secondary col-12 col-lg-4 w-25 mx-3 py-3">Big button link 3</button>
+					<button type="button" class="btn btn-outline-secondary col-12 col-lg-4 w-25 mx-2 py-3">Big button link 1</button>
+					<button type="button" class="btn btn-outline-secondary col-12 col-lg-4 w-25 mx-2 py-3">Big button link 2</button>
+					<button type="button" class="btn btn-outline-secondary col-12 col-lg-4 w-25 mx-2 py-3">Big button link 3</button>
 				</div>
 			</div>
 		</section>
@@ -155,11 +160,11 @@
 		<hr class="pt-4">
 		<footer class="row">
 			<div class="col-12 text-center ">
-				<a href="#f1"><i class="bi bi-envelope-fill text-dark border border-dark rounded-circle p-2 mx-3"></i></a>
-				<a href="#f2"><i class="bi bi-linkedin text-dark border border-dark rounded-circle p-2 mx-3"></i></a>
-				<a href="#f3"><i class="bi bi-instagram text-dark border border-dark rounded-circle p-2 mx-3"></i></a>
-				<a href="#f4"><i class="bi bi-twitter text-dark border border-dark rounded-circle p-2 mx-3"></i></a>
-				<a href="#f5"><i class="bi bi-facebook text-dark border border-dark rounded-circle p-2 mx-3"></i></a>
+				<a href="#f1"><i class="bi bi-envelope-fill text-dark border border-dark rounded-circle p-2 mx-2 mx-md-4"></i></a>
+				<a href="#f2"><i class="bi bi-linkedin text-dark border border-dark rounded-circle p-2 mx-2 mx-md-4"></i></a>
+				<a href="#f3"><i class="bi bi-instagram text-dark border border-dark rounded-circle p-2 mx-2 mx-md-4"></i></a>
+				<a href="#f4"><i class="bi bi-twitter text-dark border border-dark rounded-circle p-2 mx-2 mx-md-4"></i></a>
+				<a href="#f5"><i class="bi bi-facebook text-dark border border-dark rounded-circle p-2 mx-2 mx-md-4"></i></a>
 			</div>
 		</footer>
 	</div>

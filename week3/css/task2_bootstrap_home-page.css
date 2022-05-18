@@ -4,3 +4,10 @@
 	letter-spacing: 1em;
 }
 
+.navbar-nav, .dropdown-item {
+	text-align: center;
+}
+
+#btn-search {
+	background-color: white;
+}
