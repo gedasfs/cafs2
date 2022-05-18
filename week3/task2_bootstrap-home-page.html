@@ -2,17 +2,17 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
-	<title>Task2 (homepage), week3</title>
 	<link rel="stylesheet" href="css/task2_bootstrap_home-page.css">
+	<title>Task2 (homepage), week3</title>
 </head>
 <body>
 	
-	
 
-	<!-- nav -->
-	<div class="container sticky-top">
+	<!-- navigation menu -->
+	<div class="container bg-light">
 		<nav class="row navbar navbar-expand-lg navbar-light bg-light">
 			<div class="container-fluid">
 				<a class="navbar-brand" href="#logo"><i class="bi bi-camera2 h1"></i></a>
@@ -47,7 +47,7 @@
 
 					<form class="d-flex">
 						<input class="form-control me-2" type="search" placeholder="Search">
-						<button class="btn btn-outline-success" type="submit">Search</button>
+						<button class="btn btn-outline-secondary" type="submit">Search</button>
 					</form>
 
 				</div>
@@ -55,36 +55,38 @@
 		</nav>
 	</div>
 
-	<main class="container bg-light">
 
-		<!-- Section photo -->
+	<main class="container bg-light">
+		
+		<!-- Big Photo -->
 		<section class="row position-relative">
-			<img src="https://picsum.photos/id/1049/1440/900" class="col-12 p-0" alt="top-photo">
+			<img src="https://picsum.photos/id/1049/1440/900" alt="welcome-photo" class="p-0">
 			<h1 class="position-absolute text-light text-center fs-1" id="welcome">Welcome</h1>
 		</section>
 
-
-		<!-- Section texts -->
+		<!-- Paragraphs -->
 		<section class="row mt-3">
-			<article class="col-12 col-md-4">
-				<p class="p-4 text-center mx-4 mx-md-2 shadow">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi possimus, incidunt perspiciatis. Asperiores, nisi, enim.</p>
-			</article>
-
-			<article class="col-12 col-md-4">
-				<p class="p-4 text-center mx-4 mx-md-2 shadow">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi possimus, incidunt perspiciatis. Asperiores, nisi, enim.</p>
-			</article>
-
-			<article class="col-12 col-md-4">
-				<p class="p-4 text-center mx-4 mx-md-2 shadow">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi possimus, incidunt perspiciatis. Asperiores, nisi, enim.</p>
-			</article>
+					<article class="col-12 col-md-4">
+						<p class="text-center shadow p-4 mx-4 mx-md-2">
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi possimus, incidunt perspiciatis. Asperiores, nisi, enim.
+						</p>
+					</article>
+					<article class="col-12 col-md-4">
+						<p class="text-center shadow p-4 mx-4 mx-md-2">
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi possimus, incidunt perspiciatis. Asperiores, nisi, enim.
+						</p>
+					</article>
+					<article class="col-12 col-md-4">
+						<p class="text-center shadow p-4 mx-4 mx-md-2">
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi possimus, incidunt perspiciatis. Asperiores, nisi, enim.
+						</p>
+					</article>
 		</section>
 
 
-		<!-- Gallery cards -->
+		<!--Gallery Cards -->
 		<section class="row mt-5">
-			<div class="col-12 text-center">
-				<h3>Gallery examples</h3>
-			</div>
+			<h3 class="col-12 text-center">Gallery examples</h3>
 
 			<div class="col-12 col-md-6 col-lg-3">
 				<div class="card mx-5 my-3 mx-md-2 shadow">
@@ -120,37 +122,37 @@
 			</div>
 		</section>
 
-		<!-- last section/registration -->
-		<section class="row mt-5">
-			<div class="col-12 col-lg-6">
-				<form class="row">
+
+		<!-- Signup section -->
+		<section class="row mt-5 align-items-center">
+			<div class="col-12 col-lg-6">	
+				<form class="row m-2">
 					<h4>Signup for weekly feed</h4>         
-					<div class="col-10">
-						<div class="form-floating mb-3">
-							<input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-							<label for="floatingInput">Email address</label>
-						</div>
+					<div class="col-9">
+						<input type="email" class="form-control" id="emailInput" placeholder="your-email@example.com">
 					</div>
-
-					<div class="col-2">
-						<button type="submit" class="btn btn-secondary">Signup</button>
+					<div class="col-3 text-center">
+						<button type="button" class="btn btn-secondary">Signup</button>
 					</div>
-
 				</form>
 			</div>
 
-			<div class="col-12 col-lg-6">
-				<div class="row">
-					<p class="col-12 col-lg-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, alias.</p>
-					<p class="col-12 col-lg-4">Lorem, ipsum dolor sit amet consectetur adipisicing, elit. Quis, dolore!</p>
-					<p class="col-12 col-lg-4">Lorem ipsum dolor sit amet, consectetur, adipisicing elit. Cupiditate, inventore.</p>
+			<div class="col-12 col-lg-6">	
+				<div class="row mt-3 justify-content-center">
+					<button type="button" class="btn btn-outline-secondary col-12 col-lg-4 w-25 mx-3 py-3">Big button link 1</button>
+					<button type="button" class="btn btn-outline-secondary col-12 col-lg-4 w-25 mx-3 py-3">Big button link 2</button>
+					<button type="button" class="btn btn-outline-secondary col-12 col-lg-4 w-25 mx-3 py-3">Big button link 3</button>
 				</div>
 			</div>
 		</section>
-
+	
 	</main>
 
+	
+
+	<!-- footer -->
 	<div class="container bg-light py-5">
+		<hr class="pt-4">
 		<footer class="row">
 			<div class="col-12 text-center ">
 				<a href="#f1"><i class="bi bi-envelope-fill text-dark border border-dark rounded-circle p-2 mx-3"></i></a>
@@ -161,8 +163,6 @@
 			</div>
 		</footer>
 	</div>
-
-	
 
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>
