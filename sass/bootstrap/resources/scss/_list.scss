@@ -1,0 +1,18 @@
+ol {
+	li {
+		.badge {
+			background-color: $color;
+		}
+
+		div {
+			.fw-bold {
+				font-weight: $font-weight;
+			}
+
+			.text-danger {
+				color: $color;
+				font-weight: $font-weight;
+			}
+		}
+	}
+}
