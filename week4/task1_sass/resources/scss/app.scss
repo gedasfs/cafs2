@@ -1,0 +1,26 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+$primary: #080f1a;
+$secondary: #73829e;
+$info: #303ca5;
+
+
+body {
+	font-family: 'Roboto', sans-serif;
+	background-color: #73829e;
+}
+
+.container-price {
+	background-color: #f4f6fc;
+}
+
+.text-decoration-underline {
+	text-decoration: underline dotted;
+}
+
+
+@import "~bootstrap/scss/bootstrap";
+
+
+
