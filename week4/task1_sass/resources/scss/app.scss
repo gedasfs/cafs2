@@ -1,9 +1,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
 
-$primary: #080f1a;
-$secondary: #73829e;
-$info: #303ca5;
+@import "variables";
 
 @import "~bootstrap/scss/bootstrap";
 
@@ -23,5 +21,5 @@ body {
 
 .features-cont > ul > li {
 	text-decoration: dotted underline grey;
-	margin-top: 10px;
+	margin-top: 15px;
 }
