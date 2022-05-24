@@ -1,26 +1,35 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
 
 $primary: #080f1a;
 $secondary: #73829e;
 $info: #303ca5;
 
+@import "~bootstrap/scss/bootstrap";
 
 body {
-	font-family: 'Roboto', sans-serif;
-	background-color: #73829e;
+	font-family: 'Nunito Sans', sans-serif;
+	color: $primary;
 }
 
-.container-price {
+.price {
 	background-color: #f4f6fc;
 }
 
-.text-decoration-underline {
-	text-decoration: underline dotted;
+.small-text-secondary {
+	color: $secondary;
+	font-size: 0.9rem;
+}
+
+.features-cont > ul > li {
+	text-decoration: dotted underline grey;
+	margin-top: 10px;
 }
 
 
-@import "~bootstrap/scss/bootstrap";
+
+
+
 
 
 
