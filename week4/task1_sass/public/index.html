@@ -3,189 +3,194 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Task1, week4 (bootstrap with sass)</title>
+	<title>Task1, week4. Sass+Bootstrap</title>
 	<link rel="stylesheet" href="css/app.css">
 </head>
 <body>
-	<main class="container bg-light">
-
+	<main class="container my-5 shadow">
+		
 		<div class="row">
-			<div class="col-12 col-md-6 col-xl-3 g-0">
-				<div class="card text-center p-4">
-  					<div class="card-body">
-    					
-    					<h4 class="card-title fw-bold mb-3">Free</h4>
-    					<!-- price -->
-    					<div class="mb-3">
-    						<p class="fs-6 mb-1 fw-light">Forever</p>
-    						<div class="container-price d-flex justify-content-center rounded-5 mx-4">
-	    						<div>
-	    							<span class="fs-1 fw-bold">0</span>
-	    						</div>
-	    						<div class="d-flex flex-column">
-	    							<span class="fw-bold align-self-start">&euro;</span>
-	    							<span class="fw-bold">/mo</span>
-	    						</div>
-    						
-    						</div>
-    					</div>
+			<div class="col-12 col-md-6 col-xl-3 g-0 px-5 p-sm-0 border">
+				<div class="card px-2 py-3 text-center border-0">
+					<div class="card-body">
+						<h2 class="card-title fw-bold">Free</h2>
+						
+						<!-- price -->
+						<div  class="w-75 m-auto mt-4">
+							<small class="my-0">Forever</small>
+							<div class="price d-flex justify-content-center rounded-5">
+								<!-- price number -->
+								<div class="fs-1 fw-bold">0</div>
 
-    					<!-- card-text -->
-    					<p class="card-text mb-3">Essential live chat, chatbox and mailing features for micro & small business.</p>
+								<!-- price text -->
+								<div class="d-flex flex-column justify-content-center text-start">
+									<span class="fw-bold">&euro;</span>
+									<span class="fw-bold">/mo</span>
+								</div>
+							</div>
+						</div>
 
-    					<!-- button -->
-    					<div class="mb-4">
-    						<button type="button" class="btn btn-outline-info px-4 py-2">Use Tidio for for free</button>
-    						<p class="text-secondary fw-light">(no credit card required)</p>
-    					</div>
-    					
-    					<!-- Whats included -->
-    					<div>
-    						<p class="text-secondary fw-light mb-3">What's included:</p>
-    						<p class="text-decoration-underline">Up to 3 chat operators</p>
-    						<p class="text-decoration-underline">500 emails/mo</p>
-    						<p class="text-decoration-underline">100 unique reachable visitors</p>
-    						<p class="text-decoration-underline">Unlimited chats</p>
-    						<p class="text-decoration-underline">Desktop & mobile apps</p>
-    						<p class="text-decoration-underline">Visitors info</p>
-    						<p class="text-decoration-underline">3rd party apps integration</p>
-    					</div>
-  					</div>
+						<!-- card text -->
+						<p class="card-text mt-4">Essential live chat, chatbot and mailing features for micro & small businesses.</p>
+
+						<!-- button -->
+						<div class="mt-4">
+							<button type="button" class="btn btn-outline-info w-75">Use Tidio for free</button>
+							<p class="small-text-secondary pt-1">(no credit card required)</p>
+						</div>
+
+						<!-- features -->
+						<div class="mt-5 features-cont">
+							<p class="small-text-secondary">What's included:</p>
+							<ul class="list-unstyled">
+								<li>Up to 3 chat operators</li>
+								<li>500 emails/mo</li>
+								<li>100 unique reachable visitors</li>
+								<li>Unlimited chats</li>
+								<li>Desktop & mobile apps</li>
+								<li>Visitors info</li>
+								<li>3rd party apps integration</li>
+							</ul>
+						</div>
+					</div>
 				</div>
 			</div>
 
+			<div class="col-12 col-md-6 col-xl-3 g-0 px-5 p-sm-0 border">
+				<div class="card px-2 py-3 text-center border-0">
+					<div class="card-body">
+						<h2 class="card-title fw-bold">Chatbots</h2>
+						
+						<!-- price -->
+						<div  class="w-75 m-auto mt-4">
+							<small class="my-0">Starts from</small>
+							<div class="price d-flex justify-content-center rounded-5">
+								<!-- price number -->
+								<div class="fs-1 fw-bold">18</div>
 
-			<div class="col-12 col-md-6 col-xl-3 g-0">
-				<div class="card text-center p-4">
-  					<div class="card-body">
-    					
-    					<h4 class="card-title fw-bold mb-3">Chatbots</h4>
-    					<!-- price -->
-    					<div class="mb-3">
-    						<p class="fs-6 mb-1 fw-light">Start from</p>
-    						<div class="container-price d-flex justify-content-center rounded-5 mx-4">
-	    						<div>
-	    							<span class="fs-1 fw-bold">18</span>
-	    						</div>
-	    						<div class="d-flex flex-column">
-	    							<span class="fw-bold align-self-start">&euro;</span>
-	    							<span class="fw-bold">/mo</span>
-	    						</div>
-    						
-    						</div>
-    					</div>
+								<!-- price text -->
+								<div class="d-flex flex-column justify-content-center text-start">
+									<span class="fw-bold">&euro;</span>
+									<span class="fw-bold">/mo</span>
+								</div>
+							</div>
+						</div>
 
-    					<!-- card-text -->
-    					<p class="card-text mb-3">Don't let any sales opportunity slip away. Talk to your customers, even while you sleep.</p>
+						<!-- card text -->
+						<p class="card-text mt-4">Don't let any sales opportunity slip away. Talk to your customer, even while you sleep.</p>
 
-    					<!-- button -->
-    					<div class="mb-4">
-    						<button type="button" class="btn btn-outline-info px-4 py-2">Use Tidio for for free</button>
-    						<p class="text-secondary fw-light">(no credit card required)</p>
-    					</div>
-    					
-    					<!-- Whats included -->
-    					<div>
-    						<p class="text-secondary fw-light mb-3">What's included:</p>
-    						<p class="text-decoration-underline fw-bold">All the Free Features</p>
-    						<p class="text-decoration-underline">Unlimited active chatbots</p>
-    						<p class="text-decoration-underline">Chatbot templates</p>
-    						<p class="text-decoration-underline mb-0">Increased limit of unique reachable visitors/mo</p>
-    						<p class="text-secondary fw-light">from 1k to unlimited</p>
-    						<p class="text-decoration-underline">Visual chatbot editor</p>
-    						<p class="text-decoration-underline">Zapier integration</p>
-    					</div>
-  					</div>
+						<!-- button -->
+						<div class="mt-4">
+							<button type="button" class="btn btn-outline-info w-75">Start my free trial</button>
+							<p class="small-text-secondary pt-1">(no credit card required)</p>
+						</div>
+
+						<!-- features -->
+						<div class="mt-5 features-cont">
+							<p class="small-text-secondary">What's included:</p>
+							<ul class="list-unstyled">
+								<li class="fw-bold">All the Free Features</li>
+								<li>Unlimited active chatbots</li>
+								<li>Vhatbot templates</li>
+								<li>Increased limit of unique reachable visitors/mo</li>
+								<small class="small-text-secondary">from 1k to unlimited</small>
+								<li>Visual chatbot editor</li>
+								<li>Zapier integration</li>
+							</ul>
+						</div>
+					</div>
 				</div>
 			</div>
 
+			<div class="col-12 col-md-6 col-xl-3 g-0 px-5 p-sm-0 border">
+				<div class="card px-2 py-3 text-center border-0">
+					<div class="card-body">
+						<h2 class="card-title fw-bold">Communicator</h2>
+						
+						<!-- price -->
+						<div  class="w-75 m-auto mt-4">
+							<small class="my-0">Starts from</small>
+							<div class="price d-flex justify-content-center rounded-5">
+								<!-- price number -->
+								<div class="fs-1 fw-bold">18</div>
 
-			<div class="col-12 col-md-6 col-xl-3 g-0">
-				<div class="card text-center p-4">
-  					<div class="card-body">
-    					
-    					<h4 class="card-title fw-bold mb-3">Communicator</h4>
-    					<!-- price -->
-    					<div class="mb-3">
-    						<p class="fs-6 mb-1 fw-light">Start from</p>
-    						<div class="container-price d-flex justify-content-center rounded-5 mx-4">
-	    						<div>
-	    							<span class="fs-1 fw-bold">18</span>
-	    						</div>
-	    						<div class="d-flex flex-column">
-	    							<span class="fw-bold align-self-start">&euro;</span>
-	    							<span class="fw-bold">/mo</span>
-	    						</div>
-    						
-    						</div>
-    					</div>
+								<!-- price text -->
+								<div class="d-flex flex-column justify-content-center text-start">
+									<span class="fw-bold">&euro;</span>
+									<span class="fw-bold">/mo</span>
+								</div>
+							</div>
+						</div>
 
-    					<!-- card-text -->
-    					<p class="card-text mb-3">See more, react faster, close more sales. Knowing your customer is the key to growth.</p>
+						<!-- card text -->
+						<p class="card-text mt-4">See more, react faster, close more sales. Knowing your customers is the key to growth.</p>
 
-    					<!-- button -->
-    					<div class="mb-4">
-    						<button type="button" class="btn btn-outline-info px-4 py-2">Use Tidio for for free</button>
-    						<p class="text-secondary fw-light">(no credit card required)</p>
-    					</div>
-    					
-    					<!-- Whats included -->
-    					<div>
-    						<p class="text-secondary fw-light mb-3">What's included:</p>
-    						<p class="text-decoration-underline fw-bold">All the Free Features</p>
-    						<p class="text-decoration-underline">New Incoming Visitor Notification</p>
-    						<p class="text-decoration-underline">Live Typing</p>
-    						<p class="text-decoration-underline mb-0">Viewed pages</p>
-    						<p class="text-decoration-underline">Live Visitor List</p>
-    						<p class="text-decoration-underline mb-0">Additional chat operator seats</p>
-    						<p class="text-secondary fw-light"><span class="fw-bold">10&euro;</span> per seat</p>
-    					</div>
-  					</div>
+						<!-- button -->
+						<div class="mt-4">
+							<button type="button" class="btn btn-outline-info w-75">Start my free trial</button>
+							<p class="small-text-secondary pt-1">(no credit card required)</p>
+						</div>
+
+						<!-- features -->
+						<div class="mt-5 features-cont">
+							<p class="small-text-secondary">What's included:</p>
+							<ul class="list-unstyled">
+								<li class="fw-bold">All the Free Features</li>
+								<li>New Incoming Visitor Notification</li>
+								<li>Live Typing</li>
+								<li>Viewed Pages</li>
+								<li>Live Visitor List</li>
+								<li>Additional chat operator seats</li>
+								<small class="small-text-secondary"><b>10&euro;</b> per seat</small>
+							</ul>
+						</div>
+					</div>
 				</div>
 			</div>
 
+			<div class="col-12 col-md-6 col-xl-3 g-0 px-5 p-sm-0 border">
+				<div class="card px-2 py-3 text-center border-0">
+					<div class="card-body">
+						<h2 class="card-title fw-bold">Email Marketing</h2>
+						
+						<!-- price -->
+						<div  class="w-75 m-auto mt-4">
+							<small class="my-0">Starts from</small>
+							<div class="price d-flex justify-content-center rounded-5">
+								<!-- price number -->
+								<div class="fs-1 fw-bold">10</div>
 
-			<div class="col-12 col-md-6 col-xl-3 g-0">
-				<div class="card text-center p-4">
-  					<div class="card-body">
-    					
-    					<h4 class="card-title fw-bold mb-3">Email Marketing</h4>
-    					<!-- price -->
-    					<div class="mb-3">
-    						<p class="fs-6 mb-1 fw-light">Starts from</p>
-    						<div class="container-price d-flex justify-content-center rounded-5 mx-4">
-	    						<div>
-	    							<span class="fs-1 fw-bold">10</span>
-	    						</div>
-	    						<div class="d-flex flex-column">
-	    							<span class="fw-bold align-self-start">&euro;</span>
-	    							<span class="fw-bold">/mo</span>
-	    						</div>
-    						
-    						</div>
-    					</div>
+								<!-- price text -->
+								<div class="d-flex flex-column justify-content-center text-start">
+									<span class="fw-bold">&euro;</span>
+									<span class="fw-bold">/mo</span>
+								</div>
+							</div>
+						</div>
 
-    					<!-- card-text -->
-    					<p class="card-text mb-3">Nurture the relationship with your customers and keep them returning to your store.</p>
+						<!-- card text -->
+						<p class="card-text mt-4">Nurture the relationships with your customer and keep them returning to your store.</p>
 
-    					<!-- button -->
-    					<div class="mb-4">
-    						<button type="button" class="btn btn-outline-info px-4 py-2">Use Tidio for for free</button>
-    						<p class="text-secondary fw-light">(no credit card required)</p>
-    					</div>
-    					
-    					<!-- Whats included -->
-    					<div>
-    						<p class="text-secondary fw-light mb-3">What's included:</p>
-    						<p class="text-decoration-underline fw-bold">All the Free Features</p>
-    						<p class="text-decoration-underline">Unlimited contacts</p>
-    						<p class="text-decoration-underline">No daily sending limits</p>
-    						<p class="text-decoration-underline">Email templates</p>
-    						<p class="text-decoration-underline">Email address validation</p>
-    						<p class="text-decoration-underline">CAN-SPAM and GDPR complience</p>
-    						<p class="text-decoration-underline">Contact segmentation</p>
-    					</div>
-  					</div>
+						<!-- button -->
+						<div class="mt-4">
+							<button type="button" class="btn btn-outline-info w-75">Try it out</button>
+							<p class="small-text-secondary pt-1">(no credit card required)</p>
+						</div>
+
+						<!-- features -->
+						<div class="mt-5 features-cont">
+							<p class="small-text-secondary">What's included:</p>
+							<ul class="list-unstyled">
+								<li class="fw-bold">All the Free Features</li>
+								<li>Unlimited contacts</li>
+								<li>No daily sending limits</li>
+								<li>Email templates</li>
+								<li>Email address validation</li>
+								<li>CAN-SPAM and GDPR complience</li>
+								<li>Contact segmentation</li>
+							</ul>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
