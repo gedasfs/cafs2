@@ -50,7 +50,6 @@ for (let i=0; i<5; i++) {
 	let numTemp;
 	numTemp = (Math.random() * 10).toFixed(2);
 	numArr[i] = parseFloat(numTemp);
-	console.log(typeof numArr[i]);
 }
 
 console.log(numArr);
