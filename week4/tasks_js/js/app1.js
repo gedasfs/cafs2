@@ -39,6 +39,7 @@ function getRandom() {
 
 let maxN = Math.max(a, b, c, d, e);
 let minN = Math.min(a, b, c, d, e);
+console.log('Gets max and min values from 5 randomly generated values');
 console.log(a, b, c, d, e);
 console.log('Max: ', maxN);
 console.log('Min: ', minN);
