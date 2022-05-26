@@ -1,6 +1,6 @@
 let userInfoOutput = document.getElementById('main');
 
-user = {
+let user = {
 	name: 'Vardenis',
 	lastname: 'Pavardenis'
 };
