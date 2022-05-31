@@ -24,12 +24,30 @@
 
 
 /* navbar (flexbox) items */
-.nav-logo {
+.nav-logo-cont {
 	margin-right: auto;
 }
-.nav-logo img {
+
+.nav-logo-cont img {
 	height: 2.5rem;
 	vertical-align: middle;
+}
+
+.navbar a,
+.navbar a:visited {
+	display: block;
+	line-height: 2.5rem;
+	text-decoration: none;
+	color: #151515;
+	padding: 0 10px;
+}
+
+.navbar a:hover {
+	background-color: lightgrey;
+}
+
+.navbar ul {
+	list-style-type: none;
 }
 
 .ul-nav-links {
@@ -39,74 +57,39 @@
 	/*left: -150%;*/
 	width: 100%;
 	position: absolute;
+	/*list-style-type: none;*/
+	text-align: center;
+	background-color: white;
 	display: none;
 	flex-direction: column;
-	text-align: center;
-	list-style-type: none;
-	background-color: white;
-}
-.ul-nav-links li a {
-	display: block;
-	line-height: 2.5rem;
-	padding: 0 10px;
-	text-decoration: none;
-	/*transition: background-color 0.3s ease;*/
-}
-.ul-nav-links li a:hover{
-	background-color: lightgrey;
 }
 
 a.nav-btn {
-	display: block;
-	line-height: 2.5rem;
-	padding: 0 10px;
 	text-align: center;
 	width: 100%;
 	background-color: #b6b6b6;
 }
-a:hover.nav-btn {
-	background-color: lightgrey;
-}
-a.nav-btn, 
-a:visited.nav-btn {
-	color: #151515;
-	text-decoration: none;
-}
 
-.ul-nav-links a,
-.ul-nav-links a:visited {
-	color: #151515;
-}
 
 .ul-nav-icons {
-	/*border: 1px solid red;*/
 	display: flex;
 	gap: 5px;
-	list-style-type: none;
+	/*list-style-type: none;*/
 	padding: 0;
 	margin: auto 30px;
 }
 
-.ul-nav-icons li a {
-	/*border: 1px solid blue;*/
-	display: block;
+.ul-nav-icons a {
+	line-height: 1.5rem;
 	padding: 3px 5px;
 	border-radius: 5px;
-}
-
-.ul-nav-icons a, 
-.ul-nav-icons a:visited {
-	color: #151515;
-}
-
-.ul-nav-icons li a:hover{
-	background-color: lightgrey;
 }
 
 .nav-hamburger-cont {
 	margin: auto 10px;
 	cursor: pointer;
 }
+
 .bi-list, .bi-x {
 	display: none;
 	font-size: 2rem;
@@ -127,12 +110,13 @@ a:visited.nav-btn {
 	display: inline;
 }
 
+
 /* images */
 .gallery-cont {
 	display: flex;
-	justify-content: space-evenly;
+	justify-content: space-between;
 	flex-wrap: wrap;
-	gap: 20px;
+	gap: 25px;
 }
 
 .img-cont {
@@ -166,7 +150,7 @@ a:visited.nav-btn {
 	}
 
 	.img-cont {
-		width: 30vw;
+		width: 29vw;
 	}
 
 	.img-cont img {
@@ -177,7 +161,7 @@ a:visited.nav-btn {
 
 @media only screen and (min-width: 1200px) {
 	.img-cont {
-		width: 17vw;
+		width: 18vw;
 	}
 
 	.img-cont img {
