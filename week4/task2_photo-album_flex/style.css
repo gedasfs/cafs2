@@ -57,7 +57,6 @@
 	/*left: -150%;*/
 	width: 100%;
 	position: absolute;
-	/*list-style-type: none;*/
 	text-align: center;
 	background-color: white;
 	display: none;
@@ -74,7 +73,6 @@ a.nav-btn {
 .ul-nav-icons {
 	display: flex;
 	gap: 5px;
-	/*list-style-type: none;*/
 	padding: 0;
 	margin: auto 30px;
 }
@@ -97,11 +95,14 @@ a.nav-btn {
 
 .nav-btn-cont {
 	display: none;
+	/*left: -150%;*/
 	position: absolute;
 	top: 2.5rem;
 	width: 100%;
 }
 
+
+/* js-activated classes */
 .nav-active {
 	/*left: 0;*/
 	display: flex;
