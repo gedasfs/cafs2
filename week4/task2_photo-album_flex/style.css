@@ -1,0 +1,134 @@
+/* 
+-- Menu font-family: Lato, sans-serif;
+-- Menu font color: #151515
+-- Menu button background-color: #b6b6b6
+*/
+
+/* YOUR CODE HERE ir beje sėkmės*/
+
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+* {
+	box-sizing: border-box;
+	font-family: 'Lato', sans-serif;
+}
+
+
+.navbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: relative;
+	margin-bottom: 20px;
+}
+
+
+/* navbar (flexbox) items */
+.nav-logo img {
+	height: 2.5rem;
+	vertical-align: middle;
+}
+
+.ul-nav-links {
+	margin: 0;
+	padding: 0;
+	top: 2.5rem;
+	/*left: -150%;*/
+	width: 100%;
+	position: absolute;
+	display: none;
+	flex-direction: column;
+	text-align: center;
+	list-style-type: none;
+	background-color: white;
+}
+.ul-nav-links li a {
+	display: block;
+	line-height: 2.5rem;
+	padding: 0 20px;
+	text-decoration: none;
+	transition: background-color 0.3s ease;
+}
+.ul-nav-links li a:hover{
+	background-color: lightgrey;
+}
+
+.ul-nav-links a.nav-btn {
+	background-color: #b6b6b6;
+}
+
+.ul-nav-links a,
+.ul-nav-links a:visited {
+	color: #151515;
+}
+
+.nav-hamburger {
+	margin: auto 10px auto 20px;
+	cursor: pointer;
+}
+.bi-list, .bi-x {
+	display: none;
+	font-size: 2rem;
+}
+
+
+.nav-active {
+	/*left: 0;*/
+	display: flex;
+}
+.btn-active {
+	display: inline;
+}
+
+/* images */
+.gallery-cont {
+	display: flex;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+	gap: 20px;
+}
+
+.img-cont {
+	width: 44vw;
+}
+
+.img-cont img {
+	aspect-ratio: 0.6;
+	width: 100%;
+	object-fit: cover;
+}
+
+
+
+@media only screen and (min-width: 768px) {
+	.ul-nav-links {
+		display: flex;
+		position: static;
+		flex-direction: row;
+		justify-content: right;
+
+	}
+
+	.nav-hamburger {
+		display: none;
+	}
+
+	.img-cont {
+		width: 30vw;
+	}
+
+	.img-cont img {
+		aspect-ratio: 0.8;
+	}
+}
+
+
+@media only screen and (min-width: 1200px) {
+	.img-cont {
+		width: 17vw;
+	}
+
+	.img-cont img {
+		aspect-ratio: 1;
+	}
+}
