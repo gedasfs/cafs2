@@ -1,6 +1,6 @@
 "use strict"
 // Testuosime šį masyvą
-let numbers = [5, 1, 7, 2, -9, 8, 2, 7, 9, 4, -5, 2, -6, -4, 6];
+const numbers = [5, 1, 7, 2, -9, 8, 2, 7, 9, 4, -5, 2, -6, -4, 6];
 
 // 1. Parašykite funkciją arrDoubled, kuri sukuria ir grąžina naują masyvą, kurio elementai padauginti iš 2;
 function arrDoubled(arr) {
@@ -62,8 +62,8 @@ function reverseNumbers(number) {
   return numberArr;
 }
 const nums = 32243;
-const nums6 = reverseNumbers(nums);
-console.log('6. ', nums, nums6);
+const numsReversed = reverseNumbers(nums);
+console.log('6. ', nums, numsReversed);
 
 // 7. Parašykite  funkciją, kuri kaip argumentą priims skaičių masyvą ir suras atitinkamai mažiausią ir didžiausią skaičių bei juos grąžins.
 // Pvz.: Turime masyvą: [8,5,4,2,7,1,9]
@@ -101,13 +101,13 @@ console.log('8. ', `"${str}" `, checkForLetters(str, char));
 // Iškvietus funkciją rezultata bus: [1,3,4,6,7,8,10];
 function getNumsfromArr(arr) {
   arr = arr.filter(arrVal => Number(arrVal));
-  arr = arr.sort((a, b) => a - b)
+  arr = arr.sort((a, b) => a - b);
   
   return arr;
 }
 
 const arr2 = [8, 'Hello', 'click', 'u', 7, 4, 'a', 'a', 3, 6, "chair", ,10, 1];
-console.log('9. ', arr2, ' => ', getNumsfromArr(arr2))
+console.log('9. ', arr2, ' => ', getNumsfromArr(arr2));
 
 
 // 10. Sukurkite funkciję checkIfAllSmaller(arr, max), BE MASYVO METODŲ, kuri patikrintų ar visi skaičiai masyve yra didesni negu perduota reikšmė max;
@@ -153,7 +153,7 @@ function filteredByLetter(arr, char) {
   return arr.filter(arrVal => arrVal.includes(char));
 }
 
-console.log('11. ', filteredByLetter(citiesOfLithuania, 'ė'))
+console.log('11. ', filteredByLetter(citiesOfLithuania, 'ė'));
 
 
 // 12. Parašykite penkias funkcijas:
