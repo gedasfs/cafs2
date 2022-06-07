@@ -54,7 +54,7 @@ console.log('5. ', arrIndexOfLast(numbers, 6));
 // Pvz.: Turime skaičius 32243;
 // Iškvietus funkciją rezultata bus: 34223
 function reverseNumbers(number) {
-  let numberArr = Array.from(String(number), Number);
+  let numberArr = Array.from(String(number));
   
   numberArr = numberArr.reverse();
   numberArr = Number(numberArr.join(''));
