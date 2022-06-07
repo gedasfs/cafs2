@@ -116,7 +116,6 @@ console.log('9. ', arr2, ' => ', getNumsfromArr(arr2));
 // Iškvietus funkciją checkIfAllSmaller(arr1, 5) rezultata bus: False
 function checkIfAllSmaller(arr, max) {
 let count = 0;
-let arrLength = arr.length;
 
   for (let value of arr) {
     if (value > max) {
@@ -124,7 +123,7 @@ let arrLength = arr.length;
     }
   }
 
-  if (count == arrLength) {
+  if (count == arr.length) {
     return true;
   } 
 
@@ -132,7 +131,7 @@ let arrLength = arr.length;
 }
 
 const arr1 = [2, 7, 6, 9, 5];
-console.log('10. ', checkIfAllSmaller(arr1, 0));
+console.log('10. ', checkIfAllSmaller(arr1, 2));
 
 
 // 11. Parašykite funkciją filteredByLetter, kuri turi du parametrus: 1. masyvas; 2. raidė. Funkcija sukuria ir grąžina naują masyvą, kuriame yra visi masyvo, nurodyto kaip pirmas parametras elemntai, kuriuose galima rasti antru paramatetru nurodytą raidę.
