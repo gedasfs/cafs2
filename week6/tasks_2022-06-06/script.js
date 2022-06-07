@@ -213,4 +213,22 @@ function calculateValue(num1, num2, action) {
   return result;
 }
 
-console.log('12. ', calculateValue(5, 'a', 'division'));
+console.log('12. ', calculateValue(5, 2, 'division'));
+
+
+function calculateValueBetter(num1, num2, action) {
+  if (Number(num1) != num1 || Number(num2) != num2) {
+    throw new Error('One or both numbers are not a number.')
+  }
+
+  const actions = ['addition', 'substraction', 'multiplication', 'division'];
+  const indexOfAction = actions.map(x => x.name).indexOf(action);
+
+  if (indexOfAction === -1) {
+    throw new Error('Action not recognized.');
+  }
+
+  return actions[indexOfAction](num1, num2);
+}
+
+console.log('12. ', calculateValue(5, 2, 'division'));
