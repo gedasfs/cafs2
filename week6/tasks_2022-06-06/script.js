@@ -101,12 +101,13 @@ console.log('8. ', `"${str}" `, checkForLetters(str, char));
 // Iškvietus funkciją rezultata bus: [1,3,4,6,7,8,10];
 function getNumsfromArr(arr) {
   arr = arr.filter(arrVal => Number(arrVal));
+  arr = arr.map(x => Number(x));
   arr = arr.sort((a, b) => a - b);
   
   return arr;
 }
 
-const arr2 = [8, 'Hello', 'click', 'u', 7, 4, 'a', 'a', 3, 6, "chair", ,10, 1];
+const arr2 = [8, 'Hello', 'click', 'u', 7, 4, 'a', 'a', 3, 6, "chair", ,10, 1, '5', -2];
 console.log('9. ', arr2, ' => ', getNumsfromArr(arr2));
 
 
