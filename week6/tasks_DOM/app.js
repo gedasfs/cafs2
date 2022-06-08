@@ -5,7 +5,7 @@ const tdAge = document.getElementById('age');
 console.log('td with id="age": ', tdAge);
 
 
-const allLabels = document.querySelectorAll('form > label');
+const allLabels = document.querySelectorAll('table label');
 if (allLabels.length > 0 ) {
 	console.log('All label elements: ');
 	for (let el of allLabels) {
