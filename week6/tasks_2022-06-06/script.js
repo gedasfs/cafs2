@@ -241,7 +241,7 @@ function calculateValueBetter(num1, num2, action) {
     throw new Error('One or both numbers are not a number.')
   }
 
-  const actions = ['addition', 'substraction', 'multiplication', 'division'];
+  const actions = [addition, substraction, multiplication, division];
   const indexOfAction = actions.map(x => x.name).indexOf(action);
 
   if (indexOfAction === -1) {
