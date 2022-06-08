@@ -24,7 +24,11 @@ console.log('2. ', numbers, numbers2);
 function arrCountTwos(arr) {
   let count = 0;
   
-  arr.forEach(arrVal => arrVal === 2 ? ++count : count);
+  arr.forEach(arrVal => {
+    if (arrVal === 2) {
+      count++;
+    }
+  });
 
   return count;
 }
@@ -80,20 +84,29 @@ console.log('7. ', getMinMaxFromArr(numbers));
 
 
 // 8. Parašykite  funkciją checkForLetters, kuri priims du argumentus: Pirmas argumentas bus sakinys (arba žodžiai (-is)) ir antras argumentas bus raidė (kaip string). Funkcija turės suskaičiuoti kiek pirmu agrumentu nurodytame sakinyje/žodžiuose(-yje) yra antru argumentu nurodytų raidžių ir gražinti tų raidžių sumą su sakiniu pvz.: “Raidė “v” sakinyje rasta 4 kartus”.
-function checkForLetters(str, char) {
+function checkForLetters(str, char, caseInsensitive = false) {
+  if (caseInsensitive) {
+    str = str.toLowerCase();
+    char = char.toLowerCase();
+  }
+
   let count = 0;
   let strArr = Array.from(str);
   let msg = '';
 
-  strArr.forEach(currChar => currChar === char ? ++count : count);
+  strArr.forEach(currChar => {
+    if (currChar === char) {
+      count++;
+    }
+  });
   msg = `Raidė “${char}” sakinyje rasta ${count} kartus.`;
   
   return msg;
 }
 
-const str = 'Tai yra sakinys.';
+const str = 'TAI yra sakinys.';
 const char = 'a';
-console.log('8. ', `"${str}" `, checkForLetters(str, char));
+console.log('8. ', `"${str}" `, checkForLetters(str, char, true));
 
 
 // 9. Parašykite funckiją, kuri ras visus skaičius esančius msyve ir gražins juos kaip atsikrą masyvą. Naujame masyve visi skaičiai bus surikiuoti nuo mažiausio iki didžiausio.
@@ -149,11 +162,18 @@ const citiesOfLithuania = [
   'Utena',
 ];
 
-function filteredByLetter(arr, char) {
-  return arr.filter(arrVal => arrVal.includes(char));
+function filteredByLetter(arr, char, caseInsensitive = false) {
+    return arr.filter(arrVal => {
+      if (caseInsensitive) {
+        arrVal = arrVal.toLowerCase();
+        char = char.toLowerCase();
+      }
+      return arrVal.includes(char);
+    });
+    
 }
 
-console.log('11. ', filteredByLetter(citiesOfLithuania, 'ė'));
+console.log('11. ', filteredByLetter(citiesOfLithuania, 'v', true));
 
 
 // 12. Parašykite penkias funkcijas:
