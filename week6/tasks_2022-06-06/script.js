@@ -238,7 +238,7 @@ console.log('12. ', calculateValue(5, 2, 'division'));
 
 function calculateValueBetter(num1, num2, action) {
   if (Number(num1) != num1 || Number(num2) != num2) {
-    throw new Error('One or both numbers are not a number.')
+    throw new Error('One or both numbers are not a number.');
   }
 
   const actions = [addition, substraction, multiplication, division];
