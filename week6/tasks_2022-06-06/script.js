@@ -249,6 +249,9 @@ function calculateValueBetter(num1, num2, action) {
   }
 
   return actions[indexOfAction](num1, num2);
+
+  // it is possible to call a function as following (not recommended):
+  // return action(num1, num2); 
 }
 
 console.log('12. ', calculateValue(5, 2, 'division'));
