@@ -3,7 +3,7 @@ const inp2 = document.querySelector('.inp2');
 const btn = document.querySelector('button');
 
 
-btn.addEventListener('click', (event) => {
+btn.addEventListener('click', () => {
     inp2.value = inp1.value;
     inp1.value = '';
 });
