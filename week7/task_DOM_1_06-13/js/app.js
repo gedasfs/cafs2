@@ -31,7 +31,7 @@ function setH1TextContent (outputElement) {
 	outputElement.textContent = getMsgWithXY(window.innerWidth, window.innerHeight);
 }
 
-if(outputH1) {
+if (outputH1) {
 	setH1TextContent(outputH1);
 
 	window.addEventListener('resize', function () {
