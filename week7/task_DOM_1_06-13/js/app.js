@@ -12,7 +12,7 @@ if (outputH1) {
 	outputH1.textContent = getMsgWithXY(x0, y0);
 
 	window.addEventListener('resize', function () {
-		goutputH1.textContent = etMsgWithXY(window.innerWidth, window.innerHeight);
+		goutputH1.textContent = getMsgWithXY(window.innerWidth, window.innerHeight);
 	});
 }
 
