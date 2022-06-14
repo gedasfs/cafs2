@@ -124,7 +124,12 @@ keys.forEach(key => {
     }
 
     if (evTarget.classList.contains('equals')) {
+      console.log(okForNum2);
       console.log(num1, displayValue, action);
+      if (action == undefined) {
+        okForNum2 = true;
+        return;
+      }
       performCalculation()
       updateDisplayValue();
       return;
