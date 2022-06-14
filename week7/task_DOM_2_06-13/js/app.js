@@ -32,29 +32,111 @@ function calculateValue(num1, num2, action) {
 }
 
 
+// following functions are based on example at: https://freshman.tech/calculator/
+function reset() {
+  displayValue = 0;
+  num1 = null;
+  action = undefined;
+  okForNum2 = false;
+  readyForNewCalc = true;
+}
 
-const result = document.querySelector('#result');
-const numerics = document.querySelectorAll('input');
-const operations = document.querySelectorAll('button');
+function performCalculation() {
+  displayValue = calculateValue(Number(num1), Number(displayValue), action);
+  if (displayValue.toString().length > 8) {
+    displayValue = displayValue.toFixed(8);
+  }
+  readyForNewCalc = false;
+}
+
+function insertValueToDisplay(value) {
+  if (okForNum2) {
+    displayValue = value;
+    okForNum2 = false;
+  } else {
+    if (displayValue === 0) {
+      displayValue = value;
+    } else {
+      displayValue += value;
+    }
+  } 
+}
+
+function insertDecimalToDisplay(dec) {
+  if (displayValue.includes(dec)) {
+    return;
+  } else {
+    displayValue += dec;
+  }
+}
+
+function handleAction(actName) {
+  action = actName;
+  
+   if (num1 === null) {
+    num1 = displayValue;
+  }
+  okForNum2 = true;
+} 
+
+function updateDisplayValue() {
+  display.textContent = displayValue;
+}
+
+const display = document.querySelector('#display-result');
+const keys = document.querySelectorAll('input');
+
+let displayValue;
+let num1;
+let action;
+let okForNum2;
+let readyForNewCalc;
+
+reset();
+// updateDisplayValue();    // when page loads, inserts the 0 into display area
+
+keys.forEach(key => {
+  key.addEventListener('click', function(event) {
+    let evTarget = event.target;
+
+    let keyId = evTarget.id;
+    let keyValue = evTarget.value;
 
 
-let number = '';
+    if (evTarget.classList.contains('action')) {
+      console.log('action: ', keyValue);
+      handleAction(keyId);
+      updateDisplayValue();
+      return;
+    }
 
- 
-numerics.forEach(numeric => {
-	// console.log(Number(num.defaultValue));
-	
-	numeric.addEventListener('click', function(event) {
-		number += event.target.value;
-		console.log(number);
-	});
+    if (evTarget.classList.contains('decimal')) {
+      console.log('decimal: ', keyValue);
+      insertDecimalToDisplay(keyValue);
+      updateDisplayValue();
+      return;
+    }
+
+    if (evTarget.classList.contains('reset')) {
+      console.log('action: ', keyValue);
+      reset();
+      updateDisplayValue();
+      return;
+    }
+
+    if (evTarget.classList.contains('equals')) {
+      console.log(num1, displayValue, action);
+      performCalculation()
+      updateDisplayValue();
+      return;
+    }
+
+
+    console.log('number: ', keyValue);
+    if (!readyForNewCalc) {
+      reset();
+    }
+    insertValueToDisplay(keyValue);
+    updateDisplayValue();
+  });
 });
-
-
-operations.forEach(oper => {
-	// console.log(action.id);
-	oper.addEventListener('click', function(event) {
-		let action = event.target.id;
-		console.log(action);
-	});
-})
