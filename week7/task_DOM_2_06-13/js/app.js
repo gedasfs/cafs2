@@ -41,8 +41,9 @@ function reset() {
 
 function performCalculation() {
   displayValue = calculateValue(Number(num1), Number(displayValue), action);
-  if (displayValue.toString().length > 8) {
-    displayValue = displayValue.toFixed(8);
+  if (displayValue.toString().length > 10) {
+    displayValue = displayValue.toString().slice(0, 10);
+
   }
   readyForNewCalc = false;
 }
