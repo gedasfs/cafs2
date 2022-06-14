@@ -7,3 +7,5 @@ btn.addEventListener('click', () => {
     inp2.value = inp1.value;
     inp1.value = '';
 });
+
+
