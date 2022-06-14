@@ -5,7 +5,6 @@ const btn = document.querySelector('button');
 
 btn.addEventListener('click', () => {
     inp2.value = inp1.value;
-    inp1.value = '';
 });
 
 
