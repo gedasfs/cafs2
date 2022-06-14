@@ -31,8 +31,6 @@ function calculateValue(num1, num2, action) {
   return actions[indexOfAction](num1, num2);
 }
 
-
-// following functions are based on example at: https://freshman.tech/calculator/
 function reset() {
   displayValue = 0;
   num1 = null;
@@ -49,6 +47,7 @@ function performCalculation() {
   readyForNewCalc = false;
 }
 
+// following functions are based on example at: https://freshman.tech/calculator/
 function insertValueToDisplay(value) {
   if (okForNum2) {
     displayValue = value;
