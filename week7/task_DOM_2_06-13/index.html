@@ -5,17 +5,18 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- CSS only -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+	<link rel="stylesheet" href="style.css">
 	<title>week7, DOM task 2. Calculator</title>
 </head>
 <body>
 	
-	<div class="container m-5 p-3 bg-light border border-secondary rounded shadow w-25">
+	<div class="container m-5 p-3 bg-light border border-secondary rounded shadow">
 		<div class="row">
 			<div class="col-9">
 				<h2 id="display-result" class="border border-primary rounded p-2 mb-4">0</h2>
 			</div>
 			<div class="col-3 d-flex">
-				<input type="submit" value="AC" class="reset btn btn-danger py-2 mb-4">
+				<input type="submit" value="AC" class="reset btn btn-danger mb-4 flex-fill">
 			</div>
 		</div>
 		<div class="row">
@@ -35,7 +36,7 @@
 				<input type="submit" value="9" class="btn btn-secondary p-2 mb-3">
 				<input type="submit" value="6" class="btn btn-secondary p-2 mb-3">
 				<input type="submit" value="3" class="btn btn-secondary p-2 mb-3">
-				<input type="submit" value="=" id="equals" class="equals btn btn-danger p-2 mb-3"></input>
+				<input type="submit" value="=" class="equals btn btn-danger p-2 mb-3"></input>
 			</div>
 			<div class="col-3 d-flex flex-column">
 				<input type="submit" value="/" id="division" class="action btn btn-warning p-2 mb-3"></input>
