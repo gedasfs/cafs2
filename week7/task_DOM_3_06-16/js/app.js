@@ -49,9 +49,6 @@ window.addEventListener('DOMContentLoaded', () => {
     // console.log(divMain);
 });
 
-function createParagr(child, parent) {
-
-}
 
 function createAppendTextNode (parent, text) {
     const textNode = document.createTextNode(text);
