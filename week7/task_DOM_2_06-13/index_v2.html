@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- CSS only -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+	<link rel="stylesheet" href="style.css">
+	<title>week7, DOM task 2. Calculator</title>
+</head>
+<body>
+	
+	<div class="container m-5 p-3 bg-light border border-secondary rounded shadow">
+		<div class="calculator">
+			<div class="row mb-3">
+				<div class="col-12">
+					<h2 data-type="display" class="border border-primary rounded p-2"></h2>
+				</div>
+			</div>
+
+			<div class="row mb-3">
+				<div class="col-3">
+					<input type="submit" value="" data-type="operation-unk" class="btn btn-secondary py-2 w-100 disabled">
+				</div>
+				<div class="col-3">
+					<input type="submit" value="" data-type="operation-unk" class="btn btn-secondary py-2 w-100 disabled">
+				</div>
+				<div class="col-3">
+					<input type="submit" value="AC" data-type="reset" class="btn btn-danger py-2 w-100">
+				</div>
+				<div class="col-3">
+					<input type="submit" value="<-" data-type="backspace" class="btn btn-danger py-2 w-100">
+				</div>
+			</div>
+
+			<div class="row mb-3">
+				<div class="col-3">
+					<input type="submit" value="7" data-type="number" class="btn btn-secondary py-2 w-100">
+				</div>
+				<div class="col-3">
+					<input type="submit" value="8" data-type="number" class="btn btn-secondary py-2 w-100">
+				</div>
+				<div class="col-3">
+					<input type="submit" value="9" data-type="number" class="btn btn-secondary py-2 w-100">
+				</div>
+				<div class="col-3">
+					<input type="submit" value="/" data-type="operation" id="division" class="btn btn-warning py-2 w-100">
+				</div>
+			</div>
+
+			<div class="row mb-3">
+				<div class="col-3">
+					<input type="submit" value="4" data-type="number" class="btn btn-secondary py-2 w-100">
+				</div>
+				<div class="col-3">
+					<input type="submit" value="5" data-type="number" class="btn btn-secondary py-2 w-100">
+				</div>
+				<div class="col-3">
+					<input type="submit" value="6" data-type="number" class="btn btn-secondary py-2 w-100">
+				</div>
+				<div class="col-3">
+					<input type="submit" value="*" data-type="operation" id="multiplication" class="btn btn-warning py-2 w-100">
+				</div>
+			</div>
+
+			<div class="row mb-3">
+				<div class="col-3">
+					<input type="submit" value="1" data-type="number" class="btn btn-secondary py-2 w-100">
+				</div>
+				<div class="col-3">
+					<input type="submit" value="2" data-type="number" class="btn btn-secondary py-2 w-100">
+				</div>
+				<div class="col-3">
+					<input type="submit" value="3" data-type="number" class="btn btn-secondary py-2 w-100">
+				</div>
+				<div class="col-3">
+					<input type="submit" value="-" data-type="operation" id="substraction" class="btn btn-warning py-2 w-100">
+				</div>
+			</div>
+
+			<div class="row mb-3">
+				<div class="col-3">
+					<input type="submit" value="." data-type="decimal" class="btn btn-success py-2 w-100">
+				</div>
+				<div class="col-3">
+					<input type="submit" value="0" data-type="number" class="btn btn-secondary py-2 w-100">
+				</div>
+				<div class="col-3">
+					<input type="submit" value="=" data-type="equals" class="btn btn-danger py-2 w-100">
+				</div>
+				<div class="col-3">
+					<input type="submit" value="+" data-type="operation" id="addition" class="btn btn-warning py-2 w-100">
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+
+	<script src="js/app_v2.js"></script>
+</body>
+</html>
