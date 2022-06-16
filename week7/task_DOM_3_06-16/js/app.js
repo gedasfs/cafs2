@@ -1,3 +1,12 @@
+function createAppendTextNode (parent, text) {
+    const textNode = document.createTextNode(text);
+    parent.appendChild(textNode);
+}
+
+function createParagr(child, parent) {
+
+}
+
 window.addEventListener('DOMContentLoaded', () => {
     const divMain = document.querySelector('#main');
     
@@ -48,9 +57,3 @@ window.addEventListener('DOMContentLoaded', () => {
 
     // console.log(divMain);
 });
-
-
-function createAppendTextNode (parent, text) {
-    const textNode = document.createTextNode(text);
-    parent.appendChild(textNode);
-}
