@@ -94,7 +94,6 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 600px;
     text-align: center;
 }
 
@@ -104,10 +103,11 @@ body {
 
 .contact-us-cont input {
     padding: 5px;
+    width: 250px;
 }
 
 .contact-us-cont button {
-    margin: 10px;
+    margin: 30px;
     padding: 10px 50px;
 }
 
