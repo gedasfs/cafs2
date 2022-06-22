@@ -1,3 +1,15 @@
+/*
+2022-06-20
+DOM [JavaScript]
+Sukurkite HTML dokumentą, kuris <body> dalyje turės tris žymas, t.y. <header>, <main>, <footer>. 
+<header> dalyje bus navigacijos meniu su 5 nuorodomis, kuris bus “Responsive” (mobilioje versjoje turi būti “toggler” mygtukas, kurį paspaudus atsiranda meniu).
+<main> dalyje bus trys <section>:
+Pirmas <section> turės pilno pločio ir aukčio “slider” foną, kuriame bus trys paveikslėliai, kurie keisis kas 2 sekundės;
+Antras <section> turės pilno pločio ir ne mažesnę nei 300px aukščio laikrodį (laikas rodomas kaip tekstas), kuriame bus matomos dabartinės valandos, minutės ir sekundės (atsinaujins realiu laiku); 
+Trečias <section> turės kontaktų formą, kurią užpildžius, po ja pasirodys žinutė, kurioje nurodoma, kad forma užpildyta sėkmingai
+*/
+
+
 const navHamCont = document.querySelector('.nav-hamburger-cont');
 const barIcon = document.querySelector('.bi-list');
 const closeIcon = document.querySelector('.bi-x');
@@ -5,7 +17,7 @@ const navList = document.querySelector('.nav-links');
 
 navHamCont.addEventListener('click', function() {
     barIcon.classList.toggle('burger-active');
-    navList.classList.toggle('nav-active')
+    navList.classList.toggle('nav-active');
     closeIcon.classList.toggle('burger-active');
   });
 
@@ -24,11 +36,7 @@ function slideImg() {
     if (curSlide > slides.length) {
         curSlide = 1;
     }
-    slides[curSlide - 1].style.display = 'block'
-
-    // slides.forEach((slide, index) => {
-    //     slide.style.transform = `translateX(${100 * (index - curSlide)}%)`;
-    // });
+    slides[curSlide - 1].style.display = 'block';
 }
 // setInterval(slideImg, '2000');
 
@@ -77,4 +85,4 @@ window.addEventListener('DOMContentLoaded', () => {
             notification.style.color = 'green';
         }
     });
-})
+});
