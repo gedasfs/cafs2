@@ -29,15 +29,15 @@ class Motorcycle extends Car {
         let msg = '';
         
         if (!wheelsNo) {
-            return 'Could not get wheels Number.';
+            msg = 'Could not get wheels Number.';
         }
 
         if (wheelsNo === 3) {
-            msg = 'motociklas turi 3 ratus.';
+            msg = 'Motociklas turi 3 ratus.';
         } else if (wheelsNo === 2) {
-            msg = 'motociklas turi 2 ratus.';
+            msg = 'Motociklas turi 2 ratus.';
         } else {
-            msg = `motociklo ratų skaičius neįprastas (${wheelsNo}).`;
+            msg = `Motociklo ratų skaičius neįprastas (${wheelsNo}).`;
         }
 
         return msg;

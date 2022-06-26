@@ -34,7 +34,7 @@ class Car {
         let intro = this.getIntroduction();
 
         if (intro) {
-            return `Make: ${intro.make}, model: ${intro.model}`;
+            return `Make: ${intro.make}, model: ${intro.model}.`;
         } else {
             return 'Could not get intro (make and model).';
         }
@@ -60,7 +60,6 @@ class Car {
         }
 
         return (age <= checkCond) ? '10 metų arba naujesnis.' : '11 metų arba senesnis.';
-
     }
     
     getAll() {
