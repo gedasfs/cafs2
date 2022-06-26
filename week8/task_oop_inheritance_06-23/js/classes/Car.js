@@ -59,11 +59,7 @@ class Car {
             return 'Could not get age.';
         }
 
-        if (age <= checkCond) {
-            return '10 metų arba naujesnis.';
-        } else if (age > checkCond) {
-            return '11 metų arba senesnis.';
-        }
+        return (age <= checkCond) ? '10 metų arba naujesnis.' : '11 metų arba senesnis.';
 
     }
     
