@@ -1,4 +1,4 @@
-const car1 = new Car('WV', 'Golf', '2003');
+const car1 = new Car('WV', '', '2003');
 const motorc1 = new Motorcycle('Kawasaki', 'Ninja H2R', 2020, 2);
 
 // console.log(car1.getAll());
