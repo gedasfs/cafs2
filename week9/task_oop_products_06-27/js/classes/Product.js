@@ -3,7 +3,7 @@ Sukurkite objektų kūrimo konstruktorių (ES6 būdu) pavadinimu Products. Jo pa
 name, price, salePrice, category(bus kaip masyvas, jame vardijamos kategorijos, prie kurių jis priskiriamas, galimos "T-shirts", "Pants", "Sweaters", "Shoes") ir metodus,
 kurie atlikas šias funkcijas:
 1.1. pateiks produkto prisistatymą su pavadinimu ir kaina (arba akcijine kaina) (Pvz. "Nike pants": 59.00 Eur");
-1. patikrins ar produktas turi akciję kainą ir jeigu turi gražins akcijinę kainą, jeigu neturi, grąžins tekstą, kuriame nurodoma, kad šiam produktui akcija netaikoma;
+1.2. patikrins ar produktas turi akciję kainą ir jeigu turi gražins akcijinę kainą, jeigu neturi, grąžins tekstą, kuriame nurodoma, kad šiam produktui akcija netaikoma;
 2. Sukurkite masyvą, pavadinimo currentProducts, kurima bus patalpinti 5 produktai;
 3. Filtrus, kurie padės vartotojams filtruoti prekes pagal:
     1. Kainą (turi būti sukuriama funkcija (turės tris argumentus pvz.: 1 argumentas - produktai, 2 - visada bus skaičius, 3 argumentas - gali būti skaičius arba string "nuo" / "iki"), 
@@ -45,7 +45,7 @@ class Product {
 
     setPrice(price) {
         if (!isNaN(price)) {
-            return +price;
+            return price;
         } else {
             throw new Error('Problems with price.');
         }

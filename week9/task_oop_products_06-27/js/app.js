@@ -1,5 +1,5 @@
 const currentProducts = [
-    new Product('product1', 10, 'Shoes', 7),
+    new Product('product1', 10.5, 'Shoes', 7),
     new Product('product2', 20, 'Pants'),
     new Product('product3', 30, 'T-Shirts', 25),
     new Product('product4', 40, 'Sweaters'),
@@ -22,7 +22,7 @@ currentProducts.forEach(product => {
 });
 
 let pricesForFilter = [20, 43]; 
-let singelPriceForFilter = [30];
+let singelPriceForFilter = [25];
 let priceCheckPoint = 'min';
 let category = 'Shoes';
 
