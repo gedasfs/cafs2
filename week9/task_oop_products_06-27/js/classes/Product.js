@@ -101,4 +101,8 @@ class Product {
     getCategory() {
         return this.category;
     }
+
+    getNameAndPrice() {
+        return `${this.getName()}: ${this.getPrice()} Eur.`;
+    }
 }

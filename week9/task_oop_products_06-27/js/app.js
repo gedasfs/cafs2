@@ -6,15 +6,42 @@ const currentProducts = [
     new Product('product5', 50, 'Shoes', 45),
 ];
 
-// console.log(currentProducts);
-
 const currFilter = new Filter(currentProducts);
-console.log(currFilter.getFilteredByCategory('Shoes'));
-console.log(currFilter.getFilteredByDiscountedPrice());
-console.log(currentProducts[0].getDiscountAsPercent());
-console.log(currentProducts[0].getFinalPrice());
 
-let priceForFilter = [20, 43]; 
+currentProducts.forEach(product => {
+    console.log(product.getNameAndPrice());
+
+    let discPrice = product.getDiscountedPrice();
+    if(discPrice) {
+        console.log(`${product.getName()} discounted price: ${discPrice} (discount ${product.getDiscountAsPercent()}%)`);
+    } else {
+        console.log(`${product.getName()} does not have a discount.`)
+    }
+
+    console.log('-------------------------')
+});
+
+let pricesForFilter = [20, 43]; 
+let singelPriceForFilter = [30];
 let priceCheckPoint = 'min';
-console.log('priceForFilter: ', priceForFilter);
-console.log(currFilter.getFilteredByPrices(priceForFilter, priceCheckPoint));
+let category = 'Shoes';
+
+console.log('All products:');
+console.log(currentProducts);
+console.log('-------------------------');
+
+console.log('Discounted products: ');
+console.log(currFilter.getFilteredByDiscountedPrice());
+console.log('-------------------------');
+
+console.log(`Products, belonging to category "${category}":`);
+console.log(currFilter.getFilteredByCategory(category));
+console.log('-------------------------');
+
+console.log(`Products, filtered by prices ${pricesForFilter[0]} and ${pricesForFilter[1]}`)
+console.log(currFilter.getFilteredByPrices(pricesForFilter));
+console.log('-------------------------');
+
+console.log(`Products, filtered by price ${singelPriceForFilter} and checkpoint is ${priceCheckPoint}`)
+console.log(currFilter.getFilteredByPrices(singelPriceForFilter, priceCheckPoint));
+console.log('-------------------------');

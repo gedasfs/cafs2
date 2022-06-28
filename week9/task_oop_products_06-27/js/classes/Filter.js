@@ -6,7 +6,6 @@ class Filter {
     }
 
     setProducts(productsArr) {
-        console.log(productsArr)
         if (Array.isArray(productsArr) || productsArr.length !== 0) {
             return productsArr;
         } else {
