@@ -29,7 +29,8 @@ class Product {
         
         this.name = this.setName(name);
         this.price = this.setPrice(price);
-        this.salePrice = this.setSalePrice(salePrice);
+        this.salePrice = this.setDiscountedPrice(salePrice);
+        this.finalPrice = this.getFinalPrice();
         this.category = this.setCategory(category);
 
     }
@@ -50,7 +51,7 @@ class Product {
         }
     }
 
-    setSalePrice(salePrice) {
+    setDiscountedPrice(salePrice) {
         if ((salePrice) && !isNaN(salePrice)) {
             return +salePrice;
         } else {
@@ -78,23 +79,26 @@ class Product {
         return this.price;
     }
 
-    getSalePrice() {
-        if (this.salePrice) {
-            return this.salePrice;
-        } else {
-            return null;
+    getDiscountedPrice() {
+        return (this.salePrice) ? this.salePrice : null;
+    }
+
+    getFinalPrice() {
+        return (this.getDiscountedPrice()) ? this.getDiscountedPrice() : this.getPrice();
+    }
+
+    getDiscountAsPercent() {
+        let result = null;
+        
+        if (this.getDiscountedPrice()) {
+            result = (1 - (this.getDiscountedPrice()/this.getPrice())) * 100;
+            result = result.toFixed(2);
         }
+
+        return result;
     }
 
     getCategory() {
         return this.category;
     }
-
-    getNamePrice() {
-        return {
-                name: this.getName(),
-                price: this.getPrice(),
-        }
-    }
-
 }
