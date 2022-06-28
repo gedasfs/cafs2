@@ -71,8 +71,8 @@ class Filter {
         }
 
         if (prices.length === 2) {
-            let priceMin = +Math.min(...prices);
-            let priceMax = +Math.max(...prices);
+            let priceMin = Math.min(...prices);
+            let priceMax = Math.max(...prices);
 
             result = this.products.filter(product => (product.getFinalPrice() <= priceMax) && (product.getFinalPrice() >= priceMin));
             
