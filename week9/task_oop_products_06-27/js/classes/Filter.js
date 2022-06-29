@@ -1,7 +1,8 @@
 class Filter {
     
     constructor(products) {
-        this.products = this.setProducts(products);
+        // this.products = this.setProducts(products);
+        this.products = [];
 
     }
 
@@ -13,19 +14,21 @@ class Filter {
         }
     }
 
-    //check if arr elements are objects?
+    add(product) {
+        if (product instanceof Product) {
+            this.products.push(product);
+        }
+    }
     
 
     getFilteredByCategory(category) {
+        let result = [];
+
         if (category !== '') {
-            let result = [];
-            
             result = this.products.filter(product => product.getCategory() === category);
-            
-            return result;
-        } else {
-            return null;
         }
+
+        return result;
     }
 
     /*
@@ -39,15 +42,16 @@ class Filter {
             throw new Error(`An array is required, provided ${typeof prices}`);
         }
 
-        if (prices.length > 2) {
-            throw new Error(`An array with 1 or 2 prices required. Instead, provided ${prices.length}`);
-        } else {
-            prices.forEach((price, index) => {
-                if (isNaN(+price)) {
-                    throw new Error(`Price in provided array (index No.: ${index}) is not a number.`);
-                }
-            });
-        }
+
+        // if (prices.length > 2) {
+        //     throw new Error(`An array with 1 or 2 prices required. Instead, provided ${prices.length}`);
+        // } else {
+        //     prices.forEach((price, index) => {
+        //         if (isNaN(+price)) {
+        //             throw new Error(`Price in provided array (index No.: ${index}) is not a number.`);
+        //         }
+        //     });
+        // }
 
 
         let result = [];
@@ -61,12 +65,8 @@ class Filter {
 
             if (providedPriceIs === 'max') {
                 result = this.products.filter(product => product.getFinalPrice() <= price);
-                
-                return result;
             } else if (providedPriceIs === 'min') {
-                result = this.products.filter(product => product.getFinalPrice() >= price);
-               
-                return result;
+                result = this.products.filter(product => product.getFinalPrice() >= price);  
             }
         }
 
@@ -75,9 +75,9 @@ class Filter {
             let priceMax = Math.max(...prices);
 
             result = this.products.filter(product => (product.getFinalPrice() <= priceMax) && (product.getFinalPrice() >= priceMin));
-            
-            return result;
         }
+
+        return result;
     }
 
     getFilteredByDiscountedPrice() {

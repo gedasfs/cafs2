@@ -1,3 +1,10 @@
+categoryList = [
+    'T-Shirts',
+    'Pants',
+    'Sweaters',
+    'Shoes',
+];
+
 const currentProducts = [
     new Product('product1', 10.5, 'Shoes', 7),
     new Product('product2', 20, 'Pants'),
@@ -6,7 +13,7 @@ const currentProducts = [
     new Product('product5', 50, 'Shoes', 45),
 ];
 
-const currFilter = new Filter(currentProducts);
+const currFilter = new Filter();
 
 currentProducts.forEach(product => {
     console.log(product.getNameAndPrice());
@@ -19,6 +26,7 @@ currentProducts.forEach(product => {
     }
 
     console.log('-------------------------')
+    currFilter.add(product);
 });
 
 let pricesForFilter = [20, 43]; 

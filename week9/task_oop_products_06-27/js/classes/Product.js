@@ -20,13 +20,6 @@ jeigu turi gražins tą nuolaidą kaip procentinę išraišką (pvz. produkto ka
 class Product {
 
     constructor(name, price, category, salePrice = null) {
-        this.categoryList = [
-            'T-Shirts',
-            'Pants',
-            'Sweaters',
-            'Shoes',
-        ];
-        
         this.name = this.setName(name);
         this.price = this.setPrice(price);
         this.salePrice = this.setDiscountedPrice(salePrice);
@@ -61,7 +54,7 @@ class Product {
 
     setCategory(category) {
         if (typeof category === 'string' && category !== '') {
-            if (this.categoryList.includes(category)) {
+            if (categoryList.includes(category)) {
                 return category;
             } else {
                 return null;        //provided category not listed in allowed categories
