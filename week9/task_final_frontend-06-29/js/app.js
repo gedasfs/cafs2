@@ -1,6 +1,5 @@
 // Article 1
 const alertBtn = document.querySelector('#alertBtn');
-// console.log(alertBtn);
 
 alertBtn?.addEventListener('click', () => {
     alert('Hello World!');
@@ -50,7 +49,7 @@ const inpEmail = document.querySelector('#email');
 const inpPhone = document.querySelector('#phoneNumber');
 const errDivEmail = document.querySelector('#err-div-email');
 const errDivPhone = document.querySelector('#err-div-phone');
-const emailPhoneDivSucces = document.querySelector('#email-pho-div-success');
+const emailPhoneDivSucces = document.querySelector('#email-phone-div-success');
 
 function checkEmail(email) {
     if (email !== '' && (email.includes('@') && email.includes('.'))) {
