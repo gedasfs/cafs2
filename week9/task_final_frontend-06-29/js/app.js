@@ -34,7 +34,7 @@ function changeStr(str, changeToWhat) {
 
 btnsUpperLower?.forEach(btn => {
     btn.addEventListener('click', (event) => {
-        let inpValue = inpTxtUpperLower.value;
+        let inpValue = inpTxtUpperLower?.value;
         let btnType = event.target.dataset.btn;
 
         inpTxtUpperLower.value = changeStr(inpValue, btnType);
@@ -54,18 +54,18 @@ const emailPhoneDivSucces = document.querySelector('#email-phone-div-success');
 function checkEmail(email) {
     const regExp = /^[0-9A-Z_.-]+@[0-9A-Z_-]+\.[A-Z]+$/i;
 
-    return (regExp.test(email) ? true : false);
+    return regExp.test(email);
 }
 
 function checkPhoneNumber(number) {
-    const regExp = /^\+[0-9]+$/;
+    const regExp = /^\+[0-9]{5,}$/;
     
-    return (regExp.test(number) ? true : false);
+    return regExp.test(number);
 }
 
 btnSaveEmailPhone?.addEventListener('click', () => {
-    let inpEmailVal = inpEmail.value;
-    let inpPhoneVal = inpPhone.value;
+    let inpEmailVal = inpEmail?.value;
+    let inpPhoneVal = inpPhone?.value;
     
     let checkEmailRes = checkEmail(inpEmailVal);
     let checkPhoneRes = checkPhoneNumber(inpPhoneVal);
@@ -174,7 +174,7 @@ resetBtn?.addEventListener('click', event => {
     txtDiv.removeAttribute('style');
     smallTxt.removeAttribute('style');
 
-    // only working on chrome
+    // only working on chrome, edge and opera
     // txtDiv.attributeStyleMap.clear();
     // smallTxt.attributeStyleMap.clear();
 });
