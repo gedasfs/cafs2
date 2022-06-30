@@ -51,13 +51,13 @@ const errDivEmail = document.querySelector('#err-div-email');
 const errDivPhone = document.querySelector('#err-div-phone');
 const emailPhoneDivSucces = document.querySelector('#email-phone-div-success');
 
-function checkEmail(email) {
+function validateEmail(email) {
     const regExp = /^[0-9A-Z_.-]+@[0-9A-Z_-]+\.[A-Z]+$/i;
 
     return regExp.test(email);
 }
 
-function checkPhoneNumber(number) {
+function validatePhoneNumber(number) {
     const regExp = /^\+[0-9]{5,}$/;
     
     return regExp.test(number);
@@ -67,8 +67,8 @@ btnSaveEmailPhone?.addEventListener('click', () => {
     let inpEmailVal = inpEmail?.value;
     let inpPhoneVal = inpPhone?.value;
     
-    let checkEmailRes = checkEmail(inpEmailVal);
-    let checkPhoneRes = checkPhoneNumber(inpPhoneVal);
+    let checkEmailRes = validateEmail(inpEmailVal);
+    let checkPhoneRes = validatePhoneNumber(inpPhoneVal);
 
     if (!checkEmailRes) {
         errDivEmail.textContent = 'Please check email';
@@ -86,15 +86,13 @@ btnSaveEmailPhone?.addEventListener('click', () => {
         inpPhone.classList.remove('border-danger');
     }
 
-    if (checkEmailRes && checkPhoneRes) {
-        inpEmail.value = '';
-        inpPhone.value = '';
-        emailPhoneDivSucces.textContent = 'Your information has been saved.'
+    inpEmail.value = '';
+    inpPhone.value = '';
+    emailPhoneDivSucces.textContent = 'Your information has been saved.'
 
-        setTimeout(() => {
-            emailPhoneDivSucces.textContent = '';
-        }, 5000);
-    }
+    setTimeout(() => {
+        emailPhoneDivSucces.textContent = '';
+    }, 5000);
 });
 
 
@@ -136,7 +134,7 @@ imgElement?.addEventListener('mouseleave', () => {
 
 // Article 6
 const txtDiv = document.querySelector('#txt-div-in-art-6');
-const smallTxt = document.querySelector('small');
+const smallTxt = txtDiv.querySelector('small');
 const allLinks = document.querySelectorAll('#art-6 a');
 const resetBtn = document.querySelector('#reset-all');
 // const btnGroupDivs = document.querySelectorAll('#art-6 .btn-group');
@@ -174,7 +172,7 @@ resetBtn?.addEventListener('click', event => {
     txtDiv.removeAttribute('style');
     smallTxt.removeAttribute('style');
 
-    // only working on chrome, edge and opera
+    // currently only works on chrome, edge and opera:
     // txtDiv.attributeStyleMap.clear();
     // smallTxt.attributeStyleMap.clear();
 });
