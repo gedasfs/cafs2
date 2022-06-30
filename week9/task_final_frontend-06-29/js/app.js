@@ -120,16 +120,16 @@ btnsBlockUnblock?.forEach(btn =>  {
 
 // Article 5
 const imgElement = document.querySelector('#art-5 img');
-const imgScrs = [
+const imgSrcs = [
     'https://picsum.photos/id/239/300',
     'https://picsum.photos/id/238/300',
 ];
 
 imgElement?.addEventListener('mouseenter', () => {
-    imgElement.src = imgScrs[0];
+    imgElement.src = imgSrcs[0];
 });
 imgElement?.addEventListener('mouseleave', () => {
-    imgElement.src = imgScrs[1];
+    imgElement.src = imgSrcs[1];
 });
 
 
