@@ -12,8 +12,8 @@ const inpTxtUpperLower = document.querySelector('#inp-txt-upp-low');
 const btnsUpperLower = document.querySelectorAll('#art-2 button[data-btn]');
 
 function changeStr(str, changeToWhat) {
-    if (str === '') {
-        return;
+    if (str === '' || changeToWhat === '') {
+        return '';
     }
 
     if (changeToWhat === 'upper') {
@@ -52,21 +52,15 @@ const errDivPhone = document.querySelector('#err-div-phone');
 const emailPhoneDivSucces = document.querySelector('#email-phone-div-success');
 
 function checkEmail(email) {
-    if (email !== '' && (email.includes('@') && email.includes('.'))) {
-        return true;
-    }
+    const regExp = /^[0-9A-Z_.-]+@[0-9A-Z_-]+\.[A-Z]+$/i;
 
-    return false;
+    return (regExp.test(email) ? true : false);
 }
 
 function checkPhoneNumber(number) {
     const regExp = /^\+[0-9]+$/;
     
-    if (regExp.test(number)) {
-        return true;
-    }
-
-    return false;
+    return (regExp.test(number) ? true : false);
 }
 
 btnSaveEmailPhone?.addEventListener('click', () => {
@@ -126,12 +120,16 @@ btnsBlockUnblock?.forEach(btn =>  {
 
 // Article 5
 const imgElement = document.querySelector('#art-5 img');
+const imgScrs = [
+    'https://picsum.photos/id/239/300',
+    'https://picsum.photos/id/238/300',
+];
 
 imgElement?.addEventListener('mouseenter', () => {
-    imgElement.src = 'https://picsum.photos/id/239/300';
+    imgElement.src = imgScrs[0];
 });
 imgElement?.addEventListener('mouseleave', () => {
-    imgElement.src = 'https://picsum.photos/id/238/300';
+    imgElement.src = imgScrs[1];
 });
 
 
@@ -172,6 +170,11 @@ allLinks?.forEach(link => {
 });
 
 resetBtn?.addEventListener('click', event => {
-    txtDiv.attributeStyleMap.clear();
-    smallTxt.attributeStyleMap.clear();
+    txtDiv.style.cursor = 'default';
+    txtDiv.removeAttribute('style');
+    smallTxt.removeAttribute('style');
+
+    // only working on chrome
+    // txtDiv.attributeStyleMap.clear();
+    // smallTxt.attributeStyleMap.clear();
 });
