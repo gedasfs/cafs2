@@ -34,7 +34,7 @@ function changeStr(str, changeToWhat) {
 
 btnsUpperLower?.forEach(btn => {
     btn.addEventListener('click', (event) => {
-        let inpValue = inpTxtUpperLower?.value;
+        let inpValue = inpTxtUpperLower.value;
         let btnType = event.target.dataset.btn;
 
         inpTxtUpperLower.value = changeStr(inpValue, btnType);
@@ -64,8 +64,8 @@ function validatePhoneNumber(number) {
 }
 
 btnSaveEmailPhone?.addEventListener('click', () => {
-    let inpEmailVal = inpEmail?.value;
-    let inpPhoneVal = inpPhone?.value;
+    let inpEmailVal = inpEmail.value;
+    let inpPhoneVal = inpPhone.value;
     
     let checkEmailRes = validateEmail(inpEmailVal);
     let checkPhoneRes = validatePhoneNumber(inpPhoneVal);
