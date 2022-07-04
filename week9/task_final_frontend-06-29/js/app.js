@@ -36,7 +36,7 @@ function changeStr(str, changeToWhat) {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    btnsUpperLower?.forEach(btn => {
+    btnsUpperLower.forEach(btn => {
         btn.addEventListener('click', (event) => {
             let inpValue = inpTxtUpperLower.value;
             let btnType = event.target.dataset.btn;
@@ -133,7 +133,7 @@ const inpBlockUnblock = document.querySelector('#inp-block-unblock');
 const btnsBlockUnblock = document.querySelectorAll('#art-4 button[data-btn]');
 
 document.addEventListener('DOMContentLoaded', function() {
-    btnsBlockUnblock?.forEach(btn =>  {
+    btnsBlockUnblock.forEach(btn =>  {
         btn.addEventListener('click', (event) => {
             let btnType = event.target.dataset.btn;
     
@@ -176,14 +176,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Article 6
 const txtDiv = document.querySelector('#txt-div-in-art-6');
-const smallTxt = txtDiv.querySelector('small');
+const smallTxt = txtDiv?.querySelector('small');
 const allLinks = document.querySelectorAll('#art-6 a');
 const resetBtn = document.querySelector('#reset-all');
 const btnGroupIDs = ['cursors', 'colors', 'borders'];
 // const btnGroupDivs = document.querySelectorAll('#art-6 .btn-group');
 
 document.addEventListener('DOMContentLoaded', function() {
-    allLinks?.forEach(link => {
+    allLinks.forEach(link => {
         link.addEventListener('click', event => {
             event.preventDefault();
     
