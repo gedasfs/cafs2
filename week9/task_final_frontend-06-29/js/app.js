@@ -49,9 +49,10 @@ const inpEmail = document.querySelector('#email');
 const inpPhone = document.querySelector('#phone-number');
 const errDivEmail = document.querySelector('#err-div-email');
 const errDivPhone = document.querySelector('#err-div-phone');
-const successDivEmailPhone = document.querySelector('#email-phone-div-success');
+const successDivEmailPhone = document.querySelector('#success-div-email-phone');
 
 function validateEmail(email) {
+    //to do: add checking for i.e. ???co.uk
     const regExp = /^[A-Z][0-9A-Z_.-]+@[0-9A-Z_-]+\.[A-Z]+$/i;
 
     return regExp.test(email);
@@ -167,8 +168,8 @@ const txtDiv = document.querySelector('#txt-div-in-art-6');
 const smallTxt = txtDiv.querySelector('small');
 const allLinks = document.querySelectorAll('#art-6 a');
 const resetBtn = document.querySelector('#reset-all');
-// const btnGroupDivs = document.querySelectorAll('#art-6 .btn-group');
 const btnGroupIDs = ['cursors', 'colors', 'borders'];
+// const btnGroupDivs = document.querySelectorAll('#art-6 .btn-group');
 
 allLinks?.forEach(link => {
     link.addEventListener('click', event => {
@@ -203,7 +204,8 @@ resetBtn?.addEventListener('click', event => {
     txtDiv.style.color = '';
     smallTxt.style.color = '';
     txtDiv.style.border = 'none';
-    
+
+    // removes all inline style
     // txtDiv.removeAttribute('style');
     // smallTxt.removeAttribute('style');
 
