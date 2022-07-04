@@ -1,9 +1,12 @@
 // Article 1
 const alertBtn = document.querySelector('#alertBtn');
 
-alertBtn?.addEventListener('click', () => {
-    alert('Hello World!');
+document.addEventListener('DOMContentLoaded', function() {
+    alertBtn?.addEventListener('click', function() {
+        alert('Hello World!');
+    });
 });
+
 
 
 
@@ -32,12 +35,14 @@ function changeStr(str, changeToWhat) {
     return str;
 }
 
-btnsUpperLower?.forEach(btn => {
-    btn.addEventListener('click', (event) => {
-        let inpValue = inpTxtUpperLower.value;
-        let btnType = event.target.dataset.btn;
-
-        inpTxtUpperLower.value = changeStr(inpValue, btnType);
+document.addEventListener('DOMContentLoaded', function() {
+    btnsUpperLower?.forEach(btn => {
+        btn.addEventListener('click', (event) => {
+            let inpValue = inpTxtUpperLower.value;
+            let btnType = event.target.dataset.btn;
+    
+            inpTxtUpperLower.value = changeStr(inpValue, btnType);
+        });
     });
 });
 
@@ -84,39 +89,41 @@ function hideElement(element) {
     return false;
 }
 
-btnSaveEmailPhone?.addEventListener('click', () => {
-    let inpEmailVal = inpEmail.value;
-    let inpPhoneVal = inpPhone.value;
+document.addEventListener('DOMContentLoaded', function() {
+    btnSaveEmailPhone?.addEventListener('click', () => {
+        let inpEmailVal = inpEmail.value;
+        let inpPhoneVal = inpPhone.value;
+        
+        let checkEmailRes = validateEmail(inpEmailVal);
+        let checkPhoneRes = validatePhoneNumber(inpPhoneVal);
     
-    let checkEmailRes = validateEmail(inpEmailVal);
-    let checkPhoneRes = validatePhoneNumber(inpPhoneVal);
-
-    if (!checkEmailRes) {
-        showElement(errDivEmail);
-        inpEmail.classList.add('border-danger');
-    } else {
-        hideElement(errDivEmail);
-        inpEmail.classList.remove('border-danger');
-    }
-
-    if (!checkPhoneRes) {
-        showElement(errDivPhone);
-        inpPhone.classList.add('border-danger');
-    } else {
-        hideElement(errDivPhone);
-        inpPhone.classList.remove('border-danger');
-    }
-
-    if (checkEmailRes && checkPhoneRes) {
-        inpEmail.value = '';
-        inpPhone.value = '';
-        showElement(successDivEmailPhone);
-
-        setTimeout(() => {
-            hideElement(successDivEmailPhone);
-
-        }, 5000);
-    }
+        if (!checkEmailRes) {
+            showElement(errDivEmail);
+            inpEmail.classList.add('border-danger');
+        } else {
+            hideElement(errDivEmail);
+            inpEmail.classList.remove('border-danger');
+        }
+    
+        if (!checkPhoneRes) {
+            showElement(errDivPhone);
+            inpPhone.classList.add('border-danger');
+        } else {
+            hideElement(errDivPhone);
+            inpPhone.classList.remove('border-danger');
+        }
+    
+        if (checkEmailRes && checkPhoneRes) {
+            inpEmail.value = '';
+            inpPhone.value = '';
+            showElement(successDivEmailPhone);
+    
+            setTimeout(() => {
+                hideElement(successDivEmailPhone);
+    
+            }, 5000);
+        }
+    });
 });
 
 
@@ -125,16 +132,18 @@ btnSaveEmailPhone?.addEventListener('click', () => {
 const inpBlockUnblock = document.querySelector('#inp-block-unblock');
 const btnsBlockUnblock = document.querySelectorAll('#art-4 button[data-btn]');
 
-btnsBlockUnblock?.forEach(btn =>  {
-    btn.addEventListener('click', (event) => {
-        let btnType = event.target.dataset.btn;
-
-        if (btnType === 'block') {
-            inpBlockUnblock.disabled = true;
-        }
-        if (btnType === 'unblock') {
-            inpBlockUnblock.disabled = false;
-        }
+document.addEventListener('DOMContentLoaded', function() {
+    btnsBlockUnblock?.forEach(btn =>  {
+        btn.addEventListener('click', (event) => {
+            let btnType = event.target.dataset.btn;
+    
+            if (btnType === 'block') {
+                inpBlockUnblock.disabled = true;
+            }
+            if (btnType === 'unblock') {
+                inpBlockUnblock.disabled = false;
+            }
+        });
     });
 });
 
@@ -148,17 +157,19 @@ const imgSrcs = [
     'https://picsum.photos/id/238/300',
 ];
 
-imgElement?.addEventListener('mouseenter', () => {
-    imgElement.src = imgSrcs[0];
-
-    // hideElement(imgElements[0]);
-    // showElement(imgElements[1]);
-});
-imgElement?.addEventListener('mouseleave', () => {
-    imgElement.src = imgSrcs[1];
-
-    // hideElement(imgElements[1]);
-    // showElement(imgElements[0]);
+document.addEventListener('DOMContentLoaded', function() {
+    imgElement?.addEventListener('mouseenter', () => {
+        imgElement.src = imgSrcs[0];
+    
+        // hideElement(imgElements[0]);
+        // showElement(imgElements[1]);
+    });
+    imgElement?.addEventListener('mouseleave', () => {
+        imgElement.src = imgSrcs[1];
+    
+        // hideElement(imgElements[1]);
+        // showElement(imgElements[0]);
+    });
 });
 
 
@@ -171,45 +182,47 @@ const resetBtn = document.querySelector('#reset-all');
 const btnGroupIDs = ['cursors', 'colors', 'borders'];
 // const btnGroupDivs = document.querySelectorAll('#art-6 .btn-group');
 
-allLinks?.forEach(link => {
-    link.addEventListener('click', event => {
-        event.preventDefault();
-
-        let btnGrpID = event.target.parentElement.parentElement.parentElement.id;   // div id
-        
-        if (btnGrpID === btnGroupIDs[0]) {  
-            let cursorType = event.target.dataset.cursorType;
+document.addEventListener('DOMContentLoaded', function() {
+    allLinks?.forEach(link => {
+        link.addEventListener('click', event => {
+            event.preventDefault();
+    
+            let btnGrpID = event.target.parentElement.parentElement.parentElement.id;   // div id
             
-            txtDiv.style.cursor = cursorType;
-        }
-
-        if (btnGrpID === btnGroupIDs[1]) {
-            let color = event.target.dataset.color;
-            
-            txtDiv.style.color = color;
-            smallTxt.setAttribute('style', `color:${color} !important`);
-        }
-
-        if (btnGrpID === btnGroupIDs[2]) {
-            let borderColor = event.target.dataset.borderColor;
-
-            txtDiv.style.setProperty('border', `1px solid ${borderColor}`);
-        }
-
+            if (btnGrpID === btnGroupIDs[0]) {  
+                let cursorType = event.target.dataset.cursorType;
+                
+                txtDiv.style.cursor = cursorType;
+            }
+    
+            if (btnGrpID === btnGroupIDs[1]) {
+                let color = event.target.dataset.color;
+                
+                txtDiv.style.color = color;
+                smallTxt.setAttribute('style', `color:${color} !important`);
+            }
+    
+            if (btnGrpID === btnGroupIDs[2]) {
+                let borderColor = event.target.dataset.borderColor;
+    
+                txtDiv.style.setProperty('border', `1px solid ${borderColor}`);
+            }
+    
+        });
     });
-});
 
-resetBtn?.addEventListener('click', event => {
-    txtDiv.style.cursor = 'default';
-    txtDiv.style.color = '';
-    smallTxt.style.color = '';
-    txtDiv.style.border = 'none';
-
-    // removes all inline style
-    // txtDiv.removeAttribute('style');
-    // smallTxt.removeAttribute('style');
-
-    // currently only works on chrome, edge and opera:
-    // txtDiv.attributeStyleMap.clear();
-    // smallTxt.attributeStyleMap.clear();
+    resetBtn?.addEventListener('click', event => {
+        txtDiv.style.cursor = 'default';
+        txtDiv.style.color = '';
+        smallTxt.style.color = '';
+        txtDiv.style.border = 'none';
+    
+        // removes all inline style
+        // txtDiv.removeAttribute('style');
+        // smallTxt.removeAttribute('style');
+    
+        // currently only works on chrome, edge and opera:
+        // txtDiv.attributeStyleMap.clear();
+        // smallTxt.attributeStyleMap.clear();
+    });
 });
