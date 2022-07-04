@@ -11,7 +11,7 @@
     
     <main class="container">
 
-        <article id="art-1">
+        <article>
             <div class="card mt-3">
                 <div class="card-header">
                     1. Paspaudus mygtuką iškviečiamas <code>alert('Hello World!')</code>
@@ -39,7 +39,7 @@
             </div>
         </article>
         
-        <article id="art-3">
+        <article>
             <div class="card mt-3">
                 <div class="card-header">
                     3. Paspaudus mygtuką, patikrinamos įvestos reikšmės, jeigu reikia parodomi klaidų pranešimai
@@ -49,16 +49,16 @@
                         <label for="email" class="col-sm-2 col-form-label">Email</label>
                         <div class="col-sm-10">
                             <input type="email" class="form-control" id="email" placeholder="Enter Email">
-                            <div class="text-danger fw-light" id="err-div-email"></div>
+                            <div class="text-danger fw-light d-none" id="err-div-email">Please check email</div>
                         </div>
                     </div>
                     <div class="mb-3 row">
-                        <label for="phoneNumber" class="col-sm-2 col-form-label">Phone Number</label>
+                        <label for="phone-number" class="col-sm-2 col-form-label">Phone Number</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="phoneNumber" placeholder="Enter Phone Number: +370...">
-                            <div class="text-danger fw-light" id="err-div-phone"></div>
+                            <input type="text" class="form-control" id="phone-number" placeholder="Enter Phone Number: +370...">
+                            <div class="text-danger fw-light d-none" id="err-div-phone">Please check phone number</div>
                             <button class="btn btn-outline-dark my-3" type="button" id="btn-save-email-phone">Save</button>
-                            <div class="text-success" id="email-phone-div-success"></div>
+                            <div class="text-success d-none" id="email-phone-div-success">Your information has been saved.</div>
                         </div>
                     </div>
                     
@@ -89,6 +89,7 @@
                 <div class="card-body text-center">
                     <div class="border rounded d-inline-block">
                         <img src="https://picsum.photos/id/238/300" class="img-thumbnail p-0 m-1" alt="img_alt">
+                        <!-- <img src="https://picsum.photos/id/239/300" class="img-thumbnail p-0 m-1 d-none" alt="img_alt"> -->
                     </div>
                 </div>
             </div>

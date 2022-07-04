@@ -46,13 +46,13 @@ btnsUpperLower?.forEach(btn => {
 // Article 3
 const btnSaveEmailPhone = document.querySelector('#btn-save-email-phone');
 const inpEmail = document.querySelector('#email');
-const inpPhone = document.querySelector('#phoneNumber');
+const inpPhone = document.querySelector('#phone-number');
 const errDivEmail = document.querySelector('#err-div-email');
 const errDivPhone = document.querySelector('#err-div-phone');
-const emailPhoneDivSucces = document.querySelector('#email-phone-div-success');
+const successDivEmailPhone = document.querySelector('#email-phone-div-success');
 
 function validateEmail(email) {
-    const regExp = /^[0-9A-Z_.-]+@[0-9A-Z_-]+\.[A-Z]+$/i;
+    const regExp = /^[A-Z][0-9A-Z_.-]+@[0-9A-Z_-]+\.[A-Z]+$/i;
 
     return regExp.test(email);
 }
@@ -63,6 +63,26 @@ function validatePhoneNumber(number) {
     return regExp.test(number);
 }
 
+function showElement(element) {
+    if (element) {
+        element.classList.remove('d-none');
+        element.classList.add('d-block');
+        
+        return true;
+    }
+    return false;
+}
+
+function hideElement(element) {
+    if (element) {
+        element.classList.remove('d-block');
+        element.classList.add('d-none');
+        
+        return true;
+    }
+    return false;
+}
+
 btnSaveEmailPhone?.addEventListener('click', () => {
     let inpEmailVal = inpEmail.value;
     let inpPhoneVal = inpPhone.value;
@@ -71,28 +91,31 @@ btnSaveEmailPhone?.addEventListener('click', () => {
     let checkPhoneRes = validatePhoneNumber(inpPhoneVal);
 
     if (!checkEmailRes) {
-        errDivEmail.textContent = 'Please check email';
+        showElement(errDivEmail);
         inpEmail.classList.add('border-danger');
     } else {
-        errDivEmail.textContent = '';
+        hideElement(errDivEmail);
         inpEmail.classList.remove('border-danger');
     }
 
     if (!checkPhoneRes) {
-        errDivPhone.textContent = 'Please check phone number';
+        showElement(errDivPhone);
         inpPhone.classList.add('border-danger');
     } else {
-        errDivPhone.textContent = '';
+        hideElement(errDivPhone);
         inpPhone.classList.remove('border-danger');
     }
 
-    inpEmail.value = '';
-    inpPhone.value = '';
-    emailPhoneDivSucces.textContent = 'Your information has been saved.'
+    if (checkEmailRes && checkPhoneRes) {
+        inpEmail.value = '';
+        inpPhone.value = '';
+        showElement(successDivEmailPhone);
 
-    setTimeout(() => {
-        emailPhoneDivSucces.textContent = '';
-    }, 5000);
+        setTimeout(() => {
+            hideElement(successDivEmailPhone);
+
+        }, 5000);
+    }
 });
 
 
@@ -118,6 +141,7 @@ btnsBlockUnblock?.forEach(btn =>  {
 
 // Article 5
 const imgElement = document.querySelector('#art-5 img');
+const imgElements = document.querySelectorAll('#art-5 img');
 const imgSrcs = [
     'https://picsum.photos/id/239/300',
     'https://picsum.photos/id/238/300',
@@ -125,9 +149,15 @@ const imgSrcs = [
 
 imgElement?.addEventListener('mouseenter', () => {
     imgElement.src = imgSrcs[0];
+
+    // hideElement(imgElements[0]);
+    // showElement(imgElements[1]);
 });
 imgElement?.addEventListener('mouseleave', () => {
     imgElement.src = imgSrcs[1];
+
+    // hideElement(imgElements[1]);
+    // showElement(imgElements[0]);
 });
 
 
@@ -143,6 +173,7 @@ const btnGroupIDs = ['cursors', 'colors', 'borders'];
 allLinks?.forEach(link => {
     link.addEventListener('click', event => {
         event.preventDefault();
+
         let btnGrpID = event.target.parentElement.parentElement.parentElement.id;   // div id
         
         if (btnGrpID === btnGroupIDs[0]) {  
@@ -169,8 +200,12 @@ allLinks?.forEach(link => {
 
 resetBtn?.addEventListener('click', event => {
     txtDiv.style.cursor = 'default';
-    txtDiv.removeAttribute('style');
-    smallTxt.removeAttribute('style');
+    txtDiv.style.color = '';
+    smallTxt.style.color = '';
+    txtDiv.style.border = 'none';
+    
+    // txtDiv.removeAttribute('style');
+    // smallTxt.removeAttribute('style');
 
     // currently only works on chrome, edge and opera:
     // txtDiv.attributeStyleMap.clear();
