@@ -57,7 +57,6 @@ const errDivPhone = document.querySelector('#err-div-phone');
 const successDivEmailPhone = document.querySelector('#success-div-email-phone');
 
 function validateEmail(email) {
-    //to do: add checking for i.e. ???co.uk
     const regExp = /^[A-Z][0-9A-Z_.-]+@[0-9A-Z_-]+\.[A-Z]+$/i;
 
     return regExp.test(email);
@@ -160,15 +159,11 @@ const imgSrcs = [
 document.addEventListener('DOMContentLoaded', function() {
     imgElement?.addEventListener('mouseenter', () => {
         imgElement.src = imgSrcs[0];
-    
-        // hideElement(imgElements[0]);
-        // showElement(imgElements[1]);
+
     });
     imgElement?.addEventListener('mouseleave', () => {
         imgElement.src = imgSrcs[1];
-    
-        // hideElement(imgElements[1]);
-        // showElement(imgElements[0]);
+
     });
 });
 
@@ -217,12 +212,5 @@ document.addEventListener('DOMContentLoaded', function() {
         smallTxt.style.color = '';
         txtDiv.style.border = 'none';
     
-        // removes all inline style
-        // txtDiv.removeAttribute('style');
-        // smallTxt.removeAttribute('style');
-    
-        // currently only works on chrome, edge and opera:
-        // txtDiv.attributeStyleMap.clear();
-        // smallTxt.attributeStyleMap.clear();
     });
 });
