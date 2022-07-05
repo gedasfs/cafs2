@@ -159,11 +159,9 @@ const imgSrcs = [
 document.addEventListener('DOMContentLoaded', function() {
     imgElement?.addEventListener('mouseenter', () => {
         imgElement.src = imgSrcs[0];
-
     });
     imgElement?.addEventListener('mouseleave', () => {
         imgElement.src = imgSrcs[1];
-
     });
 });
 
@@ -212,5 +210,12 @@ document.addEventListener('DOMContentLoaded', function() {
         smallTxt.style.color = '';
         txtDiv.style.border = 'none';
     
+        // removes all inline style
+        // txtDiv.removeAttribute('style');
+        // smallTxt.removeAttribute('style');
+    
+        // currently only works on chrome, edge and opera:
+        // txtDiv.attributeStyleMap.clear();
+        // smallTxt.attributeStyleMap.clear();
     });
 });
