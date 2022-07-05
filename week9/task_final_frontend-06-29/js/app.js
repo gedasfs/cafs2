@@ -63,7 +63,7 @@ function validateEmail(email) {
 }
 
 function validatePhoneNumber(number) {
-    const regExp = /^\+[0-9]{5,}$/;
+    const regExp = /^\+[0-9]{5,12}$/;
     
     return regExp.test(number);
 }
