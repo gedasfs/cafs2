@@ -68,7 +68,7 @@ function validatePhoneNumber(number) {
     return regExp.test(number);
 }
 
-function showElement(element) {
+function showElementAsBlock(element) {
     if (element) {
         element.classList.remove('d-none');
         element.classList.add('d-block');
@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function() {
         let checkPhoneRes = validatePhoneNumber(inpPhoneVal);
     
         if (!checkEmailRes) {
-            showElement(errDivEmail);
+            showElementAsBlock(errDivEmail);
             inpEmail.classList.add('border-danger');
         } else {
             hideElement(errDivEmail);
@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     
         if (!checkPhoneRes) {
-            showElement(errDivPhone);
+            showElementAsBlock(errDivPhone);
             inpPhone.classList.add('border-danger');
         } else {
             hideElement(errDivPhone);
@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (checkEmailRes && checkPhoneRes) {
             inpEmail.value = '';
             inpPhone.value = '';
-            showElement(successDivEmailPhone);
+            showElementAsBlock(successDivEmailPhone);
     
             setTimeout(() => {
                 hideElement(successDivEmailPhone);
