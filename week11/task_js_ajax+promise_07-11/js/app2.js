@@ -8,13 +8,20 @@ const baseURL = 'https://jsonplaceholder.typicode.com/';
 const fillTableWithData = async function(dataArr) {
     checkIfArray(dataArr);
     
+    let users = await getData('users');
+    checkIfArray(dataArr);
+    
     for (let i = 0; i < dataArr.length; i++) {
-        let user = await getData('users', dataArr[i].userId);
-        checkIfArray(user);
+        // let user = await getData('users', dataArr[i].userId);
+        // checkIfArray(user);
+
+        let user = users.find(userToCheck => dataArr[i].userId === userToCheck.id);
 
         const row = document.createElement('tr');
+
+        // ${user[0].name}
         row.innerHTML = 
-            `<td>${user[0].name}</td>
+            `<td>${user.name}</td>
             <td>${dataArr[i].title}</td>
             <td>${dataArr[i].body}</td>`;
         tblBody.appendChild(row);
@@ -70,6 +77,7 @@ btnLoad.addEventListener('click', async () => {
         showElement(userTable);
         hideElement(spinner);
     } catch (err) {
+        hideElement(spinner);
         showError(err.message);
         console.warn(err);
     }
