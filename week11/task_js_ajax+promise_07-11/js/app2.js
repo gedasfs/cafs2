@@ -5,16 +5,24 @@ const tblBody = userTable.querySelector('tbody');
 const baseURL = 'https://jsonplaceholder.typicode.com/';
 
 const fillTableWithData = async function(dataArr) {
+    checkIfArray(dataArr);
+    
     for (let i = 0; i < dataArr.length; i++) {
-        const row = document.createElement('tr');
-
         let user = await getData('users', dataArr[i].userId);
+        checkIfArray(user);
 
+        const row = document.createElement('tr');
         row.innerHTML = 
             `<td>${user[0].name}</td>
             <td>${dataArr[i].title}</td>
             <td>${dataArr[i].body}</td>`;
         tblBody.appendChild(row);
+    }
+}
+
+const checkIfArray = function(arr) {
+    if (!Array.isArray(arr) || !arr.length === 0) {
+        throw new Error('Array is empty or passed not an array');
     }
 }
 
@@ -51,7 +59,7 @@ const getData = function(dataName, id = null) {
 btnLoad.addEventListener('click', async () => {
     try {
         let posts = await getData('posts');
-        fillTableWithData(posts);
+        await fillTableWithData(posts);
         showTable(userTable);
     } catch (err) {
         showError(err.message);
