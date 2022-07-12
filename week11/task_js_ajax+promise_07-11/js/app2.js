@@ -1,6 +1,7 @@
 const btnLoad = document.querySelector('#btn-load-data');
 const userTable = document.querySelector('#data-table');
 const tblBody = userTable.querySelector('tbody');
+const spinnerDiv = document.querySelector('#spinner');
 
 const baseURL = 'https://jsonplaceholder.typicode.com/';
 
@@ -26,9 +27,14 @@ const checkIfArray = function(arr) {
     }
 }
 
-const showTable = function(table) {
-    table.classList.remove('d-none');
-    table.classList.add('d-block');
+const showElement = function(el) {
+    el.classList.remove('d-none');
+    el.classList.add('d-block');
+}
+
+const hideElement = function(el) {
+    el.classList.add('d-none');
+    el.classList.remove('d-block');
 }
 
 const showError = function(msg) {
@@ -58,9 +64,11 @@ const getData = function(dataName, id = null) {
 
 btnLoad.addEventListener('click', async () => {
     try {
+        showElement(spinner);
         let posts = await getData('posts');
         await fillTableWithData(posts);
-        showTable(userTable);
+        showElement(userTable);
+        hideElement(spinner);
     } catch (err) {
         showError(err.message);
         console.warn(err);
