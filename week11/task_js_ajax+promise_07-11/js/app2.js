@@ -5,25 +5,23 @@ const spinnerDiv = document.querySelector('#spinner');
 
 const baseURL = 'https://jsonplaceholder.typicode.com/';
 
-const fillTableWithData = async function(dataArr) {
-    checkIfArray(dataArr);
+const fillTableWithData = async function(postsArr, usersArr) {
+    checkIfArray(postsArr);
+    checkIfArray(usersArr);
     
-    let users = await getData('users');
-    checkIfArray(dataArr);
-    
-    for (let i = 0; i < dataArr.length; i++) {
-        // let user = await getData('users', dataArr[i].userId);
+    for (let i = 0; i < postsArr.length; i++) {
+        // let user = await getData('users', postsArr[i].userId);
         // checkIfArray(user);
 
-        let user = users.find(userToCheck => dataArr[i].userId === userToCheck.id);
+        let user = usersArr.find(userToCheck => postsArr[i].userId === userToCheck.id);
+
 
         const row = document.createElement('tr');
-
         // ${user[0].name}
         row.innerHTML = 
             `<td>${user.name}</td>
-            <td>${dataArr[i].title}</td>
-            <td>${dataArr[i].body}</td>`;
+            <td>${postsArr[i].title}</td>
+            <td>${postsArr[i].body}</td>`;
         tblBody.appendChild(row);
     }
 }
@@ -73,7 +71,8 @@ btnLoad.addEventListener('click', async () => {
     try {
         showElement(spinner);
         let posts = await getData('posts');
-        await fillTableWithData(posts);
+        let users = await getData('users');
+        await fillTableWithData(posts, users);
         showElement(userTable);
         hideElement(spinner);
     } catch (err) {
