@@ -7,16 +7,17 @@ const baseURL = 'https://jsonplaceholder.typicode.com/';
 
 const fillTableWithData = async function(postsArr, usersArr) {
     checkIfArray(postsArr);
-    checkIfArray(usersArr);
+    checkIfArray(postsArr);
     
     for (let i = 0; i < postsArr.length; i++) {
         // let user = await getData('users', postsArr[i].userId);
         // checkIfArray(user);
 
-        let user = usersArr.find(userToCheck => postsArr[i].userId === userToCheck.id);
+        let user = users.find(userToCheck => postsArr[i].userId === userToCheck.id);
 
 
-        const row = document.createElement('tr');
+        const row = document?.createElement('tr');
+
         // ${user[0].name}
         row.innerHTML = 
             `<td>${user.name}</td>
