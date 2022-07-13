@@ -13,14 +13,14 @@ const fillTableWithData = async function(postsArr, usersArr) {
         // let user = await getData('users', postsArr[i].userId);
         // checkIfArray(user);
 
-        let user = users.find(userToCheck => postsArr[i].userId === userToCheck.id);
+        let user = usersArr.find(userToCheck => postsArr[i].userId === userToCheck.id);
 
 
-        const row = document?.createElement('tr');
+        const row = document.createElement('tr');
 
         // ${user[0].name}
         row.innerHTML = 
-            `<td>${user.name}</td>
+            `<td>${user?.name}</td>
             <td>${postsArr[i].title}</td>
             <td>${postsArr[i].body}</td>`;
         tblBody.appendChild(row);
