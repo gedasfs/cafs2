@@ -7,42 +7,19 @@ P.S.
 https://nodejs.org/en/knowledge/command-line/how-to-parse-command-line-arguments/
 */
 
-const fs = require('node:fs');
-const yargs = require('yargs');
+const fs = require('fs');
 
-const argv = yargs
-    .usage('$0 <command> [options]')
-    .example('$0 cf -f filename.js -c "file content"')
-    .example('$0 cf --filename filename.js --content "file content"')
-    .command('cf', 'Creates a file with given name and file content.')
-    .option('filename', {
-        alias: 'f',
-        describe: 'File name (i.e. name.js)'
-    })
-    .option('content', {
-        alias: 'c',
-        describe: 'The content to write to file'
-    })
-    .alias('v', 'version')
-    .alias('h', 'help')
-    .demandOption(['f','c'])
-    .help()
-    .version(false)
-    .argv;
-    
+const myArgs = process.argv.slice(2);
+const fileName = myArgs[0];
+const fileContent = myArgs[1];
 
-
-if (argv._.includes('cf')) {
-    const fileName = argv.filename;
-    const fileContent = argv.content;
-    
+if (fileName && fileContent) {
     fs.appendFile(fileName, fileContent, (err) => {
         if (err) {
             throw err;
         }
         console.log('The file has been saved.');
     });
+} else {
+    console.log('Missing parameters.', myArgs)
 }
-
-console.log(argv);
-
