@@ -15,14 +15,24 @@ const argv = yargs
     .example('$0 cf -f filename.js -c "file content"')
     .example('$0 cf --filename filename.js --content "file content"')
     .command('cf', 'Creates a file with given name and file content.')
+    .option('filename', {
+        alias: 'f',
+        describe: 'File name (i.e. name.js)'
+    })
+    .option('content', {
+        alias: 'c',
+        describe: 'The content to write to file'
+    })
     .alias('v', 'version')
     .alias('h', 'help')
-    .alias('f', 'filename')
-    .alias('c', 'content')
-    .describe('f', 'File name (i.e. name.js)')
-    .describe('c', 'The content to write to file')
+    // .alias('f', 'filename')
+    // .alias('c', 'content')
+    // .describe('f', 'File name (i.e. name.js)')
+    // .describe('c', 'The content to write to file')
     .demandOption(['f','c'])
-    .help().argv;
+    .help()
+    .version(false)
+    .argv;
     
 
 
