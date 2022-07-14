@@ -16,7 +16,7 @@ const fileContent = myArgs[1];
 if (fileName && fileContent) {
     fs.appendFile(fileName, fileContent, (err) => {
         if (err) {
-            throw err;
+            console.log(err);
         }
         console.log('The file has been saved.');
     });
