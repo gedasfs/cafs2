@@ -40,7 +40,7 @@ if (argv._.includes('cf')) {
     const fileName = argv.filename;
     const fileContent = argv.content;
     
-    fs.writeFile(fileName, fileContent, (err) => {
+    fs.appendFile(fileName, fileContent, (err) => {
         if (err) {
             throw err;
         }
