@@ -15,6 +15,7 @@ const argv = yargs
     .example('$0 cf -f filename.js -c "file content"')
     .example('$0 cf --filename filename.js --content "file content"')
     .command('cf', 'Creates a file with given name and file content.')
+    .alias('v', 'version')
     .alias('h', 'help')
     .alias('f', 'filename')
     .alias('c', 'content')
@@ -33,9 +34,9 @@ if (argv._.includes('cf')) {
         if (err) {
             throw err;
         }
-        console.log('The file jas been saved.');
+        console.log('The file has been saved.');
     });
 }
 
-console.log(argv.content);
+console.log(argv);
 
