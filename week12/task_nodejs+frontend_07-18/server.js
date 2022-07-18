@@ -8,7 +8,6 @@ const generateFeedback = function(filePath, responseObj) {
             responseObj.writeHead(404, getContentType());
             responseObj.end('Resource not found.');
         } else {
-            // let ext = getFileExt(filePath);
             console.log(`File ${filePath} read ok.`);
             responseObj.writeHead(200, getContentType(filePath));
             responseObj.end(content);
