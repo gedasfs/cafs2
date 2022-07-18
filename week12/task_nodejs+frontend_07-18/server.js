@@ -35,8 +35,6 @@ const setContentTypeByExt = function(ext = '') {
             contentType['Content-Type'] = 'application/json'
             break;
         case 'txt':
-            contentType['Content-Type'] = 'text/plain'
-            break;
         case '':
             contentType['Content-Type'] = 'text/plain'
             break;
