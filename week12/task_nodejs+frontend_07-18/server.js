@@ -1,5 +1,6 @@
 const fs = require('node:fs');
 const http = require('node:http');
+const path = require('node:path');
 
 const generateFeedback = function(filePath, responseObj) {
     fs.readFile(filePath, (error, content) => {
@@ -42,19 +43,15 @@ const getContentType = function(fileName = '') {
 http.createServer(function(request, response) {
     console.log(request.url);
     
+    let file = null;
+
     if (request.url === '/' || request.url === '/index.html' || request.url === '/index') {
-        generateFeedback('index.html', response);
-    }
-    else if (request.url === '/sample') {
-        generateFeedback('data/sample.txt', response);
-    }
-    else if (request.url === '/user') {
-        generateFeedback('data/user.json', response);
-    }
-    else if (request.url === '/users') {
-        generateFeedback('data/users.json', response);
+        file = 'index.html';
     }
     else {
-        generateFeedback(request.url.slice(1), response);
+        file = request.url.slice(1);
     }
+
+    const filePath = path.join('./public', path.normalize(file));
+    generateFeedback(filePath, response);
 }).listen(8080, () => console.log('Listening on port 8080.'));
