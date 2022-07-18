@@ -66,7 +66,6 @@ function loadUsersXHR() {
   getDataFrom('http://localhost:8080/users')
     .then(response => JSON.parse(response))
     .then(dataArr => {
-
       dataArr.forEach(data => {
         usersOutput.innerHTML += `<p>${data.name}, ${data.email}</p>`;
         console.log(data);
