@@ -27,6 +27,11 @@ function getDataFrom(source) {
     xhr.addEventListener('load', () => {
       if (xhr.status === 200) {
         console.log(xhr);
+
+        if (xhr.getResponseHeader('Content-Type') === 'application/json') {
+          resolve(JSON.parse(xhr.response));
+        }
+
         resolve(xhr.response);
       } else {
         reject(xhr.responseText);
@@ -53,7 +58,6 @@ function loadTextFileXHR() {
 //-- Load User Information
 function loadUserXHR() {
   getDataFrom('http://localhost:8080/user')
-    .then(response => JSON.parse(response))
     .then(data => {
       userOutput.textContent = `${data.name}, ${data.email}`;
       console.log(data);
@@ -64,7 +68,6 @@ function loadUserXHR() {
 //-- Load Users information
 function loadUsersXHR() {
   getDataFrom('http://localhost:8080/users')
-    .then(response => JSON.parse(response))
     .then(dataArr => {
       dataArr.forEach(data => {
         usersOutput.innerHTML += `<p>${data.name}, ${data.email}</p>`;
