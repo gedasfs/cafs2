@@ -5,23 +5,20 @@ const generateFeedback = function(filePath, responseObj) {
     fs.readFile(filePath, (error, content) => {
         if (error) {
             console.log('Error reading file: ', error);
-            responseObj.writeHead(404, getContentTypeByExt());
+            responseObj.writeHead(404, getContentType());
             responseObj.end('Resource not found.');
         } else {
-            let ext = getFileExt(filePath);
+            // let ext = getFileExt(filePath);
             console.log(`File ${filePath} read ok.`);
-            responseObj.writeHead(200, getContentTypeByExt(ext));
+            responseObj.writeHead(200, getContentType(filePath));
             responseObj.end(content);
         }
     });
     
 }
 
-const getFileExt = function(fileName) {
-    return fileName.includes('.') ? fileName.split('.').pop() : '';
-}
-
-const getContentTypeByExt = function(ext = '') {
+const getContentType = function(fileName = '') {
+    let ext = fileName.includes('.') ? fileName.split('.').pop() : '';
     let contentType = {'Content-Type': 'text/html',};
     
     switch (ext) {

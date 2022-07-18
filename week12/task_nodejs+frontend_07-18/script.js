@@ -50,7 +50,6 @@ function loadTextFileXHR() {
   getDataFrom('http://localhost:8080/sample')
     .then(response => {
       textOutput.textContent = response;
-      console.log(response);
     })
     .catch(error => console.log(error));
 }
@@ -60,7 +59,6 @@ function loadUserXHR() {
   getDataFrom('http://localhost:8080/user')
     .then(data => {
       userOutput.textContent = `${data.name}, ${data.email}`;
-      console.log(data);
     })
     .catch(error => console.log(error));
 }
@@ -71,7 +69,6 @@ function loadUsersXHR() {
     .then(dataArr => {
       dataArr.forEach(data => {
         usersOutput.innerHTML += `<p>${data.name}, ${data.email}</p>`;
-        console.log(data);
       })
     })
     .catch(error => console.log(error));
