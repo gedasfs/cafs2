@@ -51,7 +51,7 @@ function loadTextFileXHR() {
     .then(response => {
       textOutput.textContent = response;
     })
-    .catch(error => console.log(error));
+    .catch(error => console.warn(error));
 }
 
 //-- Load User Information
@@ -60,7 +60,7 @@ function loadUserXHR() {
     .then(data => {
       userOutput.textContent = `${data.name}, ${data.email}`;
     })
-    .catch(error => console.log(error));
+    .catch(error => console.warn(error));
 }
 
 //-- Load Users information
@@ -71,7 +71,7 @@ function loadUsersXHR() {
         usersOutput.innerHTML += `<p>${data.name}, ${data.email}</p>`;
       })
     })
-    .catch(error => console.log(error));
+    .catch(error => console.warn(error));
 }
 
 //-- Load Users information

@@ -45,7 +45,7 @@ http.createServer(function(request, response) {
     if (request.url === '/' || request.url === '/index.html' || request.url === '/index') {
         generateFeedback('index.html', response);
     }
-    else if (request.url === '/sample') {
+    else if (request.url === '/samples') {
         generateFeedback('data/sample.txt', response);
     }
     else if (request.url === '/user') {
