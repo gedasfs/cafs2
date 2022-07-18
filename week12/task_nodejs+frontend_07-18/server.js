@@ -55,13 +55,13 @@ http.createServer(function(request, response) {
         generateFeedback('script.js', response);
     }
     else if (request.url === '/sample') {
-        generateFeedback('sample.txt', response);
+        generateFeedback('data/sample.txt', response);
     }
     else if (request.url === '/user') {
-        generateFeedback('user.json', response);
+        generateFeedback('data/user.json', response);
     }
     else if (request.url === '/users') {
-        generateFeedback('users.json', response);
+        generateFeedback('data/users.json', response);
     }
     else {
         response.writeHead(404, setContentTypeByExt());
