@@ -51,9 +51,6 @@ http.createServer(function(request, response) {
     if (request.url === '/' || request.url === '/index.html' || request.url === '/index') {
         generateFeedback('index.html', response);
     }
-    else if (request.url === '/script.js') {
-        generateFeedback('script.js', response);
-    }
     else if (request.url === '/sample') {
         generateFeedback('data/sample.txt', response);
     }
@@ -64,7 +61,6 @@ http.createServer(function(request, response) {
         generateFeedback('data/users.json', response);
     }
     else {
-        response.writeHead(404, setContentTypeByExt());
-        response.end('Page not found.');
-    }    
+        generateFeedback(request.url.slice(1), response);
+    }
 }).listen(8080, () => console.log('Listening on port 8080.'));
