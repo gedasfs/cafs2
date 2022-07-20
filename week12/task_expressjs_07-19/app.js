@@ -21,7 +21,7 @@ app
 })
 .get('/cpu', function(req, res) {
     let cpu = {
-        model: os.cpus()[0].model,
+        model: os.cpus()[0]?.model,
         cores: os.cpus().length,
     };
 
