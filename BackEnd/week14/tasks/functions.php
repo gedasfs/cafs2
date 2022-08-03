@@ -47,7 +47,8 @@
     // Parašykite funkciją, kuri priima kaip parametrą skaičių nuo 1 iki 7, o grąžina savaitės dieną lietuvių kalba.
     function getDayAsStr($dayNum) {
         $weekNames = ['Pirmadienis', 'Antradienis', 'Trečiadienis', 'Ketvirtadienis', 'Penktadienis', 'Šeštadienis', 'Sekmadienis'];
-        
+        $dayNum = (int) $dayNum;
+
         if ($dayNum <= 7 && $dayNum >= 1) {
             return $weekNames[$dayNum - 1];
         } else {
