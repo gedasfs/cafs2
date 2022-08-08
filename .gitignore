@@ -2,3 +2,4 @@ node_modules
 mix-manifest.json
 mix.js.map
 .DS_Store
+.env
