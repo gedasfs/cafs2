@@ -19,7 +19,7 @@
                 <p>Miestas: 
                     <select name="city">
                         <?php foreach ($cities as $id => $city): ?>
-                        <option <?= isset($messages['error']) && $_POST['city'] == $id ? 'selected' : '' ?> value="<?= $id; ?>"><?= $city; ?></option>
+                        <option <?= isset($messages['error']) && isset($_POST['city']) && $_POST['city'] == $id ? 'selected' : '' ?> value="<?= $id; ?>"><?= $city; ?></option>
                         <?php endforeach; ?>
                     </select>
                 </p>
@@ -31,7 +31,7 @@
                 </div>
                 <h4>Papildoma informacija</h4>
                 <textarea name="additional_info" cols="35" rows="5" placeholder="Pvz.: turite C++ programavimo patirties"><?= isset($messages['error']) && isset($_POST['additional_info']) ? $_POST['additional_info'] : '' ?></textarea>
-                <p><button type="submit" name="reg_form" value="submitted">Siųsti</button></p>
+                <p><button type="submit">Siųsti</button></p>
             </form>
             
             <?php if (count($messages)): ?>
