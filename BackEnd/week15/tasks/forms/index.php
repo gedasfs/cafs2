@@ -23,9 +23,9 @@
 
     require_once './views/index.phtml';
 
-    if (isset($messages['success'])) {
+    // if (isset($messages['success'])) {
         echo '<pre>';
         print_r($_POST);
         echo '</pre>';
-    }
+    // }
     

@@ -18,14 +18,14 @@
                 <p>Pavardė: <input type="text" name="lastname" value="<?= isset($messages['error']) && isset($_POST['lastname']) ? $_POST['lastname'] : ''; ?>"></p>
                 <p>Miestas: 
                     <select name="city">
-                        <?php foreach ($cities as $city): ?>
-                        <option <?= isset($messages['error']) && $_POST['city'] === $city ? 'selected' : '' ?> value="<?= $city; ?>"><?= $city; ?></option>
+                        <?php foreach ($cities as $id => $city): ?>
+                        <option <?= isset($messages['error']) && $_POST['city'] == $id ? 'selected' : '' ?> value="<?= $id; ?>"><?= $city; ?></option>
                         <?php endforeach; ?>
                     </select>
                 </p>
                 <div class="coding-langs">
                     <h3>Programavimo kalba:</h3>
-                    <?php foreach ($codingLangs as $lang): ?>
+                    <?php foreach ($codingLangs as $id => $lang): ?>
                     <p><?= $lang; ?> <input type="checkbox" name="coding_lang[]" value="<?= $lang; ?>"></p>
                     <?php endforeach; ?>
                 </div>
