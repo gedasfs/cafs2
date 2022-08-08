@@ -13,13 +13,13 @@
             <h1>Registracija į kursus</h1>
             <hr>
 
-            <form action="" method="POST">
+            <form method="POST">
                 <p>Vardas: <input type="text" name="name" value="<?= isset($messages['error']) && isset($_POST['name']) ? $_POST['name'] : ''; ?>"></p>
                 <p>Pavardė: <input type="text" name="lastname" value="<?= isset($messages['error']) && isset($_POST['lastname']) ? $_POST['lastname'] : ''; ?>"></p>
                 <p>Miestas: 
                     <select name="city">
                         <?php foreach ($cities as $city): ?>
-                        <option value="<?= $city; ?>"><?= $city; ?></option>
+                        <option <?= isset($messages['error']) && $_POST['city'] === $city ? 'selected' : '' ?> value="<?= $city; ?>"><?= $city; ?></option>
                         <?php endforeach; ?>
                     </select>
                 </p>
@@ -30,7 +30,7 @@
                     <?php endforeach; ?>
                 </div>
                 <h4>Papildoma informacija</h4>
-                <textarea name="additional_info" cols="35" rows="5" placeholder="Pvz.: turite C++ programavimo patirties"></textarea>
+                <textarea name="additional_info" cols="35" rows="5" placeholder="Pvz.: turite C++ programavimo patirties"><?= isset($messages['error']) && isset($_POST['additional_info']) ? $_POST['additional_info'] : '' ?></textarea>
                 <p><button type="submit" name="reg_form" value="submitted">Siųsti</button></p>
             </form>
             
