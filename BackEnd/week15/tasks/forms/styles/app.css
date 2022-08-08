@@ -1,0 +1,21 @@
+main {
+    max-width: 500px;
+
+}
+
+main .container {
+    border-left: 2px solid black;
+    padding-left: 20px;
+}
+
+.coding-langs p {
+    margin: 5px 0px;
+}
+
+.messages .error {
+    color: red;
+}
+
+.messages .success {
+    color: green;
+}
