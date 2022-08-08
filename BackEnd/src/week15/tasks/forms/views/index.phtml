@@ -14,32 +14,32 @@
             <hr>
 
             <form method="POST">
-                <p>Vardas: <input type="text" name="name" value="<?= isset($messages['error']) && isset($_POST['name']) ? $_POST['name'] : ''; ?>"></p>
-                <p>Pavardė: <input type="text" name="lastname" value="<?= isset($messages['error']) && isset($_POST['lastname']) ? $_POST['lastname'] : ''; ?>"></p>
+                <p>Vardas: <input type="text" name="name" value="<?php echo isset($messages['error']) && isset($_POST['name']) ? $_POST['name'] : ''; ?>"></p>
+                <p>Pavardė: <input type="text" name="lastname" value="<?php echo isset($messages['error']) && isset($_POST['lastname']) ? $_POST['lastname'] : ''; ?>"></p>
                 <p>Miestas: 
                     <select name="city">
                         <?php foreach ($cities as $id => $city): ?>
-                        <option <?= isset($messages['error']) && isset($_POST['city']) && $_POST['city'] == $id ? 'selected' : '' ?> value="<?= $id; ?>"><?= $city; ?></option>
+                        <option <?php echo isset($messages['error']) && isset($_POST['city']) && $_POST['city'] == $id ? 'selected' : '' ?> value="<?php echo $id; ?>"><?php echo $city; ?></option>
                         <?php endforeach; ?>
                     </select>
                 </p>
                 <div class="coding-langs">
                     <h3>Programavimo kalba:</h3>
                     <?php foreach ($codingLangs as $id => $lang): ?>
-                    <p><?= $lang; ?> <input type="checkbox" name="coding_lang[]" value="<?= $lang; ?>"></p>
+                    <p><?php echo $lang; ?> <input type="checkbox" name="coding_lang[]" value="<?php echo $lang; ?>"></p>
                     <?php endforeach; ?>
                 </div>
                 <h4>Papildoma informacija</h4>
-                <textarea name="additional_info" cols="35" rows="5" placeholder="Pvz.: turite C++ programavimo patirties"><?= isset($messages['error']) && isset($_POST['additional_info']) ? $_POST['additional_info'] : '' ?></textarea>
+                <textarea name="additional_info" cols="35" rows="5" placeholder="Pvz.: turite C++ programavimo patirties"><?php echo isset($messages['error']) && isset($_POST['additional_info']) ? $_POST['additional_info'] : '' ?></textarea>
                 <p><button type="submit">Siųsti</button></p>
             </form>
             
             <?php if (count($messages)): ?>
             <div class="messages">
                 <?php if (isset($messages['error'])): ?>
-                    <p class="error"><?= $messages['msgStr']; ?></p>
+                    <p class="error"><?php echo $messages['msgStr']; ?></p>
                 <?php elseif (isset($messages['success'])): ?>
-                    <p class="success"><?= $messages['msgStr']; ?></p>
+                    <p class="success"><?php echo $messages['msgStr']; ?></p>
                 <?php endif; ?>
             </div>
             <?php endif; ?>
