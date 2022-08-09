@@ -1,8 +1,13 @@
 <?php
 require_once './configs/index_form_vars.php';
+require_once './helpers/fileUpload.php';
+
 $messages = [];
 
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $photo = checkFileUpload($_FILES, 'profile_photo');
+    
 
     if ((!isset($_POST['name']) || $_POST['name'] == '') || (!isset($_POST['lastname']) || $_POST['lastname'] == '')) {
         $messages['error'] = true;
@@ -10,19 +15,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } elseif (!isset($_POST['coding_lang']) || !count($_POST['coding_lang'])) {
         $messages['error'] = true;
         $messages['msgStr'] = 'Būtina pasirinkti bent vieną programavimo kalbą.';
+    } elseif (isset($photo['error'])) {
+        $messages['error'] = true;
+        $messages['msgStr'] = $photo['errorMsg'];
     } else {
         $messages['success'] = true;
-        $messages['msgStr'] = 'Jūsų registracija sėkminga.';
+        $photoDir = moveUploadedFile($photo['fileArr'], 'profile_photos');
+
     }
 }
 
 
 
-require_once './views/index.phtml';
-
 if (isset($messages['success'])) {
-    echo '<pre>';
-    print_r($_POST);
-    echo '</pre>';
+    require_once './views/profile.phtml';
+} else {
+    require_once './views/form.phtml';
 }
-    
+   

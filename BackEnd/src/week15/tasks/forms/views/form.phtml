@@ -9,13 +9,13 @@
 </head>
 <body>
     <main>
-        <div class="container">
+        <div class="container vruler">
             <h1>Registracija į kursus</h1>
             <hr>
 
-            <form method="POST">
-                <p>Vardas: <input type="text" name="name" value="<?php echo isset($messages['error']) && isset($_POST['name']) ? $_POST['name'] : ''; ?>"></p>
-                <p>Pavardė: <input type="text" name="lastname" value="<?php echo isset($messages['error']) && isset($_POST['lastname']) ? $_POST['lastname'] : ''; ?>"></p>
+            <form method="POST" enctype="multipart/form-data">
+                <p>Vardas*: <input type="text" name="name" value="<?php echo isset($messages['error']) && isset($_POST['name']) ? $_POST['name'] : ''; ?>"></p>
+                <p>Pavardė*: <input type="text" name="lastname" value="<?php echo isset($messages['error']) && isset($_POST['lastname']) ? $_POST['lastname'] : ''; ?>"></p>
                 <p>Miestas: 
                     <select name="city">
                         <?php foreach ($cities as $id => $city): ?>
@@ -24,14 +24,18 @@
                     </select>
                 </p>
                 <div class="coding-langs">
-                    <h3>Programavimo kalba:</h3>
+                    <h3>Programavimo kalba*:</h3>
                     <?php foreach ($codingLangs as $id => $lang): ?>
                     <p><?php echo $lang; ?> <input type="checkbox" name="coding_lang[]" value="<?php echo $lang; ?>"></p>
                     <?php endforeach; ?>
                 </div>
+                <div class="photo">
+                    <h4>Nuotrauka:</h4>
+                    <input type="file" name="profile_photo">
+                </div>
                 <h4>Papildoma informacija</h4>
                 <textarea name="additional_info" cols="35" rows="5" placeholder="Pvz.: turite C++ programavimo patirties"><?php echo isset($messages['error']) && isset($_POST['additional_info']) ? $_POST['additional_info'] : '' ?></textarea>
-                <p><button type="submit">Siųsti</button></p>
+                <p><button>Siųsti</button></p>
             </form>
             
             <?php if (count($messages)): ?>
