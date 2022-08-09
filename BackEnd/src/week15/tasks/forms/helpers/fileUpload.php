@@ -79,7 +79,11 @@ function moveUploadedFile($fileArr, $folderName) {
 
     if (!is_dir($dirPath)) {
         mkdir($dirPath, 0777, TRUE);
-        chmod($dirPath, 0777);      // mkdir does not set perm. to 0777 due to umask: 0777 - 022 (umask) = 0755 --> changing perm. manually
+
+        // https://stackoverflow.com/questions/3997641/why-cant-php-create-a-directory-with-777-permissions
+        // https://www.php.net/manual/en/function.umask.php
+        // https://www.php.net/manual/en/function.chmod.php
+        chmod($dirPath, 0777);      // mkdir does not set perm. to 0777 due to umask: 0777 - 022 (umask) = 0755 --> should change umask, but not recommended --> changing perm. manually
     }
 
     $ext = getFileExt($fileArr['name']);
