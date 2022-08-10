@@ -15,6 +15,7 @@ define('UPPLOAD_ERR_MSGS_LT', [
     8 => 'Failas nebuvo įkeltas (serverio klaida).',
     9 => 'Neleistinas failo plėtinys.'
 ]);
+define('MAX_ALLOWED_SIZE', 1 * 1024 * 1024);
 
 
 function checkFileUpload($uplFile, $fileInputName) {
@@ -34,6 +35,14 @@ function checkFileUpload($uplFile, $fileInputName) {
     if (!in_array($ext, ALLOWED_EXTS)) {
         $result['error'] = true;
         $result['errorCode'] = 9;
+        $result['errorMsg'] = getErrorMsg($result['errorCode']);
+
+        return $result;
+    }
+
+    if ($file['size'] > MAX_ALLOWED_SIZE) {
+        $result['error'] = true;
+        $result['errorCode'] = 1;
         $result['errorMsg'] = getErrorMsg($result['errorCode']);
 
         return $result;
