@@ -23,32 +23,28 @@ function checkFileUpload($uplFile, $fileInputName) {
     $result = [];
 
     if (!$file || $file['error'] !== UPLOAD_ERR_OK) {
-        $result['error'] = true;
-        $result['errorCode'] = $file['error'];
-        $result['errorMsg'] = getErrorMsg($result['errorCode']);
-
-        return $result;
+        return setError($file['error']);
     }
 
     $ext = getFileExt($file['name']);
 
     if (!in_array($ext, ALLOWED_EXTS)) {
-        $result['error'] = true;
-        $result['errorCode'] = 9;
-        $result['errorMsg'] = getErrorMsg($result['errorCode']);
-
-        return $result;
+        return setError(9);
     }
 
     if ($file['size'] > MAX_ALLOWED_SIZE) {
-        $result['error'] = true;
-        $result['errorCode'] = 1;
-        $result['errorMsg'] = getErrorMsg($result['errorCode']);
-
-        return $result;
+        return setError(1);
     }
 
-    $result['fileArr'] = $file;
+    return $file;
+}
+
+function setError($errCode) {
+    $result = [];
+
+    $result['error'] = true;
+    $result['errorCode'] = $errCode;
+    $result['errorMsg'] = getErrorMsg($result['errorCode']);
 
     return $result;
 }

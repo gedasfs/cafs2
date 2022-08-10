@@ -15,12 +15,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } elseif (!isset($_POST['coding_lang']) || !count($_POST['coding_lang'])) {
         $messages['error'] = true;
         $messages['msgStr'] = 'Būtina pasirinkti bent vieną programavimo kalbą.';
-    } elseif (isset($photo['error'])) {
+    } elseif (isset($photo['error']) && $photo['error']) {
         $messages['error'] = true;
         $messages['msgStr'] = $photo['errorMsg'];
     } else {
         $messages['success'] = true;
-        $photoDir = moveUploadedFile($photo['fileArr'], 'profile_photos');
+        $photoDir = moveUploadedFile($photo, 'profile_photos');
 
     }
 }
