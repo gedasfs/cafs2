@@ -32,4 +32,3 @@ if (isset($messages['success'])) {
 } else {
     require_once './views/form.phtml';
 }
-   

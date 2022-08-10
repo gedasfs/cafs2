@@ -26,7 +26,18 @@
                 <div class="coding-langs">
                     <h3>Programavimo kalba*:</h3>
                     <?php foreach ($codingLangs as $id => $lang): ?>
-                    <p><?php echo $lang; ?> <input type="checkbox" name="coding_lang[]" value="<?php echo $lang; ?>"></p>
+                    <p><?php echo $lang; ?> 
+                        <input 
+                            type="checkbox" 
+                            name="coding_lang[]" 
+                            value="<?php echo $lang; ?>"
+                            <?php if (isset($messages['error']) && isset($_POST['coding_lang'])): ?>
+                                <?php foreach ($_POST['coding_lang'] as $setCodingLang): ?>
+                                    <?php echo ($setCodingLang == $lang) ? 'checked' : ''; ?>
+                                <?php endforeach; ?>
+                            <?php endif; ?>
+                        >
+                    </p>
                     <?php endforeach; ?>
                 </div>
                 <div class="photo">
