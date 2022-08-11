@@ -15,7 +15,8 @@ services:
 
   php:
     container_name: ca-php
-    image: php:8.1.1-fpm-alpine3.15
+    # image: php:8.1.1-fpm-alpine3.15
+    build: ./docker/php/
     working_dir: /var/www
     volumes:
       - ./src:/var/www
