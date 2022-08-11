@@ -1,6 +1,6 @@
 <?php
-require_once './configs/index_form_vars.php';
-require_once './helpers/fileUpload.php';
+require_once './../configs/index_form_vars.php';
+require_once './../helpers/fileUpload.php';
 
 $messages = [];
 
@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
 if (isset($messages['success'])) {
-    require_once './views/profile.phtml';
+    require_once './../views/profile.phtml';
 } else {
-    require_once './views/form.phtml';
+    require_once './../views/form.phtml';
 }
