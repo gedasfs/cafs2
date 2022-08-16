@@ -1,7 +1,7 @@
 <?php
-require_once './../configs/index_form_vars.php';
-require_once './../helpers/fileUpload.php';
-require_once './../helpers/profileExportImage.php';
+require_once '../configs/forIndexForm.php';
+require_once '../helpers/fileUpload.php';
+require_once '../helpers/profileExport.php';
 
 $response = [];
 
@@ -23,7 +23,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $photoDir = moveUploadedFile($photo, 'profile_photos');
         $response['profilePNGPath'] = createProfileAsPNG($_POST, $photoDir);;
-
     }
 
     echo json_encode($response);

@@ -1,8 +1,7 @@
 <?php
-require_once './../configs/dirs.php';
-define('EXPORT_TMPL_NAME_PNG', 'userProfileTmpl.png');
-define('USER_PROFILES_DIR', UPLOAD_DIR_FULL . '/user_profiles/');
-define('FONT', FONTS_DIR_FULL . '/Lato-Black.ttf');
+require_once '../configs/dirs.php';
+require_once '../configs/forProfileExports.php';
+
 
 function createProfileAsPNG($userInfo, $photoPath) {
     $imgMarginLeft = 35;

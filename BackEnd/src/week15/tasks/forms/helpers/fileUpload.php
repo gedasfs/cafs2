@@ -1,19 +1,6 @@
 <?php
-require_once './../configs/dirs.php';
-
-define('MAX_ALLOWED_SIZE', 5 * 1024 * 1024);    //Mb
-define('ALLOWED_EXTS', ['png', 'jpg', 'jpeg']);
-define('UPPLOAD_ERR_MSGS_LT', [
-    1 => 'Failas per didelis. Max ' . MAX_ALLOWED_SIZE,
-    2 => 'Failas per didelis.',
-    3 => 'Failas nebuvo pilnai įkeltas.',
-    4 => 'Failas nebuvo pasirinktas.',
-    6 => 'Nerastas tmp folderis.',
-    7 => 'Failo nepavyko įrašyti.',
-    8 => 'Failas nebuvo įkeltas (serverio klaida).',
-    9 => 'Neleistinas failo plėtinys.'
-]);
-
+require_once '../configs/dirs.php';
+require_once '../configs/forFileUploads.php';
 
 function checkFileUpload($uplFile, $fileInputName) {
     $file = isset($uplFile[$fileInputName]) ? $uplFile[$fileInputName] : null;
@@ -99,9 +86,10 @@ function moveUploadedFile($fileArr, $folderName) {
     $moveResult = move_uploaded_file($fileArr['tmp_name'], $filePath);
 
     if ($moveResult) {
-        chmod($filePath, 0777);
+        // chmod($filePath, 0777);
         $downloadFilePath = sprintf('..%s/%s/%s', UPLOAD_DIR, $folderName, $fileName);
     } else {
+        // to do
         $downloadFilePath = 'path_to_default_img';
     }
 
