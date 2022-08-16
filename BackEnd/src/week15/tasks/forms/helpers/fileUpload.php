@@ -2,6 +2,7 @@
 require_once '../configs/dirs.php';
 require_once '../configs/forFileUploads.php';
 
+
 function checkFileUpload($uplFile, $fileInputName) {
     $file = isset($uplFile[$fileInputName]) ? $uplFile[$fileInputName] : null;
     $result = [];
