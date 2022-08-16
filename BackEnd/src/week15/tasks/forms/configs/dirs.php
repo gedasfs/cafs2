@@ -1,5 +1,5 @@
 <?php
-// Should be set of projecy runs not in the server root, 
+// Should be set if project runs not in the server root (i.e. /var/www), 
 // i.e. project resides in /var/www/project/forms, 
 // then define('PROJECT_DIR', '/project/forms');
 define('PROJECT_DIR', '');
