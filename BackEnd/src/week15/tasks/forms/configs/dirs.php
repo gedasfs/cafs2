@@ -1,5 +1,5 @@
 <?php
-define('PROJECT_DIR', '/week15/tasks/forms');
+define('PROJECT_DIR', '');
 define('PROJECT_DIR_FULL', $_SERVER['DOCUMENT_ROOT'] . PROJECT_DIR);
 
 define('UPLOAD_DIR', '/uploads');
