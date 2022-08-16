@@ -50,6 +50,11 @@ function createProfileAsPNG($userInfo, $photoPath) {
     imagettftext($bckIm, 14, 0, $langsSX, $langsSY, $colorForText, FONT, $userInfo['coding_langs']);
     imagettftext($bckIm, 12, 0, $addInfoSX, $addInfoSY, $colorForText, FONT, wordwrap($userInfo['additional_info']));
 
+    if (!is_dir(USER_PROFILES_DIR)) {
+        mkdir(USER_PROFILES_DIR, 0777, TRUE);
+        chmod(USER_PROFILES_DIR, 0777);      // mkdir does not set perm. to 0777 due to umask: 0777 - 022 (umask) = 0755 --> should change umask, but not recommended --> changing perm. manually
+    }
+
     imagepng($bckIm, USER_PROFILES_DIR . $userPhotoName);
     imagedestroy($bckIm);
     imagedestroy($userImage);
