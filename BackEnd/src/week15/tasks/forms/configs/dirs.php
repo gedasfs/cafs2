@@ -1,5 +1,9 @@
 <?php
+// Should be set of projecy runs not in the server root, 
+// i.e. project resides in /var/www/project/forms, 
+// then define('PROJECT_DIR', '/project/forms');
 define('PROJECT_DIR', '');
+
 define('PROJECT_DIR_FULL', $_SERVER['DOCUMENT_ROOT'] . PROJECT_DIR);
 
 define('UPLOAD_DIR', '/uploads');
