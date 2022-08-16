@@ -1,12 +1,10 @@
 <?php
 require_once './../configs/dirs.php';
 
-define('UPLOAD_DIR', 'uploads');
-define('UPLOAD_DIR_ROOT', ROOT_DIR .'/' . UPLOAD_DIR);
-
+define('MAX_ALLOWED_SIZE', 5 * 1024 * 1024);    //Mb
 define('ALLOWED_EXTS', ['png', 'jpg', 'jpeg']);
 define('UPPLOAD_ERR_MSGS_LT', [
-    1 => 'Failas per didelis.',
+    1 => 'Failas per didelis. Max ' . MAX_ALLOWED_SIZE,
     2 => 'Failas per didelis.',
     3 => 'Failas nebuvo pilnai įkeltas.',
     4 => 'Failas nebuvo pasirinktas.',
@@ -15,7 +13,6 @@ define('UPPLOAD_ERR_MSGS_LT', [
     8 => 'Failas nebuvo įkeltas (serverio klaida).',
     9 => 'Neleistinas failo plėtinys.'
 ]);
-define('MAX_ALLOWED_SIZE', 1 * 1024 * 1024);    //Mb
 
 
 function checkFileUpload($uplFile, $fileInputName) {
@@ -80,7 +77,7 @@ function generateRandomString($length = 10) {
 }
 
 function moveUploadedFile($fileArr, $folderName) {
-    $dirPath = sprintf('%s/%s', UPLOAD_DIR_ROOT, $folderName);
+    $dirPath = sprintf('%s/%s', UPLOAD_DIR_FULL, $folderName);
 
     if (!is_dir($dirPath)) {
         mkdir($dirPath, 0777, TRUE);
@@ -103,7 +100,7 @@ function moveUploadedFile($fileArr, $folderName) {
 
     if ($moveResult) {
         chmod($filePath, 0777);
-        $downloadFilePath = sprintf('../%s/%s/%s', UPLOAD_DIR, $folderName, $fileName);
+        $downloadFilePath = sprintf('..%s/%s/%s', UPLOAD_DIR, $folderName, $fileName);
     } else {
         $downloadFilePath = 'path_to_default_img';
     }

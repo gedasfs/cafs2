@@ -1,21 +1,11 @@
 main {
-    max-width: 500px;
-
+    min-width: 345px;
 }
-
 .vruler {
     border-left: 2px solid black;
     padding-left: 20px;
 }
 
-.coding-langs p {
-    margin: 5px 0px;
-}
-
-.messages .error {
-    color: red;
-}
-
-.messages .success {
-    color: green;
+#userProfile img {
+    width: 800px;
 }
