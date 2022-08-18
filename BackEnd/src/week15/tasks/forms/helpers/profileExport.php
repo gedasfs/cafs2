@@ -3,7 +3,7 @@ require_once '../configs/dirs.php';
 require_once '../configs/forProfileExports.php';
 
 
-function createProfileAsPNG($userInfo, $photoPath) {
+function createProfileAsPng($userInfo, $photoPath) {
     $imgMarginLeft = 35;
     $nameSX = 435;
     $nameSY = 95;
@@ -38,10 +38,6 @@ function createProfileAsPNG($userInfo, $photoPath) {
     imagefilter($userImage, IMG_FILTER_GRAYSCALE);
 
     $colorForText = imageColorAllocate($bckIm, 64, 64, 64);
-
-    imagettftext($bckIm, 20, 0, $nameSX, $nameSY, $colorForText, FONT, $userInfo['fullname']);
-    imagettftext($bckIm, 14, 0, $langsSX, $langsSY, $colorForText, FONT, $userInfo['coding_langs']);
-    imagettftext($bckIm, 12, 0, $addInfoSX, $addInfoSY, $colorForText, FONT, wordwrap($userInfo['additional_info']));
 
     imagecopy($bckIm, $userImage, $imgMarginLeft, ($bckImSizeY - $userImageSizeY) / 2, 0, 0, $userImageSizeX, $userImageSizeY);
 

@@ -64,7 +64,7 @@ function generateRandomString($length = 10) {
     return $randomString;
 }
 
-function moveUploadedFile($fileArr, $folderName) {
+function _moveUploadedFile($fileArr, $folderName) {
     $dirPath = sprintf('%s/%s', UPLOAD_DIR_FULL, $folderName);
 
     if (!is_dir($dirPath)) {

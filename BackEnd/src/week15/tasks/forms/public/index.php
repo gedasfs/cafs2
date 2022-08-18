@@ -22,11 +22,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $response['error'] = false;
         $response['msgStr'] = 'Jūsų informacija išsaugota sėkmingai.';
 
-        $photoDir = moveUploadedFile($photo, 'profile_photos');
-        $response['profilePNGPath'] = createProfileAsPNG($_POST, $photoDir);;
+        $photoDir = _moveUploadedFile($photo, 'profile_photos');
+        $response['profilePNGPath'] = createProfileAsPng($_POST, $photoDir);
     }
 
     echo json_encode($response);
+    exit;
 } else {
 
     require_once './../views/index.phtml';

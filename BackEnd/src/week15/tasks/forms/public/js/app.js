@@ -22,7 +22,6 @@ function showUserProfileImg(appendTo, imagePath) {
 
 document.addEventListener('DOMContentLoaded', () => {
     const userProfileForm = document.querySelector('#userProfileForm');
-    // const userRegistrationDiv = document.querySelector('#userRegistration');
     const userProfile = document.querySelector('#userProfile');
     
     userProfileForm.addEventListener('submit', async event => {
