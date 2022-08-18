@@ -25,7 +25,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $photoDir = _moveUploadedFile($photo, 'profile_photos');
         $response['profilePNGPath'] = createProfileAsPng($_POST, $photoDir);
     }
-
+    
+    if ($response['error'] === true) {
+        $response['statusCode'] = 422;
+    } else {
+        $response['statusCode'] = 200;
+    }
+    http_response_code($response['statusCode']);
     echo json_encode($response);
     exit;
 } else {
