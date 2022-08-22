@@ -14,42 +14,39 @@ function flatten($array, $prefix = '') {
     return $result;
 }
 
-$csvFilePath = 'excelFile.csv';
+$csvFilePath = 'users.csv';
 $apiUrl = 'https://randomuser.me/api/';
 
 try {
     $data = json_decode(file_get_contents($apiUrl), true);
 
     if (isset($data) && array_key_exists('results', $data)) {
-        $flatData = [];
         $headersSaved = false;
 
-        foreach ($data['results'] as $line) {
-            $line['#headers'] = '#data';
-            $flatData[] = flatten($line);
-        }
-
         $file = fopen($csvFilePath, 'a+');
-
         $fileData = fgetcsv($file);
 
         if (is_array($fileData) && in_array('#headers', $fileData)) {
             $headersSaved = true;
         }
 
-        foreach ($flatData as $line) {
+        foreach ($data['results'] as $line) {
+            $flatData = flatten($line);
+            $flatData['#saved'] = date('Y-m-d H:i:s');
+            $flatData['#headers'] = '#data';
+
             if (!$headersSaved) {
-                fputcsv($file, array_keys($line));
+                fputcsv($file, array_keys($flatData));
                 $headersSaved = true;
             }
 
-            fputcsv($file, array_values($line));
+            fputcsv($file, array_values($flatData));
         }
 
         fclose($file);
 
         echo "Info from '{$apiUrl}' saved to '{$csvFilePath}'";
-        exit;
+
     } else {
         throw new Exception('No data.');
     }
