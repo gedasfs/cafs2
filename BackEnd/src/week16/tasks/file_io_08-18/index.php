@@ -38,6 +38,10 @@ try {
         $headersSaved = false;
 
         $file = fopen($csvFilePath, 'a+');
+        if (!$file) {
+            throw new Exception('Could not open file.');
+        }
+
         $fileData = fgetcsv($file);
 
         if (is_array($fileData) && in_array('#headers', $fileData)) {
