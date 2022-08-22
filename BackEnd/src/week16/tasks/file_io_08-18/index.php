@@ -45,7 +45,7 @@ try {
         echo "Info from '{$apiUrl}' saved to '{$csvFilePath}'";
         exit;
     } else {
-        throw new Exception('Problems with receiving data.');
+        throw new Exception('No data.');
     }
 } catch (Exception $e) {
     echo $e->getMessage();
