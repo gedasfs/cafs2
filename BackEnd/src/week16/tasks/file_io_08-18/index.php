@@ -18,15 +18,15 @@ $csvFilePath = 'users.csv';
 $apiUrl = 'https://randomuser.me/api/';
 
 try {
-    $data = file_get_contents($apiUrl);
+    $apiData = file_get_contents($apiUrl);
 
-    if (!$data) {
+    if (!$apiData) {
         throw new Exception('Data fetching failed.');
     }
 
-    $data = json_decode($data, true);
+    $apiData = json_decode($apiData, true);
 
-    if (isset($data) && array_key_exists('results', $data)) {
+    if (isset($apiData) && array_key_exists('results', $apiData)) {
         $headersSaved = false;
 
         $file = fopen($csvFilePath, 'a+');
@@ -36,17 +36,17 @@ try {
             $headersSaved = true;
         }
 
-        foreach ($data['results'] as $line) {
-            $flatData = flatten($line);
-            $flatData['#saved'] = date('Y-m-d H:i:s');
-            $flatData['#headers'] = '#data';
+        foreach ($apiData['results'] as $line) {
+            $flatApiData = flatten($line);
+            $flatApiData['#saved'] = date('Y-m-d H:i:s');
+            $flatApiData['#headers'] = '#data';
 
             if (!$headersSaved) {
-                fputcsv($file, array_keys($flatData));
+                fputcsv($file, array_keys($flatApiData));
                 $headersSaved = true;
             }
 
-            fputcsv($file, array_values($flatData));
+            fputcsv($file, array_values($flatApiData));
         }
 
         fclose($file);
