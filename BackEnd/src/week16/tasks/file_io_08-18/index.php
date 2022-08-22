@@ -14,6 +14,14 @@ function flatten($array, $prefix = '') {
     return $result;
 }
 
+function writeCsvToFile($fileRes, $content) {
+    $result = fputcsv($fileRes, $content);
+
+    if (!$result) {
+        throw new Exception('Failed to write to file.');
+    }
+}
+
 $csvFilePath = 'users.csv';
 $apiUrl = 'https://randomuser.me/api/';
 
@@ -42,11 +50,11 @@ try {
             $flatApiData['#headers'] = '#data';
 
             if (!$headersSaved) {
-                fputcsv($file, array_keys($flatApiData));
+                writeCsvToFile($file, array_keys($flatApiData));
                 $headersSaved = true;
             }
 
-            fputcsv($file, array_values($flatApiData));
+            writeCsvToFile($file, array_values($flatApiData));
         }
 
         fclose($file);
