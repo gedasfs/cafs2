@@ -18,7 +18,13 @@ $csvFilePath = 'users.csv';
 $apiUrl = 'https://randomuser.me/api/';
 
 try {
-    $data = json_decode(file_get_contents($apiUrl), true);
+    $data = file_get_contents($apiUrl);
+
+    if (!$data) {
+        throw new Exception('Data fetching failed.');
+    }
+
+    $data = json_decode($data, true);
 
     if (isset($data) && array_key_exists('results', $data)) {
         $headersSaved = false;
