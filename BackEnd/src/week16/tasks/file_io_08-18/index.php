@@ -1,8 +1,4 @@
 <?php
-
-$excelFilePath = 'excelFile.csv';
-$data = json_decode(file_get_contents('https://randomuser.me/api/'), true)['results'][0];
-
 // https://stackoverflow.com/questions/526556/how-to-flatten-a-multi-dimensional-array-to-simple-one-in-php
 function flatten($array, $prefix = '') {
     $result = [];
@@ -18,12 +14,60 @@ function flatten($array, $prefix = '') {
     return $result;
 }
 
-$data = flatten($data);
+function writeCsvToFile($fileRes, $content) {
+    $result = fputcsv($fileRes, $content);
 
-$file = fopen($excelFilePath, 'w');
-fputcsv($file, array_keys($data));
-fputcsv($file, array_values($data));
-fclose($file);
+    if (!$result) {
+        throw new Exception('Failed to write to file.');
+    }
+}
 
-// var_dump($data);
+$csvFilePath = 'users.csv';
+$apiUrl = 'https://randomuser.me/api/';
 
+try {
+    $apiData = file_get_contents($apiUrl);
+
+    if (!$apiData) {
+        throw new Exception('Data fetching failed.');
+    }
+
+    $apiData = json_decode($apiData, true);
+
+    if (isset($apiData) && array_key_exists('results', $apiData)) {
+        $headersSaved = false;
+
+        $file = fopen($csvFilePath, 'a+');
+        if (!$file) {
+            throw new Exception('Could not open file.');
+        }
+
+        $fileData = fgetcsv($file);
+
+        if (is_array($fileData) && in_array('#headers', $fileData)) {
+            $headersSaved = true;
+        }
+
+        foreach ($apiData['results'] as $line) {
+            $flatApiData = flatten($line);
+            $flatApiData['#saved'] = date('Y-m-d H:i:s');
+            $flatApiData['#headers'] = '#data';
+
+            if (!$headersSaved) {
+                writeCsvToFile($file, array_keys($flatApiData));
+                $headersSaved = true;
+            }
+
+            writeCsvToFile($file, array_values($flatApiData));
+        }
+
+        fclose($file);
+
+        echo "Info from '{$apiUrl}' saved to '{$csvFilePath}'";
+
+    } else {
+        throw new Exception('No data.');
+    }
+} catch (Exception $e) {
+    echo $e->getMessage();
+}
