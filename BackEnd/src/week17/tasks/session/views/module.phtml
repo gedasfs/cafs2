@@ -1,0 +1,8 @@
+<?php
+
+ob_start();
+require ROOT_PATH . '/views/components/' . $component;
+$content = ob_get_contents();
+ob_end_clean();
+
+require_once ROOT_PATH . '/views/layouts/main.phtml';

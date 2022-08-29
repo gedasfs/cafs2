@@ -1,0 +1,22 @@
+<div class="card w-50">
+  <div class="card-header d-flex">
+    <div class="align-self-center">
+      Welcome back, <span class="text-primary"><?php echo $username; ?></span>
+    </div>
+  </div>
+  <div class="card-body">
+    <p class="card-text m-0"><strong>Your location info</strong></p>
+    <p class="card-text m-0">Address: <?php echo $address; ?></p>
+    <p class="card-text m-0">Postcode: <?php echo $postcode; ?></p>
+    <p class="card-text m-0">State: <?php echo $state; ?></p>
+    <p class="card-text m-0">Country: <?php echo $country; ?></p>
+    <p class="card-text mt-3">
+      <a class="text-decoration-none text-secondary" data-bs-toggle="collapse" href="#coordinates" role="button" aria-expanded="false" aria-controls="coordinates">
+        Show coordinates <span class="fs-3">&#8964</span>
+      </a>
+    </p>
+    <div class="collapse" id="coordinates">
+      <p class="card-text m-0">latitude: <?php echo $coordinates['latitude']; ?></p>
+      <p class="card-text m-0">Longitude: <?php echo $coordinates['longitude']; ?></p>
+    </div>
+  </div>

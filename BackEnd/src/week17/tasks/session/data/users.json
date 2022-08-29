@@ -1,0 +1,71 @@
+{
+    "users":
+    [
+        {
+            "username": "orangetiger142",
+            "password": "litle",
+            "email": "arttu.koivisto@example.com",
+            "location":
+            {
+                "street":
+                {
+                    "number": 6557,
+                    "name": "Bulevardi"
+                },
+                "city": "Raseborg",
+                "state": "Satakunta",
+                "country": "Finland",
+                "postcode": 15172,
+                "coordinates":
+                {
+                    "latitude": "-5.5670",
+                    "longitude": "-133.5855"
+                }
+            }
+        },
+        {
+            "username": "blackkoala816",
+            "password": "bigmike",
+            "email": "jaxon.moore@example.com",
+            "location":
+            {
+                "street":
+                {
+                    "number": 2707,
+                    "name": "Opoho Road"
+                },
+                "city": "Auckland",
+                "state": "West Coast",
+                "country": "New Zealand",
+                "postcode": 52411,
+                "coordinates":
+                {
+                    "latitude": "66.5563",
+                    "longitude": "-132.0848"
+                }
+            }
+        },
+        {
+            "username": "sadbutterfly916",
+            "password": "qqqqqqqq",
+            "email": "lars.acker@example.com",
+            "location":
+            {
+                "street":
+                {
+                    "number": 6014,
+                    "name": "Beethovenstraße"
+                },
+                "city": "Westerburg",
+                "state": "Hamburg",
+                "country": "Germany",
+                "postcode": 57140,
+                "coordinates":
+                {
+                    "latitude": "-42.3932",
+                    "longitude": "-116.6138"
+                }
+            }
+        }
+    ]
+}
