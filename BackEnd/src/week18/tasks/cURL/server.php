@@ -40,5 +40,7 @@ try {
         'contentType' => null,
     ];
 } finally {
+    header('Content-type: application/json');
+    http_response_code($response['statusCode']);
     echo json_encode($response);
 }
