@@ -1,6 +1,6 @@
 <?php
 
-$urlApi = 'https://randomuser.me/api/';
+$urlApi = 'https://randomuser.me/api/?results=10';
 $urlServer = 'nginx/week18/tasks/cURL/server.php';
 
 try {
@@ -20,9 +20,7 @@ try {
 
     if (isset($apiResponse['error'])) {
         $responseCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-        curl_close($ch);
         throw new Exception($apiResponse['error'], $responseCode);
-        
     }
 
     // -----------------------------------------------------
@@ -44,18 +42,20 @@ try {
     curl_setopt_array($ch, $curlOptions);
 
     $serverResponse = curl_exec($ch);
-    curl_close($ch);
-
-    // To Do: check response type
 
     $responseData = json_decode($serverResponse, true);
 
     if (isset($responseData['error']) && $responseData['error'] === true) {
         throw new Exception($responseData['responseMsg'], $responseData['statusCode']);
     }
-
-    var_dump($responseData);
+    
+    header('Content-type: ' . $responseData['contentType']);
+    http_response_code($responseData['statusCode']);
+    echo $responseData['responseContent'];
+    
 } catch (Exception $e) {
-    curl_close($ch);
+    http_response_code($e->getCode());
     echo sprintf('Something went wrong. "%s" (%s)', $e->getMessage(), $e->getCode());
+} finally {
+    curl_close($ch);
 }

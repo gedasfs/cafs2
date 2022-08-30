@@ -16,7 +16,6 @@ try {
             $writtenDataFiles[] = $userFilePath;
         }
 
-        
         if (count($writtenDataFiles) === 0) {
             throw new Exception('Data was not saved', 500);
         }
@@ -25,11 +24,11 @@ try {
             'error' => false,
             'statusCode' => 201,
             'responseMsg' => 'Users created successfully',
-            'responseContent' => $writtenDataFiles,
+            'responseContent' => json_encode($writtenDataFiles),
             'contentType' => 'application/json',
         ];
     } else {
-        throw new Exception('Request method not post', 405);
+        throw new Exception('Request method is not allowed', 405);
     }  
 } catch (Exception $e) {
     $response = [
@@ -40,7 +39,5 @@ try {
         'contentType' => null,
     ];
 } finally {
-    header('Content-type: application/json');
-    http_response_code($response['statusCode']);
     echo json_encode($response);
 }
