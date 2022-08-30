@@ -19,8 +19,8 @@ try {
     $apiResponse = json_decode($apiResponseJson, true);
 
     if (isset($apiResponse['error'])) {
-        $responseCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-        throw new Exception($apiResponse['error'], $responseCode);
+        $apiResponseCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        throw new Exception($apiResponse['error'], $apiResponseCode);
     }
 
     // -----------------------------------------------------
