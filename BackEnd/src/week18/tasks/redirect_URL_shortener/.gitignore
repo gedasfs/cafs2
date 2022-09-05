@@ -1,0 +1,9 @@
+data
+node_modules
+.env
+.DS_Store
+
+public/js
+public/css
+/public/mix-manifest.json
+/public/mix.js.map
