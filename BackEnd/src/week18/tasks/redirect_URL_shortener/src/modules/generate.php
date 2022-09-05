@@ -24,7 +24,6 @@ if (!$userUrlValid) {
 
 
 $currTime = time();
-$timeLeft = (int) env('MAX_TIME') - ($currTime - $_SESSION['firstRequestTime']);
 
 if (!isset($_SESSION['sessionId'])) {
     $_SESSION['sessionId'] = session_id();
@@ -32,6 +31,7 @@ if (!isset($_SESSION['sessionId'])) {
     $_SESSION['firstRequestTime'] = $currTime;
 }
 
+$timeLeft = (int) env('MAX_TIME') - ($currTime - $_SESSION['firstRequestTime']);
 if ($timeLeft <= 0) {
     $_SESSION['requestsRemaining'] = env('MAX_REQUESTS');
     $_SESSION['firstRequestTime'] = $currTime;
