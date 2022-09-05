@@ -24,7 +24,7 @@ if (!$userUrlValid) {
 
 
 $currTime = time();
-$timeLeft = env('MAX_TIME') - ($currTime - $_SESSION['firstRequestTime']);
+$timeLeft = (int) env('MAX_TIME') - ($currTime - $_SESSION['firstRequestTime']);
 
 if (!isset($_SESSION['sessionId'])) {
     $_SESSION['sessionId'] = session_id();
