@@ -51,7 +51,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 let linksList = linksDiv.querySelector('ol');
                 let linkItem = document.createElement('li');
 
-                linkItem.innerHTML = `<a title="URL for ${response.content.userUrl}" href="${response.content.redirectUrl}" target="_blank">${response.content.redirectUrl}</a>`;
+                let link = document.createElement('a');
+                link.textContent = response.content.redirectUrl;
+                link.setAttribute('href', response.content.redirectUrl);
+                link.setAttribute('title', `URL for ${response.content.userUrl}`);
+                link.setAttribute('target', '_blank');
+                link.classList.add('text-decoration-none');
+
+                let par = document.createElement('p');
+                par.textContent = response.content.userUrl;
+                par.classList.add('ms-2', 'fw-light', 'fst-italic', 'linklist-span');
+
+                linkItem.append(link);
+                linkItem.append(par);
                 linksList.prepend(linkItem);
             }
         } catch (error) {
