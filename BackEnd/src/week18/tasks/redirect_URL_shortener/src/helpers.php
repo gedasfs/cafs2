@@ -75,11 +75,3 @@ if (!function_exists('validateUrl')) {
 		return preg_match($urlRegex, $url);
 	}
 }
-
-if (!function_exists('setSessionVar')) {
-	function setSessionVar(array $sessionVar): void {
-		foreach ($sessionVar as $key => $val) {
-			$_SESSION[$key] = $val;
-		}
-	}
-}
