@@ -1,7 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     const searchBtn = document.querySelector('#searchBtn');
     const searchInpt = document.querySelector('#searchBarInpt');
-    const msgDiv = document.querySelector('.messages');
+    const msgDiv = document.querySelector('#messages');
+    const linksDiv = document.querySelector('#links');
 
     
     searchBtn?.addEventListener('click', async ev => {
@@ -25,12 +26,12 @@ document.addEventListener('DOMContentLoaded', () => {
             response = await response.json();
 
 
-            let msgSpan = document.createElement('span');
-
             if (!response.status) {
                 if (response.httpResponseCode >= 400 && response.httpResponseCode < 500 && Object.keys(response.content.length > 0)) {
                     for (let error in response.content) {
                         console.log('Fail: ', response);
+
+                        let msgSpan = document.createElement('span');
                         let inptEl = document.querySelector(`[name=${error}]`);
                         inptEl?.classList.add('is-invalid');
 
@@ -42,11 +43,16 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 console.log('Success:', response);
                 searchInpt.value = '';
+               
+                if (linksDiv.classList.contains('d-none')) {
+                    linksDiv.classList.remove('d-none');
+                }
 
-                msgSpan.classList.add('mt-2', 'd-block');
-                msgSpan.innerHTML = `<a title="URL for ${response.content.userUrl}" href="${response.content.redirectUrl}" target="_blank">${response.content.redirectUrl}</a>`;
+                let linksList = linksDiv.querySelector('ol');
+                let linkItem = document.createElement('li');
 
-                msgDiv.prepend(msgSpan); 
+                linkItem.innerHTML = `<a title="URL for ${response.content.userUrl}" href="${response.content.redirectUrl}" target="_blank">${response.content.redirectUrl}</a>`;
+                linksList.prepend(linkItem);
             }
         } catch (error) {
             console.log('error: ', error);

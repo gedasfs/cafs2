@@ -1,7 +1,10 @@
 <?php
 
+$content = '';
 ob_start();
-require ROOT_PATH . '/views/components/' . $component;
+foreach ($components as $component) {
+    require ROOT_PATH . '/views/components/' . $component;
+}
 $content = ob_get_contents();
 ob_end_clean();
 
