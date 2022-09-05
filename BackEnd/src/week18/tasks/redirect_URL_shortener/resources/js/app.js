@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                         msgSpan.classList.add('mt-2', 'text-danger', 'is-invalid-helper');
 						msgSpan.textContent = response.content[error];
-                        msgDiv.prepend(msgSpan); 
+                        inptEl.after(msgSpan); 
                     }                   
                 }
             } else {
