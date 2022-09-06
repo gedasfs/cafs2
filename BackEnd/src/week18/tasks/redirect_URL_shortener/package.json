@@ -12,6 +12,10 @@
   },
   "author": "gedas.fs@gmail.com",
   "license": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gedasfs/cafs2/tree/master/BackEnd/src/week18/tasks/redirect_URL_shortener"
+  },
   "devDependencies": {
     "laravel-mix": "^6.0.49",
     "resolve-url-loader": "^5.0.0",
