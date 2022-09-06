@@ -12,7 +12,7 @@ if (!function_exists('env')) {
 }
 
 if (!function_exists('asset')) {
-	function asset(string $asset): string 
+	function asset(string $asset): string
 	{
 		$manifestPath = ROOT_PATH . '/public/mix-manifest.json';
 
@@ -33,7 +33,7 @@ if (!function_exists('asset')) {
 
 if (!function_exists('generateRandomString')) {
 	// https://stackoverflow.com/questions/4356289/php-random-string-generator
-	function generateRandomString(int $length = 5): string 
+	function generateRandomString(int $length = 5): string
 	{
 		$characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
 		$charactersLength = strlen($characters);
@@ -62,16 +62,31 @@ if (!function_exists('ajaxResponse')) {
 		http_response_code($httpResponseCode);
 
 		echo json_encode($data);
-		
+
 		exit;
 	}
 }
 
 if (!function_exists('validateUrl')) {
-	function validateUrl(string $url): bool {
+	function validateUrl(string $url): bool
+	{
 		// https://uibakery.io/regex-library/url-regex-php
 		$urlRegex = '/^https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*)$/';
-		
+
 		return preg_match($urlRegex, $url);
+	}
+}
+
+if (!function_exists('getViewComponents')) {
+	function getViewComponents(array $components): string
+	{
+		ob_start();
+		foreach ($components as $component) {
+			require ROOT_PATH . '/views/components/' . $component;
+		}
+		$content = ob_get_contents();
+		ob_end_clean();
+
+		return $content;
 	}
 }

@@ -1,11 +1,5 @@
 <?php
 
-$content = '';
-ob_start();
-foreach ($components as $component) {
-    require ROOT_PATH . '/views/components/' . $component;
-}
-$content = ob_get_contents();
-ob_end_clean();
+$content = getViewComponents($components);
 
 require_once ROOT_PATH . '/views/layouts/main.phtml';
