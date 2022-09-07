@@ -15,6 +15,8 @@ if (!$_POST[SEARCH_INPT_NAME]) {
     ajaxResponse($errors, false, 'Input problems', 422);
 }
 
+$userUrl = str_starts_with($userUrl, 'http') ? $userUrl : 'http://' . $userUrl;
+
 $userUrlValid = validateUrl($userUrl); 
 
 if (!$userUrlValid) {
