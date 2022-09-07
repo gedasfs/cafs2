@@ -7,7 +7,7 @@ class User
     function __construct(
         protected string $firstname, 
         protected string $lastname
-        )
+    )
     {
         $this->createdAt = time();
     }
@@ -27,7 +27,7 @@ class User
         return $this->createdAt;
     }
 
-    public function getCreatedTimeFormated(string $format = 'Y-m-d H:i:s'): string
+    public function getCreatedTimeFormatted(string $format = 'Y-m-d H:i:s'): string
     {
         return date($format, $this->createdAt);
     }

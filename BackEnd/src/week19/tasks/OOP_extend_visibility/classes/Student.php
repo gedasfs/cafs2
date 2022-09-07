@@ -7,7 +7,7 @@ class Student extends User
         protected string $lastname, 
         private int $scholarship, 
         private array $courseNames
-        )
+    )
     {
         parent::__construct($firstname, $lastname);
     }
