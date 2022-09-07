@@ -7,7 +7,7 @@ class User
     function __construct(
         protected string $firstname, 
         protected string $lastname
-    )
+        )
     {
         $this->createdAt = time();
     }
