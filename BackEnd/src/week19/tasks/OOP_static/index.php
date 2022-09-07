@@ -7,6 +7,6 @@ include_once 'classes/ArrayHelper.php';
 
 $numArr = [5, 5, '5', 'abc'];
 
-echo sprintf("Sum: %d<br>\n", ArrayHelper::_arraySum($numArr));
-echo sprintf("Avg: %d<br>\n", ArrayHelper::_arrayAvg($numArr));
+echo sprintf("Sum: %d<br>\n", ArrayHelper::sum($numArr));
+echo sprintf("Avg: %d<br>\n", ArrayHelper::avg($numArr));
 var_dump($numArr);

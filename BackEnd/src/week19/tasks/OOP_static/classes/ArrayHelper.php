@@ -4,13 +4,13 @@
 // Panaudokite vieną statinį metodą kitame.
 
 class ArrayHelper {
-    public static function _arraySum(array $arr): float
+    public static function sum(array $arr): float|int
     {
         return array_sum($arr);
     }
 
-    public static function _arrayAvg(array $arr): float
+    public static function avg(array $arr): float|int
     {
-        return self::_arraySum($arr) / count(array_filter(array_values($arr), 'is_numeric'));
+        return self::sum($arr) / count(array_filter(array_values($arr), 'is_numeric'));
     }
 }
