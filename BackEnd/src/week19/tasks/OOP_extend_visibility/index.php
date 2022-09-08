@@ -17,6 +17,6 @@ $student1 = new Student(
 echo sprintf(
     "Student %s (created %s) attends courses:<br>\n %s.", 
     $student1->getFullName(), 
-    $student1->getCreatedTimeFormated('y-m-d'), 
+    $student1->getCreatedTimeFormatted('y-m-d'), 
     $student1->getCourseNamesAsStr()
 );
