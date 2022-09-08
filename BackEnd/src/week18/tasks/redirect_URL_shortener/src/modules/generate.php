@@ -50,7 +50,7 @@ do {
     $filePath = sprintf('%s/%s.%s', ROOT_PATH . env('DATA_FOLDER_PATH'), $fileName, env('FILE_EXT', 'json'));
 } while (file_exists($filePath));
 
-$redirectUrl = sprintf('http://%s/?module=redirect&code=%s', $_SERVER['HTTP_HOST'], $fileName);
+$redirectUrl = sprintf('http://%s/?code=%s', $_SERVER['HTTP_HOST'], $fileName);
 
 $fileContent = [
     'redirectUrl' => $redirectUrl,
