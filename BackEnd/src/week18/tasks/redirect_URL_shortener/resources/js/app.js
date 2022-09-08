@@ -1,12 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
     const searchBtn = document.querySelector('#searchBtn');
     const searchInpt = document.querySelector('#searchBarInpt');
+    const urlInpForm = document.querySelector('#urlInpForm');
     const msgDiv = document.querySelector('#messages');
     const linksDiv = document.querySelector('#links');
 
     
-    searchBtn?.addEventListener('click', async ev => {
+    urlInpForm?.addEventListener('submit', async ev => {
         try {
+            ev.preventDefault();
+            
             Array.from(document.querySelectorAll('.is-invalid')).forEach(el => {
                 el.classList.remove('is-invalid');
             });

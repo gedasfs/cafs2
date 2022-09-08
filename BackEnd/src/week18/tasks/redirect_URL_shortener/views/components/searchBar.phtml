@@ -4,14 +4,16 @@
         <p class="card-text">
             This app allows you to shorten your link. Please insert your link URL below and get your shorter link.
         </p>
-        <div class="row align-items-top justify-content-center my-2">
-            <div class="col-12 col-md-9 col-lg-10">
-                <input name="search_inpt" type="search" class="form-control fs-5 text-lowercase" id="searchBarInpt" aria-describedby="searchBarSpan" placeholder="http://example.com">
+        <form id="urlInpForm">
+            <div class="row align-items-top justify-content-center my-2">
+                <div class="col-12 col-md-9 col-lg-10">
+                    <input name="search_inpt" type="search" class="form-control fs-5 text-lowercase" id="searchBarInpt" aria-describedby="searchBarSpan" placeholder="http://example.com">
+                </div>
+                <div class="col-12 col-md-3 col-lg-2 mt-4 mt-md-0">
+                    <button type="submit" class="btn btn-primary w-100 py-2" id="searchBtn">Generate</button>
+                </div>
             </div>
-            <div class="col-12 col-md-3 col-lg-2 mt-4 mt-md-0">
-                <button type="button" class="btn btn-primary w-100 py-2" id="searchBtn">Generate</button>
-            </div>
-        </div>
+        </form>
         <div id="messages"></div>
     </div>
 </div>
