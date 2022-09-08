@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const searchBtn = document.querySelector('#searchBtn');
-    const searchInpt = document.querySelector('#searchBarInpt');
+    const urlInpt = document.querySelector('#urlInpt');
     const urlInpForm = document.querySelector('#urlInpForm');
     const msgDiv = document.querySelector('#messages');
     const linksDiv = document.querySelector('#links');
@@ -9,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     urlInpForm?.addEventListener('submit', async ev => {
         try {
             ev.preventDefault();
-            
+
             Array.from(document.querySelectorAll('.is-invalid')).forEach(el => {
                 el.classList.remove('is-invalid');
             });
@@ -19,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const formData = new FormData();
 
-            formData.append(searchInpt.name, searchInpt.value);
+            formData.append(urlInpt.name, urlInpt.value);
 
             let response = await fetch('?module=generate', {
                 method: 'POST',
@@ -45,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             } else {
                 console.log('Success:', response);
-                searchInpt.value = '';
+                urlInpt.value = '';
                
                 if (linksDiv.classList.contains('d-none')) {
                     linksDiv.classList.remove('d-none');

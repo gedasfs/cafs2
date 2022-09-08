@@ -1,6 +1,6 @@
 <?php
 
-define('SEARCH_INPT_NAME', 'search_inpt');
+define('SEARCH_INPT_NAME', 'url_inpt');
 
 $errors = [];
 $userUrl = $_POST[SEARCH_INPT_NAME] ?? null;
