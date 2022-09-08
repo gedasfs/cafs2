@@ -3,9 +3,7 @@
 class Vehicle
 {   
 
-    protected ?int $wheels = null;
-
-    public function __construct(protected string $make, protected string $model, protected string $year) 
+    public function __construct(protected string $make, protected string $model, protected string $year, protected ?int $wheels = null) 
     {
 
     }
@@ -49,7 +47,7 @@ class Vehicle
         }
     }
 
-    public function getWheelsNumber(): int 
+    public function getWheelsNumber(): ?int 
     {
         return $this->wheels;
     }
