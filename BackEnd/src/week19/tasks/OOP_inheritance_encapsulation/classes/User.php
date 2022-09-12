@@ -4,8 +4,8 @@
 
 class User 
 {
-    protected string $name;
-    protected int $age;
+    private string $name;
+    private int $age;
 
     public function __construct($name, $age)
     {
@@ -13,22 +13,22 @@ class User
         $this->setAge($age);
     }
 
-    public function setName($name) : void 
+    public function setName($name): void 
     {
         $this->name = $name;
     }
 
-    public function setAge($age) : void 
+    public function setAge($age): void 
     {
         $this->age = $age;
     }
 
-    public function getName() : string 
+    public function getName(): string 
     {
         return $this->name;
     }
 
-    public function getAge() : int 
+    public function getAge(): int 
     {
         return $this->age;
     }

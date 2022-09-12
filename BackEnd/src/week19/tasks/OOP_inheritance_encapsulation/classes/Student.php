@@ -7,24 +7,23 @@ class Student extends User
     private float $scholarship;
     private string $courseName;
 
-    public function setScholarship($scholarship) : void 
+    public function setScholarship($scholarship): void 
     {
         $this->scholarship = $scholarship;
     }
 
-    public function setCourseName($courseName) : void 
+    public function setCourseName($courseName): void 
     {
         $this->courseName = $courseName;
     }
 
-    public function getScholarship() : float 
+    public function getScholarship(): float 
     {
         return $this->scholarship;
     }
 
-    public function getCourseName() : string 
+    public function getCourseName(): string 
     {
         return $this->courseName;
     }
-
 }

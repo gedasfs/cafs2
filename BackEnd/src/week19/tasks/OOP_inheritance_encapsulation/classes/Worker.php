@@ -4,14 +4,14 @@
 
 class Worker extends User 
 {
-    protected float $salary;
+    private float $salary;
 
-    public function setSalary($salary) : void
+    public function setSalary($salary): void
     {
         $this->salary = $salary;
     }
 
-    public function getSalary() : float
+    public function getSalary(): float
     {
         return $this->salary;
     }

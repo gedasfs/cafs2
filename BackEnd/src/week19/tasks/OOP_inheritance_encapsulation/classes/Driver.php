@@ -7,22 +7,22 @@ class Driver extends Worker
     private int $expInYears;
     private string $drivingCategory;
 
-    public function setExperience($expInYears) : void
+    public function setExperience($expInYears): void
     {
         $this->expInYears = $expInYears;
     }
 
-    public function setDrivingCategory($drivingCategory) : void
+    public function setDrivingCategory($drivingCategory): void
     {
         $this->drivingCategory = $drivingCategory;
     }
 
-    public function getExperience() : int
+    public function getExperience(): int
     {
         return $this->expInYears;
     }
 
-    public function getDrivingCategory() : string
+    public function getDrivingCategory(): string
     {
         return $this->drivingCategory;
     }
