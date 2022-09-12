@@ -5,16 +5,16 @@
 class Student extends User
 {
     private float $scholarship;
-    private string $courseName;
+    private int $course;
 
     public function setScholarship($scholarship): void 
     {
         $this->scholarship = $scholarship;
     }
 
-    public function setCourseName($courseName): void 
+    public function setCourse($course): void 
     {
-        $this->courseName = $courseName;
+        $this->course = $course;
     }
 
     public function getScholarship(): float 
@@ -22,8 +22,8 @@ class Student extends User
         return $this->scholarship;
     }
 
-    public function getCourseName(): string 
+    public function getCourse(): string 
     {
-        return $this->courseName;
+        return $this->course;
     }
 }

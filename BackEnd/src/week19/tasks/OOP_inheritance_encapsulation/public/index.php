@@ -19,7 +19,7 @@ spl_autoload_register(function ($className) {
 try {
     $student = new Student('Mark', 25);
     $student->setScholarship(400);
-    $student->setCourseName('CA');
+    $student->setCourse(3);
 
     $driver = new Driver('John', 40);
     $driver->setExperience(20);
