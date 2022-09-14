@@ -8,8 +8,8 @@ Atkreipkite dėmesį, kad kievienas messenger‘io servisas priima skirtingo bū
  
 P.S.
 Tai yra pseudo-kodas, realus siuntimo SMS ar į Facebook nereikia daryt. Kodas turi pasileisti be klaidų ir grąžinti išsiųsto pranešimo rezultatą.
-`
-<?php
+
+```<?php
 
 $text = 'Hello World';
 
@@ -30,5 +30,4 @@ $facebookAppKey  = '';
 $facebookConnector = new Connectors\FacebookConnector($facebookAppName, $facebookAppKey);
 
 $facebookMessenger = new Services\Messengers\FacebookMessengerService($facebookConnector);
-$facebookMessenger->send(4, $text);
-`
+$facebookMessenger->send(4, $text);```
