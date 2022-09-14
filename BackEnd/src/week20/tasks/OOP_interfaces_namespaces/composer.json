@@ -1,0 +1,11 @@
+{
+    "name": "codeacademy/interface_namespaces",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Services\\": "app/Services",
+            "Connectors\\": "app/Connectors",
+            "Interfaces\\": "app/Interfaces"
+            }
+        }
+    }

@@ -8,3 +8,5 @@ RUN apk add --update \
 		libpng-dev \
 	&& docker-php-ext-configure gd --with-jpeg --with-freetype \
 	&& docker-php-ext-install gd
+
+	COPY --from=composer/composer /usr/bin/composer /usr/bin/composer
