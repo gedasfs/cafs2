@@ -1,0 +1,9 @@
+{
+    "name": "codeacademy/namespace_traits",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src"
+            }
+        }
+    }
