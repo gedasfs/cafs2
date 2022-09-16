@@ -8,7 +8,7 @@ class FormBuilder
 {
     use HtmlTag;
     
-    public function open(string $action, string $method) : string
+    public function open(string $action = ' ', string $method = 'GET') : string
     {
         return $this->buildElement('form', ['action' => $action, 'method' => $method]);
     }
