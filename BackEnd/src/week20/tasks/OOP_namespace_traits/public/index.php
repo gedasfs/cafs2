@@ -1,8 +1,8 @@
 <?php
 
-use App\Classes\FormBuilder;
-
 require_once dirname(__DIR__) . '/vendor/autoload.php';
+
+use App\Classes\FormBuilder;
 
 $form = new FormBuilder();
 
