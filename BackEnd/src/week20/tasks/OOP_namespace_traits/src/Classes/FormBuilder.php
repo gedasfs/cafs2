@@ -20,13 +20,13 @@ class FormBuilder
 
     public function label(string $idName, string $labelTxt) : string
     {
-        return $this->buildElement('label', ['for' => $idName], $labelTxt, true, true);
+        return $this->buildElement('label', ['for' => $idName], $labelTxt, true);
     }
 
     public function input(string $type, ?string $placeholder = null, ?string $name = null, ?string $id = null) : string
     {   
         $attributes = $this->cleanArray(get_defined_vars());
-        $inputStr = $this -> buildElement('input', $attributes, '', false, true);
+        $inputStr = $this -> buildElement('input', $attributes, '', false);
 
         return $inputStr;
     }
@@ -39,7 +39,7 @@ class FormBuilder
     public function textarea(?string $placeholder = null, ?string $name = null, ?string $idName = null, int $rows = null, ?int $cols = null) : string
     {
         $attributes = $this->cleanArray(get_defined_vars());
-        $inputStr = $this -> buildElement('textarea', $attributes, '', true, true);
+        $inputStr = $this -> buildElement('textarea', $attributes, '', true);
 
         return $inputStr;
     }
@@ -58,7 +58,7 @@ class FormBuilder
     
     public function submit(string $btnTxt) : string
     {
-        return $this -> buildElement('button', [], $btnTxt, true, false);
+        return $this -> buildElement('button', [], $btnTxt, true);
     }
 
 
