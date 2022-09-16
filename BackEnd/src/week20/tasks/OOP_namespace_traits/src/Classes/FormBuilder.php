@@ -10,23 +10,23 @@ class FormBuilder
     
     public function open(string $action, string $method) : string
     {
-        return $this->buildFormElement('form', ['action' => $action, 'method' => $method]);
+        return $this->buildElement('form', ['action' => $action, 'method' => $method]);
     }
 
     public function close() : string
     {
-        return $this->buildFormElement('/form');
+        return $this->buildElement('/form');
     }
 
     public function label(string $idName, string $labelTxt) : string
     {
-        return $this->buildFormElement('label', ['for' => $idName], $labelTxt, true, true);
+        return $this->buildElement('label', ['for' => $idName], $labelTxt, true, true);
     }
 
     public function input(string $type, ?string $placeholder = null, ?string $name = null, ?string $id = null) : string
     {   
         $attributes = $this->cleanArray(get_defined_vars());
-        $inputStr = $this -> buildFormElement('input', $attributes, '', false, true);
+        $inputStr = $this -> buildElement('input', $attributes, '', false, true);
 
         return $inputStr;
     }
@@ -39,7 +39,7 @@ class FormBuilder
     public function textarea(?string $placeholder = null, ?string $name = null, ?string $idName = null, int $rows = null, ?int $cols = null) : string
     {
         $attributes = $this->cleanArray(get_defined_vars());
-        $inputStr = $this -> buildFormElement('textarea', $attributes, '', true, true);
+        $inputStr = $this -> buildElement('textarea', $attributes, '', true, true);
 
         return $inputStr;
     }
@@ -53,12 +53,12 @@ class FormBuilder
             $attributes['checked'] = '';
         }
 
-        return $this->buildFormElement('input', $attributes);
+        return $this->buildElement('input', $attributes);
     }
     
     public function submit(string $btnTxt) : string
     {
-        return $this -> buildFormElement('button', [], $btnTxt, true, false);
+        return $this -> buildElement('button', [], $btnTxt, true, false);
     }
 
 
