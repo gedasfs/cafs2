@@ -20,7 +20,7 @@ echo $form->label('name', 'Repeat password');
 echo $form->password('Enter password');
 echo '<br>';
 
-echo $form->checkbox('checkbox1', 'checkbox1');
+echo $form->checkbox('checkbox1', 'checkbox1', checked: true);
 echo $form->label('checkbox1', 'checkbox1');
 
 echo $form->checkbox('checkbox2', 'checkbox2');
