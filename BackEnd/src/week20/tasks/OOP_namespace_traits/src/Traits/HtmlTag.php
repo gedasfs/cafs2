@@ -9,14 +9,13 @@ trait HtmlTag
         $attributesStr = '';
 
         foreach ($attributes as $name => $value) {
-            $attributesStr .= "{$name}=\"{$value}\" ";
+            $attributesStr .= sprintf('%s="%s"', $name, $value);
         }
 
-        $elementStr = "<{$tagName} {$attributesStr}>";
+        $elementStr = sprintf('<%s %s>', $tagName, $attributesStr);
 
         if ($closingTag) {
-            $elementStr .= "{$elTxt}";
-            $elementStr .= "</{$tagName}>";
+            $elementStr .= sprintf('%s</%s>', $elTxt, $tagName);
         }
 
         return $elementStr;
