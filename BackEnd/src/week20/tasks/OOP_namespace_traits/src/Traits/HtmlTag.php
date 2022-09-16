@@ -4,7 +4,7 @@ namespace App\Traits;
 
 trait HtmlTag
 {
-    public function buildElement(string $tagName, array $attributes = [], string $elTxt = '', bool $closingTag = false)
+    private function buildElement(string $tagName, array $attributes = [], string $elTxt = '', bool $closingTag = false)
     {
         $attributesStr = '';
 
