@@ -31,7 +31,7 @@ class FormBuilder
         return $inputStr;
     }
 
-    public function password(string $placeholder, ?string $name = null, ?string $idName = null) : string
+    public function password(?string $placeholder = null, ?string $name = null, ?string $idName = null) : string
     {
         return $this->input('password', $placeholder, $name, $idName);
     }
@@ -43,19 +43,24 @@ class FormBuilder
 
         return $inputStr;
     }
+    
+    public function checkbox(?string $name = null, ?string $id = null, bool $checked = false) : string
+    {
+        $attributes = $this->cleanArray(get_defined_vars());
+        $attributes['type'] = 'checkbox';
 
+        if ($checked) {
+            $attributes['checked'] = '';
+        }
+
+        return $this->buildFormElement('input', $attributes);
+    }
+    
     public function submit(string $btnTxt) : string
     {
         return $this -> buildFormElement('button', [], $btnTxt, true, false);
     }
 
-    public function checkbox(?string $name = null, ?string $id = null, bool $ckecked = false) : string
-    {
-        $attributes = $this->cleanArray(get_defined_vars());
-        $attributes['type'] = 'checkbox';
-
-        return $this->buildFormElement('input', $attributes);
-    }
 
     private function cleanArray(array $arr)
     {
