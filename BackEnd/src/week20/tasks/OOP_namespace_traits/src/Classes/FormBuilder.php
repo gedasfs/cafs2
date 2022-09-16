@@ -36,7 +36,7 @@ class FormBuilder
         return $this->input('password', $placeholder, $name, $id);
     }
 
-    public function textarea(?string $placeholder = null, ?string $name = null, ?string $id = null, int $rows = null, ?int $cols = null) : string
+    public function textarea(?string $placeholder = null, ?string $name = null, ?string $id = null, ?int $rows = null, ?int $cols = null) : string
     {
         $attributes = $this->cleanArray(get_defined_vars());
         $inputStr = $this -> buildElement('textarea', $attributes, '', true);
