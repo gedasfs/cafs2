@@ -48,7 +48,7 @@ class Tag
         return $this->buildElement($this->tagName, $this->attributes, $this->text, $this->needsClosingTag);
     }
 
-    public function show()
+    public function show() : void
     {
         echo $this->get();
     }
