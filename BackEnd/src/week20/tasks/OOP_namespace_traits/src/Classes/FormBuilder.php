@@ -18,9 +18,9 @@ class FormBuilder
         return $this->buildElement('/form');
     }
 
-    public function label(string $idName, string $labelTxt) : string
+    public function label(string $id, string $labelTxt) : string
     {
-        return $this->buildElement('label', ['for' => $idName], $labelTxt, true);
+        return $this->buildElement('label', ['for' => $id], $labelTxt, true);
     }
 
     public function input(string $type, ?string $placeholder = null, ?string $name = null, ?string $id = null) : string
