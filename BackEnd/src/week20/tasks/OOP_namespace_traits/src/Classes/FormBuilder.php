@@ -26,7 +26,7 @@ class FormBuilder
     public function input(string $type, ?string $placeholder = null, ?string $name = null, ?string $id = null) : string
     {   
         $attributes = $this->cleanArray(get_defined_vars());
-        $inputStr = $this -> buildElement('input', $attributes, '');
+        $inputStr = $this -> buildElement('input', $attributes);
 
         return $inputStr;
     }
@@ -39,7 +39,7 @@ class FormBuilder
     public function textarea(?string $placeholder = null, ?string $name = null, ?string $id = null, ?int $rows = null, ?int $cols = null) : string
     {
         $attributes = $this->cleanArray(get_defined_vars());
-        $inputStr = $this -> buildElement('textarea', $attributes, '', true);
+        $inputStr = $this -> buildElement('textarea', $attributes, closingTag: true);
 
         return $inputStr;
     }
