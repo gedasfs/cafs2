@@ -9,7 +9,7 @@ class Tag
     use Traits\HtmlTag;
 
     private string $tagName;
-    private string $text;
+    private string $text = '';
     private array $attributes;
     private bool $needsClosingTag = false;
     
@@ -19,6 +19,7 @@ class Tag
         'p',
         'div',
         'span',
+        'form',
     ];
 
     public function __construct($tagName)
