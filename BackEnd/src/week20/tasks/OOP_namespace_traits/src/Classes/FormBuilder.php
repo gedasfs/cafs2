@@ -8,53 +8,57 @@ class FormBuilder
 {
     use HtmlTag;
     
-    public function open(string $action, string $method) : string
+    public function open(string $action = ' ', string $method = 'GET') : string
     {
-        return $this->buildFormElement('form', ['action' => $action, 'method' => $method]);
+        return $this->buildElement('form', ['action' => $action, 'method' => $method]);
     }
 
     public function close() : string
     {
-        return $this->buildFormElement('/form');
+        return $this->buildElement('/form');
     }
 
     public function label(string $idName, string $labelTxt) : string
     {
-        return $this->buildFormElement('label', ['for' => $idName], $labelTxt, true, true);
+        return $this->buildElement('label', ['for' => $idName], $labelTxt, true);
     }
 
     public function input(string $type, ?string $placeholder = null, ?string $name = null, ?string $id = null) : string
     {   
         $attributes = $this->cleanArray(get_defined_vars());
-        $inputStr = $this -> buildFormElement('input', $attributes, '', false, true);
+        $inputStr = $this -> buildElement('input', $attributes, '');
 
         return $inputStr;
     }
 
-    public function password(string $placeholder, ?string $name = null, ?string $idName = null) : string
+    public function password(?string $placeholder = null, ?string $name = null, ?string $id = null) : string
     {
-        return $this->input('password', $placeholder, $name, $idName);
+        return $this->input('password', $placeholder, $name, $id);
     }
 
-    public function textarea(?string $placeholder = null, ?string $name = null, ?string $idName = null, int $rows = null, ?int $cols = null) : string
+    public function textarea(?string $placeholder = null, ?string $name = null, ?string $id = null, ?int $rows = null, ?int $cols = null) : string
     {
         $attributes = $this->cleanArray(get_defined_vars());
-        $inputStr = $this -> buildFormElement('textarea', $attributes, '', true, true);
+        $inputStr = $this -> buildElement('textarea', $attributes, '', true);
 
         return $inputStr;
     }
-
-    public function submit(string $btnTxt) : string
-    {
-        return $this -> buildFormElement('button', [], $btnTxt, true, false);
-    }
-
-    public function checkbox(?string $name = null, ?string $id = null, bool $ckecked = false) : string
+    
+    public function checkbox(?string $name = null, ?string $id = null, bool $checked = false) : string
     {
         $attributes = $this->cleanArray(get_defined_vars());
         $attributes['type'] = 'checkbox';
 
-        return $this->buildFormElement('input', $attributes);
+        if ($checked) {
+            $attributes['checked'] = '';
+        }
+
+        return $this->buildElement('input', $attributes);
+    }
+    
+    public function submit(string $btnTxt) : string
+    {
+        return $this -> buildElement('button', [], $btnTxt, true);
     }
 
     private function cleanArray(array $arr)

@@ -4,23 +4,18 @@ namespace App\Traits;
 
 trait HtmlTag
 {
-    public function buildFormElement(string $tagName, array $attributes = [], string $elTxt = '', bool $closingTag = false, bool $breakLine = false)
+    private function buildElement(string $tagName, array $attributes = [], string $elTxt = '', bool $closingTag = false)
     {
         $attributesStr = '';
 
         foreach ($attributes as $name => $value) {
-            $attributesStr .= "{$name}=\"{$value}\" ";
+            $attributesStr .= sprintf('%s="%s"', $name, $value);
         }
 
-        $elementStr = "<{$tagName} {$attributesStr}>";
+        $elementStr = sprintf('<%s %s>', $tagName, $attributesStr);
 
         if ($closingTag) {
-            $elementStr .= "{$elTxt}";
-            $elementStr .= "</{$tagName}>";
-        }
-
-        if ($breakLine) {
-            $elementStr .= "<br>";
+            $elementStr .= sprintf('%s</%s>', $elTxt, $tagName);
         }
 
         return $elementStr;
