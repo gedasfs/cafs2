@@ -20,6 +20,7 @@ class Tag
         'div',
         'span',
         'form',
+        'button'
     ];
 
     public function __construct($tagName)
