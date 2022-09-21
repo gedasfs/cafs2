@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "description": "This is a sample server tore server.",
-    "version": "1.0.0",
+    "version": "1.0.3",
     "title": "Store",
     "termsOfService": "http:/my-store.io/terms/",
     "contact": {
@@ -13,8 +13,8 @@
       "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
     }
   },
-  "host": "api.my-store.io",
-  "basePath": "/v1",
+  "host": "localhost",
+  "basePath": "/api/v1",
   "tags": [
     {
       "name": "store",
@@ -26,11 +26,11 @@
     }
   ],
   "schemes": [
-    "https",
-    "http"
+    "http",
+    "https"
   ],
   "paths": {
-    "/store/order": {
+    "/store/orders": {
       "post": {
         "tags": [
           "store"
@@ -53,8 +53,8 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "successful operation",
+          "201": {
+            "description": "Successful operation",
             "schema": {
               "$ref": "#/definitions/Order"
             }
@@ -65,7 +65,7 @@
         }
       }
     },
-    "/store/order/{orderId}": {
+    "/store/orders/{orderId}": {
       "get": {
         "tags": [
           "store"
@@ -81,14 +81,12 @@
             "description": "ID of item that needs to be fetched",
             "required": true,
             "type": "integer",
-            "maximum": 10,
-            "minimum": 1,
             "format": "int64"
           }
         ],
         "responses": {
           "200": {
-            "description": "successful operation",
+            "description": "Successful operation",
             "schema": {
               "$ref": "#/definitions/Order"
             }
@@ -122,6 +120,9 @@
           }
         ],
         "responses": {
+          "200": {
+            "description": "Successful operation"
+          },
           "400": {
             "description": "Invalid ID supplied"
           },
@@ -131,7 +132,7 @@
         }
       }
     },
-    "/user": {
+    "/users": {
       "post": {
         "tags": [
           "user"
@@ -158,7 +159,7 @@
         }
       }
     },
-    "/user/{username}": {
+    "/users/{username}": {
       "get": {
         "tags": [
           "user"
@@ -245,6 +246,9 @@
           }
         ],
         "responses": {
+          "200": {
+            "description": "Successful operation"
+          },
           "400": {
             "description": "Invalid username supplied"
           },
