@@ -1,10 +1,21 @@
 <?php
 define('ROOT_PATH', dirname(__DIR__));
 
+
+$envFilePath = ROOT_PATH . '/.env';
+
+if (file_exists($envFilePath)) {
+    define('ENV', parse_ini_file($envFilePath));
+} else {
+    throw new Exception('Env file not found');
+}
+
+require_once ROOT_PATH . '/src/helpers.php';
+require ROOT_PATH . '/vendor/autoload.php';
+
 use Slim\Factory\AppFactory;
 
 
-require ROOT_PATH . '/vendor/autoload.php';
 
 // Instantiate App
 $app = AppFactory::create();
