@@ -1,6 +1,6 @@
 <?php
 
-// session_start();
+session_start();
 
 define('ROOT_PATH', dirname(__DIR__));
 
@@ -14,8 +14,9 @@ if (file_exists($envFilePath)) {
 
 use Slim\Factory\AppFactory;
 
-require_once ROOT_PATH . '/src/helpers.php';
+
 require_once ROOT_PATH . '/vendor/autoload.php';
+
 require_once ROOT_PATH . '/src/slimContainers.php';
 
 // Instantiate App
