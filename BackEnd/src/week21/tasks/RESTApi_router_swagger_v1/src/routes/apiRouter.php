@@ -8,13 +8,6 @@ use App\Controllers\UserControllerJson;
 use App\Controllers\OrderControllerJson;
 
 
-$responseData = [
-    'ok' => true,
-    'statusCode' => 200,
-    'msg' => 'successful operation',
-    'data' => [],
-];
-
 // 'Json file saving' based api
 $app->group('/api/v1', function (RouteCollectorProxy $group) {
     $group->group('/store/orders', function (RouteCollectorProxy $group) {
