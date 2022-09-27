@@ -17,7 +17,6 @@ $app->get('/', function (Request $request, Response $response, $args) {
         'quizzList' => $quizzList
     ];
 
-    // $view = $this->get('view');
     return $this->get('view')->render($response, 'index.phtml', $viewVars);
 })->setName('index');
 
@@ -26,6 +25,22 @@ $app->get('/', function (Request $request, Response $response, $args) {
 $app->get('/quizzes/{quizzName}', function (Request $request, Response $response, $args) {
 
     $quizzName = $args['quizzName'];
+
+    if (isset($_COOKIE['quizzName']) && $_COOKIE['quizzName'] == $quizzName) {
+        $userId = $_COOKIE['userId'];
+
+        $userProgressFilePath = sprintf('%s/%s/%s.json', ROOT_PATH, env('QUIZZ_USERS_PROGRESS_PATH'), $userId);
+        $userPreviousSessionData = json_decode(file_get_contents($userProgressFilePath), true);
+        $userPreviousSessionData['nextQuizzQNo'] = $_COOKIE['quizzQ'] + 1;
+
+        $_SESSION['quizzData'] = $userPreviousSessionData;
+
+        $viewVars = $userPreviousSessionData;
+
+
+        $view = $this->get('view');
+        return $view->render($response, 'quizzContinue.phtml', $viewVars);
+    }
 
     $quizzFilePath = sprintf('%s/%s/%s.json', ROOT_PATH, env('QUIZZ_QUESTIONS_PATH'), $quizzName);
     
@@ -40,9 +55,6 @@ $app->get('/quizzes/{quizzName}', function (Request $request, Response $response
     
     $_SESSION['quizzData'] = $quizzData;
     $_SESSION['quizzData']['totalQuestions'] = count($quizzData['questions']);
-    // $_SESSION['quizzData']['currQuestion'] = 1;
-    // $_SESSION['quizzData']['totalPoints'] = array_sum(array_column($quizzData['questions'], 'points'));
-    // $_SESSION['quizzData']['totalCorrects'] = 0;
     
     
     $viewVars = $quizzData;
@@ -57,14 +69,41 @@ $app->post('/quizzes/{quizzName}/{qNo:[0-9]+}', function (Request $request, Resp
     $qNo = $args['qNo'];
     
     $showQuestionNo = $qNo - 1;
+    $prevQNo = $qNo - 1;
     
 
-    if ($qNo > 1) {
-        $prevQNo = $qNo - 1;
-        $answerNo = $_POST['radio'];
+    if ($qNo == 1) {
 
-        $_SESSION['quizzData']['questions'][$prevQNo - 1]['a'] = $answerNo;
+        do {
+            $userId = generateRandomString(5);
+            $userProgressFilePath = sprintf('%s%s/%s.json', ROOT_PATH, env('QUIZZ_USERS_PROGRESS_PATH'), $userId);
+        } while (file_exists($userProgressFilePath));
+
+        file_put_contents($userProgressFilePath, json_encode($_SESSION['quizzData']));
+
+        $_SESSION['quizzData']['userId'] = $userId;
+
+    } elseif ($qNo > 1) {
+        
+        if (isset($_POST['continue']) && $_POST['continue'] == true) {
+
+        } else {
+            $answerNo = $_POST['radio'];
+
+            $_SESSION['quizzData']['questions'][$prevQNo - 1]['a'] = $answerNo;
+
+            $userId = $_SESSION['quizzData']['userId'];
+            $userProgressFilePath = sprintf('%s%s/%s.json', ROOT_PATH, env('QUIZZ_USERS_PROGRESS_PATH'), $userId);
+
+            file_put_contents($userProgressFilePath , json_encode($_SESSION['quizzData']));
+        }
+        
     }
+
+    setcookie('userId', $_SESSION['quizzData']['userId'], time() + env('PROGRESS_COOKIE_LIFETIME'));
+    setcookie('quizzName', $quizzName, time() + env('PROGRESS_COOKIE_LIFETIME'));
+    setcookie('quizzQ', $prevQNo, time() + env('PROGRESS_COOKIE_LIFETIME'));
+    
 
     // build question section
     $questionHtmlContent = Card::buildCardContent(
@@ -89,7 +128,7 @@ $app->post('/quizzes/{quizzName}/{qNo:finish}', function (Request $request, Resp
     $answerNo = $_POST['radio'];
     $_SESSION['quizzData']['questions'][$prevQNo - 1]['a'] = $answerNo;
 
-    foreach ($_SESSION['quizzData']['questions'] as $qNo => &$question) {
+    foreach ($_SESSION['quizzData']['questions'] as &$question) {
         if ($question['a'] == $question['c']) {
             $question['p'] = $question['possiblePoints'];
         }
@@ -104,6 +143,14 @@ $app->post('/quizzes/{quizzName}/{qNo:finish}', function (Request $request, Resp
 
     $quizzName = $args['quizzName'];
     $responseData['data'] = sprintf('/quizzes/%s/results', $quizzName);
+
+    $userProgressFilePath = sprintf('%s%s/%s.json', ROOT_PATH, env('QUIZZ_USERS_PROGRESS_PATH'),  $_SESSION['quizzData']['userId']);
+    unlink($userProgressFilePath);
+    unset($_SESSION['quizzData']['userId']);
+    setcookie('userId', '', time() - 3600);
+    setcookie('quizzName', '', time() - 3600);
+    setcookie('quizzQ', '', time() - 3600);
+
     
     $response->getBody()->write($responseData['data']);
     return $response
@@ -122,9 +169,6 @@ $app->get('/quizzes/{quizzName}/results', function (Request $request, Response $
         'totalPoints' => $totalPoints,
         'totalPossiblePoints' => $totalPossiblePoints
     ];
-
-    // var_dump($_SESSION);
-    // exit;
 
     $view = $this->get('view');
     return $view->render($response, 'quizzResults.phtml', $viewVars);

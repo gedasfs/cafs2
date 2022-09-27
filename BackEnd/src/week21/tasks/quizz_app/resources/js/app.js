@@ -68,7 +68,6 @@ function proccessFirst(ev) {
 
 
     const nextUrl = `/quizzes/${quizzName}/1`;
-    console.log()
 
         fetch(nextUrl, {
 			method: 'POST',
@@ -85,15 +84,48 @@ function proccessFirst(ev) {
 
 }
 
+function processContinue(ev) {
+    const quizzName = document.querySelector('input[name="quizz_name"]').value;
+    const nextQuizzQNo = document.querySelector('input[name="next_q_no"]').value;
+    const divQuizzQuestion = document.querySelector('#quizzQuestion');
+    const divContinue = document.querySelector('#divContinue');
+
+    
+
+    console.log(quizzName);
+    console.log(nextQuizzQNo);
+    console.log(divQuizzQuestion);
+
+
+    const nextUrl = `/quizzes/${quizzName}/${nextQuizzQNo}`;
+
+    const formData = new FormData();
+    formData.append('continue', true);
+
+        fetch(nextUrl, {
+			method: 'POST',
+			headers: {
+				'X-Requested-With': 'XMLHttpRequest'
+			},
+            body: formData
+		}).then(response => response.text())
+        .then(text => {
+            divQuizzQuestion.innerHTML = text;
+            divQuizzQuestion.classList.remove('d-none');
+            divContinue.classList.add('d-none');
+            btnNext.classList.remove('d-none');
+        });
+
+}
 
 
 document.addEventListener('DOMContentLoaded', ev => {
 
     const btnNext = document.querySelector('#btnNext');
     const btnStart = document.querySelector('#btnStart');
-    
-    
+    const btnContinue = document.querySelector('#btnContinue');
 
-    btnNext.addEventListener('click', proccessQuestion);
-    btnStart.addEventListener('click', proccessFirst);
+    btnNext?.addEventListener('click', proccessQuestion);
+    btnStart?.addEventListener('click', proccessFirst);
+    btnContinue?.addEventListener('click', processContinue);
 });

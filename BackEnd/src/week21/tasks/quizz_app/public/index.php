@@ -2,6 +2,7 @@
 
 session_start();
 
+
 define('ROOT_PATH', dirname(__DIR__));
 
 $envFilePath = ROOT_PATH . '/.env';
@@ -23,14 +24,10 @@ require_once ROOT_PATH . '/src/slimContainers.php';
 $app = AppFactory::create();
 
 // Add middlewares
-// $app->addRoutingMiddleware();
 $errorMiddleware = $app->addErrorMiddleware(true, true, true);
 
 // Add routes
 require_once ROOT_PATH . '/src/routes/webRouter.php';
 
-
-// $errorHandler = $errorMiddleware->getDefaultErrorHandler();
-// $errorHandler->forceContentType('application/json');
 
 $app->run();
