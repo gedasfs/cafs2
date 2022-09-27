@@ -54,18 +54,12 @@ function proccessQuestion(ev) {
             }).then(response => response.text())
             .then(text => divQuizzQuestion.innerHTML = text);
         }
-        
     }
 }
 
 function proccessFirst(ev) {
     const quizzName = document.querySelector('input[name="quizz_name"]').value;
     const divQuizzQuestion = document.querySelector('#quizzQuestion');
-    
-
-    console.log(quizzName);
-    console.log(divQuizzQuestion);
-
 
     const nextUrl = `/quizzes/${quizzName}/1`;
 
@@ -81,7 +75,6 @@ function proccessFirst(ev) {
             ev.target.classList.add('d-none');
             btnNext.classList.remove('d-none');
         });
-
 }
 
 function processContinue(ev) {
@@ -89,13 +82,6 @@ function processContinue(ev) {
     const nextQuizzQNo = document.querySelector('input[name="next_q_no"]').value;
     const divQuizzQuestion = document.querySelector('#quizzQuestion');
     const divContinue = document.querySelector('#divContinue');
-
-    
-
-    console.log(quizzName);
-    console.log(nextQuizzQNo);
-    console.log(divQuizzQuestion);
-
 
     const nextUrl = `/quizzes/${quizzName}/${nextQuizzQNo}`;
 
@@ -115,7 +101,6 @@ function processContinue(ev) {
             divContinue.classList.add('d-none');
             btnNext.classList.remove('d-none');
         });
-
 }
 
 

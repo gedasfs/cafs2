@@ -8,9 +8,9 @@ use Slim\Factory\AppFactory;
 $container = new Container();
 
 // Register components on container
-$container->set('view', function() {
-    return new PhpRenderer(ROOT_PATH . env('TEMPLATES_PATH'));
-});
+// $container->set('view', function() {
+//     return new PhpRenderer(ROOT_PATH . env('TEMPLATES_PATH'));
+// });
 
 
 AppFactory::setContainer($container);
