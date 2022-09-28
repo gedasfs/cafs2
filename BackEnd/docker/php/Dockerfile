@@ -23,3 +23,6 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
 	&& mv composer.phar /usr/bin/composer
 
 # COPY --from=composer:2.4.2 /usr/bin/composer /usr/bin/composer
+
+RUN docker-php-ext-install mysqli && docker-php-ext-enable mysqli
+RUN docker-php-ext-install pdo pdo_mysql
