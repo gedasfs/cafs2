@@ -27,8 +27,8 @@ $app->get('/api/documentation', function(Request $request, Response $response) {
 $app->group('/api/v1', function(RouteCollectorProxy $group) {
     $group->group('/store', function(RouteCollectorProxy $group) {
         $group->post('/orders', [Api\V1\StoreController::class, 'placeOrder']);
-        $group->get('/order/{orderId', [Api\V1\StoreController::class, 'getOrder']);
-        $group->delete('/orders/{orderId', [Api\V1\StoreController::class, 'deleteOrder']);
+        $group->get('/orders/{orderId}', [Api\V1\StoreController::class, 'getOrder']);
+        $group->delete('/orders/{orderId}', [Api\V1\StoreController::class, 'deleteOrder']);
     });
 
     $group->group('/users', function(RouteCollectorProxy $group) {
