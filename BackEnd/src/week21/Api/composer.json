@@ -1,0 +1,19 @@
+{
+    "name": "gedas-ca/api",
+    "description": "Api app for CAFS2",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        },
+        "files": ["src/functions.php"]
+    },
+    "require": {
+        "vlucas/phpdotenv": "^5.4",
+        "symfony/var-dumper": "^5.4",
+        "slim/slim": "^4.9",
+        "slim/psr7": "^1.5",
+        "middlewares/trailing-slash": "^2.0",
+        "php-di/slim-bridge": "^3.2"
+    }
+}
