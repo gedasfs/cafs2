@@ -23,7 +23,7 @@ services:
     # tty: true
     depends_on:
       - mariadb
-      - mysql
+      # - mysql
 
   mariadb:
     container_name: ca-mariadb
