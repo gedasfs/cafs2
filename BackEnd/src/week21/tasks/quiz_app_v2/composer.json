@@ -1,0 +1,27 @@
+{
+    "name": "root/quizz_app",
+    "description": "quiz app",
+    "type": "project",
+    "require": {
+        "slim/slim": "^4.10",
+        "slim/http": "^1.2",
+        "slim/psr7": "^1.5",
+        "slim/php-view": "^3.2",
+        "php-di/slim-bridge": "^3.2",
+        "vlucas/phpdotenv": "^5.4",
+        "symfony/var-dumper": "^6.1"
+    },
+    "license": "open",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        },
+        "files": ["src/helpers.php"]
+    },
+    "authors": [
+        {
+            "name": "gedas",
+            "email": "gedas.fs@gmail.com"
+        }
+    ]
+}

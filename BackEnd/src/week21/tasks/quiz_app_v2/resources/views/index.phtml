@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="<?php echo asset('/css/app.css'); ?>">
+    <title>Quiz App</title>
+</head>
+
+<body>
+    <div class="container mt-3">
+        <main class="">
+            <h1>Welcome</h1>
+            <h4>Please select the quizz to start</h4>
+
+            <div id="quizList">
+                <ul>
+                    <?php foreach($quizList as $fileName => $quizName): ?>
+                        <li><a href="<?php echo sprintf('/quizzes/%s', $fileName); ?>"><?php echo $quizName; ?></a></li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+        </main>
+    </div>
+
+    <script src="<?php echo asset('/js/app.js'); ?>"></script>
+</body>
+
+</html>

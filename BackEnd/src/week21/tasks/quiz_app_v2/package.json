@@ -1,0 +1,28 @@
+{
+  "name": "redirect_url_shortener",
+  "version": "0.0.1",
+  "description": "CAFS2 task for URL shortening/redirect app",
+  "main": "app.js",
+  "scripts": {
+    "resources-dev": "npm run resources-development",
+    "resources-development": "mix",
+    "resources-watch": "mix watch",
+    "resources-prod": "np run resources-production",
+    "resources-production": "mix --production"
+  },
+  "author": "gedas.fs@gmail.com",
+  "license": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gedasfs/cafs2/tree/master/BackEnd/src/week21/tasks/quizz_app"
+  },
+  "devDependencies": {
+    "laravel-mix": "^6.0.49",
+    "resolve-url-loader": "^5.0.0",
+    "sass": "^1.54.8",
+    "sass-loader": "^13.0.2"
+  },
+  "dependencies": {
+    "bootstrap": "^5.2.0"
+  }
+}

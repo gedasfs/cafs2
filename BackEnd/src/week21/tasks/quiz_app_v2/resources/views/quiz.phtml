@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="<?php echo asset('/css/app.css'); ?>">
+    <title><?php echo $name; ?></title>
+</head>
+
+<body>
+    <div class="container mt-3">
+        <main>
+            <h4><?php echo $name; ?></h4>
+            <p id="description"><?php echo $description; ?></p>
+            <div>
+                <input type="hidden" name="quiz_name" value="<?php echo $quizFilename; ?>">
+                <div class="card my-4 d-none" id="quizQuestion">
+                        <!-- Question content -->
+                        <?php echo $cardContent ?? ''; ?>
+                        <!-- ./ -->
+                    </div>
+                    <button class="btn btn-primary mt-4 float-end d-none" id="btnNext">Next</button>
+                </div>
+            <button class="btn btn-primary" id="btnStart">Start</button>
+        </main>
+    </div>
+
+    <script src="<?php echo asset('/js/app.js'); ?>"></script>
+</body>
+
+</html>

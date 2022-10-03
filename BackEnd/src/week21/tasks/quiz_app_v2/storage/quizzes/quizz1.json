@@ -1,0 +1,126 @@
+{
+	"name": "General Knowledge. Easy",
+	"description": "You will be presented with various questions from general knowledge. You will need to select 1 answer for every question. Each correct answer will give you 1 point. The timing for this test is not set, take all the time you need. Good Luck.",
+	"questions": [
+	  {
+		"possiblePoints": 1,
+		"q": "In which Italian city can you find the Colosseum?",
+		"s": [
+		  "Venice",
+		  "Rome",
+		  "Naples",
+		  "Milan"
+		],
+		"c": 2,
+		"a": 0
+	  },
+	  {
+		"possiblePoints": 1,
+		"q": "What is the boiling point temperature (water)?",
+		"s": [
+		  "50 °C",
+		  "100 °C",
+		  "150 °C",
+		  "200 °C"
+		],
+		"c": 2,
+		"a": 0
+	  },
+	  {
+		"possiblePoints": 1,
+		"q": "Which fruit is associated with Isaac Newton?",
+		"s": [
+		  "Banana",
+		  "Pear",
+		  "Pineapple",
+		  "Apple"
+		],
+		"c": 4,
+		"a": 0
+	  },
+	  {
+		"possiblePoints": 1,
+		"q": "Which actor played Rocky?",
+		"s": [
+		  "Tony Burton",
+		  "Harrison Ford",
+		  "Sylvester Stallone",
+		  "Jason Statham"
+		],
+		"c": 3,
+		"a": 0
+	  },
+	  {
+		"possiblePoints": 1,
+		"q": "What is the largest canyon in the world?",
+		"s": [
+		  "Verdon Gorge, France",
+		  "King’s Canyon, Australia",
+		  "Grand Canyon, USA",
+		  "Fjaðrárgljúfur Canyon, Iceland"
+		],
+		"c": 3,
+		"a": 0
+	  },
+	  {
+		"possiblePoints": 1,
+		"q": "In which museum can you find Leonardo Da Vinci’s Mona Lisa?",
+		"s": [
+		  "Le Louvre",
+		  "Uffizi Museum",
+		  "British Museum",
+		  "Metropolitan Museum of Art"
+		],
+		"c": 1,
+		"a": 0
+	  },
+	  {
+		"possiblePoints": 1,
+		"q": "Which one of the following scientists is known for his contributions to the science of evolution?",
+		"s": [
+		  "Marie Curie",
+		  "Thomas Edison",
+		  "Stephen Hawking",
+		  "Charles Darwin"
+		],
+		"c": 4,
+		"a": 0
+	  },
+	  {
+		"possiblePoints": 1,
+		"q": "Which one of the following actors did not play James Bond?",
+		"s": [
+		  "Daniel Craig",
+		  "Pierce Brosman",
+		  "Colin Firth",
+		  "Sean Connery"
+		],
+		"c": 3,
+		"a": 0
+	  },
+	  {
+		"possiblePoints": 1,
+		"q": "In which city can you find the Prado Museum?",
+		"s": [
+		  "Madrid",
+		  "Barcelona",
+		  "Santiago",
+		  "Buenos Aires"
+		],
+		"c": 1,
+		"a": 0
+	  },
+	  {
+		"possiblePoints": 1,
+		"q": "What is the largest active volcano in the world?",
+		"s": [
+		  "Mouna Loa",
+		  "Mount Batur",
+		  "Mount Vesuvius",
+		  "Mount Etna"
+		],
+		"c": 1,
+		"a": 0
+	  }
+	]
+  }
