@@ -46,4 +46,14 @@ services:
           - ./docker/mysql/data/mysql:/var/lib/mysql
           - ./docker/mysql/sql:/home/mysql
       ports:
-          - 3308:3306  
+          - 3308:3306
+  
+  phpmyadmin:
+    container_name: pma
+    build: ./docker/pma
+    env_file:
+      - ./docker/pma/pma.env
+    ports:
+      - 8081:80
+    depends_on:
+      - mysql
