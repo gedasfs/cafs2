@@ -52,7 +52,7 @@ services:
     container_name: pma
     build: ./docker/pma
     env_file:
-      - ./docker/pma/pma.env
+      - ./docker/pma/.env
     ports:
       - 8081:80
     depends_on:
