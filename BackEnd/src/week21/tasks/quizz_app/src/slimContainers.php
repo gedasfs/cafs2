@@ -1,8 +1,8 @@
 <?php
 
 use DI\Container;
-use Slim\Views\PhpRenderer;
 use Slim\Factory\AppFactory;
+use Slim\Views\PhpRenderer;
 
 // Setup container
 $container = new Container();
