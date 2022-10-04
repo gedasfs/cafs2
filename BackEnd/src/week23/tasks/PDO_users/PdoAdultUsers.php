@@ -15,13 +15,18 @@ try {
 
     $timeDiff = 18;
     $limitBy = 13;
+    $orderBy = 'id';
 
     $queryNewestAdultUsers = 'SELECT * FROM `users` WHERE TIMESTAMPDIFF(YEAR, `birthdate`, NOW()) > :timeDiff';
-    $queryNewestAdultUsers .= ' ORDER BY `id` DESC';
-    $queryNewestAdultUsers .= " LIMIT {$limitBy}";
+    $queryNewestAdultUsers .= " ORDER BY `id` DESC";
+    $queryNewestAdultUsers .= " LIMIT :limitBy";
 
     $stmt = $pdo->prepare($queryNewestAdultUsers);
-    $stmt->execute(['timeDiff' => $timeDiff]);
+    // $stmt->execute(['timeDiff' => $timeDiff, 'orderBy' => $orderBy]);
+    $stmt->bindValue(':timeDiff', $timeDiff, PDO::PARAM_INT);
+    // $stmt->bindValue(':orderBy', $orderBy, PDO::PARAM_INT);
+    $stmt->bindValue(':limitBy', $limitBy, PDO::PARAM_INT);
+    $stmt->execute();
     $adultUsers = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     var_dump($adultUsers);
