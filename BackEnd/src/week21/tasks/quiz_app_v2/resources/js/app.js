@@ -2,22 +2,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const btnStart = document.querySelector('#btnStart');
 
-    btnStart.addEventListener('click', (ev) => {
+    btnStart?.addEventListener('click', (ev) => {
 
         const quizName = document.querySelector('input[name="quiz_name"]').value;
-        const quizAnswer = document.querySelector('#quizQuestion').querySelector('input:checked');
+        const quizAnswerElem = document.querySelector('#quizQuestion').querySelector('input:checked');
         let currQuestionNo = document.querySelector('input[name="curr_Q_No"]')?.value;
 
         currQuestionNo = currQuestionNo ?? 0; 
 
-        if (currQuestionNo && !quizAnswer) {
+        if (currQuestionNo && !quizAnswerElem) {
             alert('Please select your answer.');
         } else {
             const formData = new FormData();
-            if (quizAnswer) {
-                formData.append(quizAnswer.name, quizAnswer.value);
+
+            if (quizAnswerElem) {
+                formData.append(quizAnswerElem.name, quizAnswerElem.value);
             }
-    
+
             const url = `/quizzes/${quizName}/${currQuestionNo}`;
     
             fetch(url, {
@@ -25,15 +26,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 headers: { 'X-Requested-With': 'XMLHttpRequest' },
                 body: formData,
             })
-            .then(response => response.text())
-            .then(text => {
+            .then(response => response.json())
+            .then(data => {
                 const quizQuestion = document.querySelector('#quizQuestion');
-                console.log(text);
+                console.log(data);
     
-                quizQuestion.innerHTML = text;
-                quizQuestion.classList.remove('d-none');
                 ev.target.textContent = 'Next';
-                // ev.target.classList.add('float-end');
+                quizQuestion.innerHTML = data.html;
+                quizQuestion.classList.remove('d-none');
+                if ((data.totalQCount - 1) == currQuestionNo) {
+                    ev.target.textContent = 'Finish';
+                } else if ((data.totalQCount) == currQuestionNo)
+                ev.target.classList.add('d-none');
             });
         }
     });

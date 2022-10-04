@@ -37,12 +37,13 @@ class QuizRepository
     public function setQuizData(string $quizName, bool $setFromSession = false) : void
     {      
         if ($setFromSession) {
-            $this->quizData = $_SESSION[''];
+            // $this->quizData = $_SESSION[''];
         } else {
             $quizFilePath = sprintf('%s%s%s.json', ROOT_PATH, $_ENV['QUIZZ_QUESTIONS_PATH'], $quizName);
 
             $this->quizData = $this->getDataFromJsonFile($quizFilePath);
             $this->quizData['quizFilename'] = $quizName;
+            $this->quizData['totalQCount'] = count($this->quizData['questions']);
         }
     }
 
