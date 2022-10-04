@@ -16,7 +16,8 @@ try {
     $timeDiff = 18;
     $limitBy = 13;
 
-    $queryNewestAdultUsers = 'SELECT * FROM `users` WHERE TIMESTAMPDIFF(YEAR, `birthdate`, NOW()) > :timeDiff ORDER BY `id` DESC';
+    $queryNewestAdultUsers = 'SELECT * FROM `users` WHERE TIMESTAMPDIFF(YEAR, `birthdate`, NOW()) > :timeDiff';
+    $queryNewestAdultUsers .= ' ORDER BY `id` DESC';
     $queryNewestAdultUsers .= " LIMIT {$limitBy}";
 
     $stmt = $pdo->prepare($queryNewestAdultUsers);
