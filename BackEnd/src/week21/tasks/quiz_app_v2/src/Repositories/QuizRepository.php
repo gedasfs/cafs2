@@ -11,8 +11,6 @@ class QuizRepository
     public function __construct()
     {
         $this->pathToQuizList = sprintf('%s', ROOT_PATH . $_ENV['QUIZZ_LISTNAMES_PATH']);
-
-
     }
 
     public function __destruct()
@@ -39,7 +37,7 @@ class QuizRepository
     public function setQuizData(string $quizName, bool $setFromSession = false) : void
     {      
         if ($setFromSession) {
-
+            $this->quizData = $_SESSION[''];
         } else {
             $quizFilePath = sprintf('%s%s%s.json', ROOT_PATH, $_ENV['QUIZZ_QUESTIONS_PATH'], $quizName);
 

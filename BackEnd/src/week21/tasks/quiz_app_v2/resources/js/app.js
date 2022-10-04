@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(response => response.text())
             .then(text => {
                 const quizQuestion = document.querySelector('#quizQuestion');
-                console.log();
+                console.log(text);
     
                 quizQuestion.innerHTML = text;
                 quizQuestion.classList.remove('d-none');

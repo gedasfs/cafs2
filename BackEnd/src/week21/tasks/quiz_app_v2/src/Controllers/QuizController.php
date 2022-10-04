@@ -54,6 +54,7 @@ class QuizController
         $questionId = $args['questionId'];
 
         // if ($questionId != 0) {
+        //     $this->quizRep->setQuizData($quizName, true);
         //     $_SESSION[$quizName] = 
         // }
         
