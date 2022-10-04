@@ -18,6 +18,8 @@ services:
     # image: php:8.1.1-fpm-alpine3.15
     build: ./docker/php/
     working_dir: /var/www
+    env_file:
+          - ./docker/mysql/.env
     volumes:
       - ./src:/var/www
     # tty: true
@@ -42,5 +44,6 @@ services:
           - ./docker/mysql/.env
       volumes:
           - ./docker/mysql/data/mysql:/var/lib/mysql
+          - ./docker/mysql/sql:/home/mysql
       ports:
           - 3308:3306  
